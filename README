@@ -1,0 +1,61 @@
+how to run:
+
+
+install globally http-server
+so move under app/ ad  run "http-server -a 0.0.0.0 -p 8000"
+
+
+
+
+
+What is a dashboard?
+
+E’ un sistema di visualizzazione delle informazioni caratterizzato da facilità di lettura ed immediatezza.
+
+Le dashboard forniscono una visione grafica e realtime degli indicatori chiave di performance di un'organizzazione relativamente ad uno o più processi aziendali 
+
+
+
+
+
+MONITORARE L'ATTIVITA
+
+
+"
+Il termine dashboard proviene dal settore automobilistico e come in un cruscotto tale sistema raccoglie tutte le principali informazioni, consentendo di sapere a colpo d’occhio costa sta funzionando correttamente e cosa no.
+
+"
+
+
+Pertanto il progetto non punta (per adesso) a offrirti un'area dove inserisci ad esempio fatture, ma ti
+offrirà i widget in grado di allacciarsi (con un minimo di lavoro) a quei servizi e te li mostrerà
+nella dashboard.
+-
+-------------------------------------------
+
+
+Entando può creare dei servizi di collegamento verso i vostri sistemi, prendere i dati e mostrarli nella
+dashboard.
+
+Dunque puoi utilizzare Entando come unica web app che ti offre una dashboard con le statistiche della
+tua azienda.
+
+(sarebbe una dashboard di circa 60 MB)
+
+--------------------------------------------
+
+
+Altrimenti, basa il tuo sistema su architettura entando, creati nuove funzionalità con edo ed utilizza la dashboard
+direttamente sul portale.
+
+--------------------------------------------
+
+
+
+
+
+
+
+
+
+

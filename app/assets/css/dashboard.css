@@ -1,0 +1,83 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15-ott-2015, 22.32.30
+    Author     : A.Piras
+*/
+
+.container{
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+}
+
+
+.dash_min_height{
+    min-height: 600px;
+}
+
+.menu{
+    background-color: gray;
+}
+
+
+/*dashboard*/
+
+
+ .portlet {
+      margin: 0 1em 1em 0;
+      padding: 0.3em;
+    }
+    .portlet-header {
+      padding: 0.2em 0.3em;
+      margin-bottom: 0.5em;
+      position: relative;
+    }
+    .portlet-toggle {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: -8px;
+    }
+    .portlet-content {
+      padding: 0.4em;
+    }
+    .portlet-placeholder {
+      border: 1px dotted black;
+      margin: 0 1em 1em 0;
+      height: 50px;
+    }
+
+
+    /*added*/
+
+    .menu{
+        background-color: gray;
+        padding:0.5em;
+        padding-bottom: 1000px;
+        margin-bottom: -1000px;
+    }
+
+    .menu .portlet{
+
+      width: 5em;
+      overflow: hidden;
+    }
+
+    .menu .portlet .portlet-content{
+      display: none;
+    }
+
+    .menu .portlet .portlet-header span{
+      display: none;
+    }
+
+
+.showBorders{
+    border: 2px dashed #6EB4E6;
+    min-height: 5em;
+     min-width: 5em;
+}
