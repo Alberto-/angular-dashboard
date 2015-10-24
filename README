@@ -1,9 +1,14 @@
-how to run:
+1) how to run:
 
+(install globally http-server)
 
-install globally http-server
-so move under app/ ad  run "http-server -a 0.0.0.0 -p 8000"
+under app/  run
 
+"http-server -a 0.0.0.0 -p 8000"
+
+2) test:
+
+karma start test/karma.conf.js
 
 
 

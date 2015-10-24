@@ -33,7 +33,13 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
 });
 
   function reloadChart(id){
-      angular.element(document.getElementById(id)).scope().reloadChart();
+    console.log(id);
+    // angular.element(document.getElementById(id)).scope().loadChart();
+
+
+   
+
+    
 
   }
 
