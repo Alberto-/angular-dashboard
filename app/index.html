@@ -14,6 +14,7 @@
         <!-- custom configuration-->
         <link rel="stylesheet" href="assets/css/dashboard.css">
             
+            
         <script src="app.js"></script>
         <link rel="import" href="inc/widgets_inclusions.html">
        
@@ -67,7 +68,7 @@
                                     <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                                 </div>
                             </div>
-                            <div class="col-md-4 draggable"ui:sortable="sortableOptions"  id="riga_1Col_2">
+                            <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_2">
                                 <div class="portlet" id="widgetNews">
                                     <div class="portlet-header">News</div>
                                     <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
@@ -93,16 +94,19 @@
                         <!--TERZA RIGA-->
                         <div class="row ">
                             <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_3Col_1">
-                                <div class="portlet" ng-controller="widget5Controller" id="widget5Controller">
-                                    <div class="portlet-header">{{title}}</div>
-                                    <div class="portlet-content">
-                                        <canvas id="bar" class="chart chart-bar" data="customerData"  series="series" legend="true" options="customerOptions" labels="customerLabels"></canvas> 
+                            <div class="portlet" id="widget5app">
+                                    <div ng-controller="widget5Controller">
+                                        <div class="portlet-header">{{title}}</div>
+                                        <div class="portlet-content">
+                                            <canvas id="bar" class="chart chart-bar" data="customerData"  series="series" legend="true" options="customerOptions" labels="customerLabels"></canvas> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_2Col_2">
                                 <div class="portlet" ng-controller="widget6Controller" id="widget6Controller">
                                     <div class="portlet-header">{{title}}</div>
+                                    <i class="fa fa-pie-chart icon-pie"></i>
                                     <div class="portlet-content">
                                         <canvas id="doughnut_contracts" class="chart chart-polar-area"  legend="true" labels="contractsLabels" data="contractsData" colours="contractsColours" ></canvas>
                                     </div>

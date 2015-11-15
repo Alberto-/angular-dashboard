@@ -1,37 +1,44 @@
-app.controller('widget6Controller', function ($scope, $rootScope, $http, $compile) {
+app.controller('widget6Controller', ["$scope", "$rootScope", "$http", "$compile", "widget6Factory",
+
+ function ($scope, $rootScope, $http, $compile, widget6Factory) {
     $scope.title="Grafico 6";
     $scope.desc="grafico descrizione 123456";
-    
+
+    console.log('ricarico grafico');
 
 
-     console.log('ricarico grafico');
-
-        //CHART 1) NUMERO CONTRATTI
-        $scope.contractsLabels = [
-            "Total Active",
-            "Total Not Active",
-            "Total Cancelled",
-            "Total Terminated",
-        ];
-
-        $scope.totalActive = 5;
-        $scope.totalNotActive = 2;
-        $scope.totalCancelled = 3;
-        $scope.totalTerminated = 1;
-
-        $scope.contractsData = [
-            $scope.totalActive,
-            $scope.totalNotActive,
-            $scope.totalCancelled,
-            $scope.totalTerminated
-        ];
-
-        $scope.contractsColours = [
-        "#9ED54C",
-        "#91C249",
-        "#EC2A2D",
-        "#8D0521"
-        ];
+    $scope.contractsLabels = widget6Factory.getLabels();
 
 
-});
+    widget6Factory.getInfo().success(function(data){
+      console.log(data); 
+
+      $scope.json = data; 
+
+      $scope.totalActive = $scope.json.active;
+      $scope.totalNotActive =  $scope.json.notActive;
+      $scope.totalCancelled =  $scope.json.cancelled;
+      $scope.totalTerminated =  $scope.json.terminated;
+
+      $scope.contractsData = [
+      $scope.totalActive,
+      $scope.totalNotActive,
+      $scope.totalCancelled,
+      $scope.totalTerminated
+      ];
+
+      $scope.contractsColours = [
+      "#9ED54C",
+      "#91C249",
+      "#EC2A2D",
+      "#8D0521"
+      ];
+
+  }).error(function(data){
+      console.log("error loading windget 6");
+
+  });
+
+
+
+}]);

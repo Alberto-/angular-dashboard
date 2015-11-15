@@ -1,11 +1,11 @@
 var app = angular.module('dashboardApp',['ngRoute','ui.sortable','chart.js']);
 
 
-
-
 app.config(function ($httpProvider) {
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 });
+
+
 
 app.controller('mainController', function ($scope, $rootScope, $http, $compile) {
     $scope.test="test";
@@ -23,29 +23,33 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
             alert("update verso colonna :"+listaId+"\n elemento id: "+cardId);
             reloadChart(cardId);
 //            $scope.moveCard(cardId,listaId);
+            
+            
+$( ".draggable" ).sortable( "refreshPositions" );
+$(".draggable").sortable( "refresh" );     
+  
         }
     };
 
-  
-
-    
-    
 });
+
+
+
 
   function reloadChart(id){
     console.log(id);
     // angular.element(document.getElementById(id)).scope().loadChart();
 
+console.log("resize2");
+   //   $( window ).resize();
 
-   
+   // $('#widget6Controller').resize();
+   // $('#doughnut_contracts').resize();
 
-    
+   //  $('#riga_2').resize();
 
   }
 
-
-
-            
 
 
 
@@ -68,3 +72,6 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
      });
 
 });
+
+
+
