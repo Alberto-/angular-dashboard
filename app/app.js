@@ -25,10 +25,17 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
 //            $scope.moveCard(cardId,listaId);
             
             
-$( ".draggable" ).sortable( "refreshPositions" );
-$(".draggable").sortable( "refresh" );     
-  
-        }
+
+
+// for (Chart.instances in instance){
+//           // If the responsive flag is set in the chart instance config
+//           // Cascade the resize event down to the chart.
+//           if (instance.options.responsive){
+//             instance.resize(instance.render, true);
+//           }
+//         };
+
+}
     };
 
 });
@@ -36,22 +43,28 @@ $(".draggable").sortable( "refresh" );
 
 
 
-  function reloadChart(id){
-    console.log(id);
-    // angular.element(document.getElementById(id)).scope().loadChart();
+function reloadChart(id){
 
-console.log("resize2");
-   //   $( window ).resize();
 
-   // $('#widget6Controller').resize();
-   // $('#doughnut_contracts').resize();
-
-   //  $('#riga_2').resize();
-
-  }
+  corticaFireResize();
 
 
 
+}
+
+
+function corticaFireResize(){
+if (document.createEvent) { // W3C
+    var ev = document.createEvent('Event');
+    ev.initEvent('resize', true, true);
+    window.dispatchEvent(ev);
+}
+else { // IE
+    element=document.documentElement;
+    var event=document.createEventObject();
+    element.fireEvent("onresize",event);
+}
+};
 
  $(function() {
 
