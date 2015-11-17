@@ -1,132 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Angularjs Dashboard</title>
-            
-            
-        <link rel="import" href="inc/header_inclusions.html">
-            
-            
-        <!-- custom configuration-->
-        <link rel="stylesheet" href="assets/css/dashboard.css">
-            
-            
-        <script src="app.js"></script>
-        <link rel="import" href="inc/widgets_inclusions.html">
-       
-       
-        <script>
-            $(document).ready(function() {
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Angularjs Dashboard</title>
+
+
+    <link rel="import" href="inc/header_inclusions.html">
+
+
+    <!-- custom configuration-->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+
+
+    <script src="app.js"></script>
+    <link rel="import" href="inc/widgets_inclusions.html">
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+
+    <script>
+        $(document).ready(function() {
                 // This command is used to initialize some elements and make them work properly
                 $.material.init();
             });
-        </script>
-    </head>
-    <body>
-        <div class="container" ng-app="dashboardApp" >
-            <div class="content" ng-controller="mainController">
-                <section class="col-md-1 dash_min_height menu shadow-z-3">
-                    <div class="draggable " ui:sortable="sortableOptions" id="menu">
-                        <h3>menu:</h3>
+    </script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #map {
+        height: 100%;
+        width: 100%;
+    }
 
-                        <div class="portlet">
-                            <div class="portlet-header">Chart</div>
-                            <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-                        </div>
+    .contenitoreMap{
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        height: 20em;
+    }
+</style> 
 
-                        <div class="portlet">
-                            <div class="portlet-header">Table</div>
-                            <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-                        </div>
+</head>
+<body>
+    <div class="container" ng-app="dashboardApp" >
+        <div class="content" ng-controller="mainController">
+            <section class="col-md-1 dash_min_height menu shadow-z-3">
+                <div class="draggable " ui:sortable="sortableOptions" id="menu">
+                    <h3>menu:</h3>
+
+                    <div class="portlet">
+                        <div class="portlet-header">Chart</div>
+                        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                     </div>
-                    
-                </section>
-                <section class="col-md-11 dash_min_height ">
-                    
-                    <h1>You can add your site here.</h1>
-                    <h2>To ensure that material-design theme is working, check out the buttons below.</h2>
-                    <h3 class="text-muted">If you can see the ripple effect on clicking them, then you are good to go!</h3>
-                    <p class="bs-component">
-                        <a href="javascript:void(0)" class="btn btn-default">Default</a>
-                        <a href="javascript:void(0)" class="btn btn-primary">Primary</a>
-                        <a href="javascript:void(0)" class="btn btn-success">Success</a>
-                        <a href="javascript:void(0)" class="btn btn-info">Info</a>
-                        <a href="javascript:void(0)" class="btn btn-warning">Warning</a>
-                        <a href="javascript:void(0)" class="btn btn-danger">Danger</a>
-                        <a href="javascript:void(0)" class="btn btn-link">Link</a>
-                    </p> 
-                        
-                    <div class="col-md-10">
-                        <!--PRIMA RIGA-->
-                        <div class="row ">
-                            <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_1">
-                                <div class="portlet" id="widgetFeeds">
-                                    <div class="portlet-header">Feeds</div>
-                                    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_2">
-                                <div class="portlet" id="widgetNews">
-                                    <div class="portlet-header">News</div>
-                                    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 draggable" ui:sortable="sortableOptions" id="riga_1Col_3">
-                                <div class="portlet" id="widgetNews2">
-                                    <div class="portlet-header">News2</div>
-                                    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-                                </div>
+
+                    <div class="portlet">
+                        <div class="portlet-header">Table</div>
+                        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="col-md-11 dash_min_height ">
+
+                <h1>You can add your site here.</h1>
+                <h2>To ensure that material-design theme is working, check out the buttons below.</h2>
+                <h3 class="text-muted">If you can see the ripple effect on clicking them, then you are good to go!</h3>
+                <p class="bs-component">
+                    <a href="javascript:void(0)" class="btn btn-default">Default</a>
+                    <a href="javascript:void(0)" class="btn btn-primary">Primary</a>
+                    <a href="javascript:void(0)" class="btn btn-success">Success</a>
+                    <a href="javascript:void(0)" class="btn btn-info">Info</a>
+                    <a href="javascript:void(0)" class="btn btn-warning">Warning</a>
+                    <a href="javascript:void(0)" class="btn btn-danger">Danger</a>
+                    <a href="javascript:void(0)" class="btn btn-link">Link</a>
+                </p> 
+
+                <div class="col-md-10">
+                    <!--PRIMA RIGA-->
+                    <div class="row ">
+                        <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_1">
+                            <div class="portlet" id="widgetFeeds">
+                                <div class="portlet-header">Feeds</div>
+                                <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                             </div>
                         </div>
-                        <!--SECONDA RIGA-->
-                        <div class="row ">
-                            <div class="col-md-12 draggable" ui:sortable="sortableOptions" id="riga_2">
-                                <div class="portlet" id="widgetShopping">
-                                    <div class="portlet-header">Shopping</div>
-                                    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-                                </div>
+                        <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_2">
+                            <div class="portlet" id="widgetNews">
+                                <div class="portlet-header">News</div>
+                                <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                             </div>
                         </div>
-                            
-                        <!--TERZA RIGA-->
-                        <div class="row ">
-                            <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_3Col_1">
-                            <div class="portlet" id="widget5app">
-                                    <div ng-controller="widget5Controller">
-                                        <div class="portlet-header">{{title}}</div>
-                                        <div class="portlet-content">
-                                            <canvas id="bar" class="chart chart-bar" data="customerData"  series="series" legend="true" options="customerOptions" labels="customerLabels"></canvas> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_2Col_2">
-                                <div class="portlet" ng-controller="widget6Controller" id="widget6Controller">
-                                    <div class="portlet-header">{{title}}</div>
-                                    <i class="fa fa-pie-chart icon-pie"></i>
-                                    <div class="portlet-content">
-                                        <canvas id="doughnut_contracts" class="chart chart-polar-area"  legend="true" labels="contractsLabels" data="contractsData" colours="contractsColours" ></canvas>
-                                    </div>
-                                </div>
+                        <div class="col-md-4 draggable" ui:sortable="sortableOptions" id="riga_1Col_3">
+                            <div class="portlet" id="widgetNews2">
+                                <div class="portlet-header">News2</div>
+                                <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                             </div>
                         </div>
                     </div>
-                        
-                        
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button type="button" class="borders">Schema</button>
-                        </div>                
-                    </div>    
-                        
-                </section>
+                    <!--SECONDA RIGA-->
+                    <div class="row ">
+                        <div class="col-md-12 draggable" ui:sortable="sortableOptions" id="riga_2">
+                            <div class="portlet" id="widgetShopping">
+                                <div class="portlet-header">Shopping</div>
+                                <div class="portlet-content contenitoreMap">Maps
+                                 <div id="map"></div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!--TERZA RIGA-->
+                 <div class="row ">
+                    <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_3Col_1">
+                        <div class="portlet" id="widget5app">
+                            <div ng-controller="widget5Controller">
+                                <div class="portlet-header">{{title}}</div>
+                                <div class="portlet-content">
+                                    <canvas id="bar" class="chart chart-bar" data="customerData"  series="series" legend="true" options="customerOptions" labels="customerLabels"></canvas> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_2Col_2">
+                        <div class="portlet" ng-controller="widget6Controller" id="widget6Controller">
+                            <div class="portlet-header">{{title}}</div>
+                            <i class="fa fa-pie-chart icon-pie"></i>
+                            <div class="portlet-content">
+                                <canvas id="doughnut_contracts" class="chart chart-polar-area"  legend="true" labels="contractsLabels" data="contractsData" colours="contractsColours" ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        
-    </body>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" class="borders">Schema</button>
+                </div>                
+            </div>    
+
+        </section>
+    </div>
+</div>
+
+
+<script>
+
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: {lat: 41.850, lng: -87.650}
+    });
+      setMarkers(map);
+  }
+
+// Data for the markers consisting of a name, a LatLng and a zIndex for the
+// order in which these markers should display on top of each other.
+var beaches = [
+['Bondi Beach', 41.850, -87.650, 4],
+['Coogee Beach', 41.850, -87.650, 5],
+['Cronulla Beach', 41.850, -87.650, 3],
+['Manly Beach', 41.850, -87.650, 2],
+['Maroubra Beach', 41.850, -87.650, 1]
+];
+
+function setMarkers(map) {
+  // Adds markers to the map.
+
+  // Marker sizes are expressed as a Size of X,Y where the origin of the image
+  // (0,0) is located in the top left of the image.
+
+  // Origins, anchor positions and coordinates of the marker increase in the X
+  // direction to the right and in the Y direction down.
+  var image = {
+
+    /*point perfect centered*/
+    url: 'map-marker-icon-32.png',
+        // url: 'map-marker-icon.png',
+        // This marker is 20 pixels wide by 32 pixels high.
+        size: new google.maps.Size(32, 32),
+        // The origin for this image is (0, 0).
+        origin: new google.maps.Point(0, 0),
+        // The anchor for this image is the base of the flagpole at (0, 32).
+        anchor: new google.maps.Point(16, 32)
+    };
+      // Shapes define the clickable region of the icon. The type defines an HTML
+      // <area> element 'poly' which traces out a polygon as a series of X,Y points.
+      // The final coordinate closes the poly by connecting to the first coordinate.
+      var shape = {
+        coords: [1, 1, 1, 20, 18, 20, 18, 1],
+        type: 'poly'
+    };
+    for (var i = 0; i < beaches.length; i++) {
+        var beach = beaches[i];
+        var marker = new google.maps.Marker({
+          position: {lat: beach[1], lng: beach[2]},
+          map: map,
+          icon: image,
+          shape: shape,
+          title: beach[0],
+          zIndex: beach[3]
+      });
+    }
+}
+
+initMap();
+
+
+
+</script>
+</body>
 </html>
