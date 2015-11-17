@@ -1,0 +1,10 @@
+{
+    "customers" : {
+          "label" : "Customers",
+          "total" : 55  
+    },
+    "leads" : {
+        "label" : "Leads",
+        "total" : 100
+    }
+}
