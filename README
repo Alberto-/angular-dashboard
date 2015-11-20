@@ -1,3 +1,19 @@
+
+TO-DO
+
+
+vedi: http://rdash.github.io/#/
+
+
+	aggiungi calendarietto
+
+	aggiungi mappa(Google maps)
+
+	aggiungi widget meteo (https://erikflowers.github.io/weather-icons/)
+
+	widget barra singola orizzontale
+
+
 1) how to run:
 
 (install globally http-server)
@@ -57,9 +73,21 @@ direttamente sul portale.
 
 
 
+Versioni:
+
+1)versione pubblica:
+
+
+Dashboard tutta in angular, con un numero di widget fissi (10).
+Quindi lo sviluppatore farà puntare quei widget a certi servizi esterni per prendere valori diversi.
 
 
 
+2) versione per entando:
+
+Crei una dashboard analoga ma in jquery con tutti i widget in angular (singole SPA).
+
+quindi ogni widget sarà indipendente e pubblicabile in ogni pagina.
 
 
 

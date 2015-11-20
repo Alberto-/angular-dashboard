@@ -1,5 +1,5 @@
 
-app.factory("widget5Factory",["$http", function( $http) {
+app.factory("widgetMapFactory",["$http", function( $http) {
 
 	labels = ["Customers", "Leads"];
 	return {
