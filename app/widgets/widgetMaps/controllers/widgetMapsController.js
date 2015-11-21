@@ -73,9 +73,11 @@ initMap();
 
 }]);
 
+app.directive("widgetmap",function(){
+  return{
+    restrict : "E",
+    replace : true,
+    templateUrl: "widgets/widgetMaps/views/vista.html"
+  }
 
-
-
-
-
-
+});
