@@ -17,7 +17,7 @@
 
     <script src="app.js"></script>
     <link rel="import" href="inc/widgets_inclusions.html">
- 
+
     <script>
         $(document).ready(function() {
                 // This command is used to initialize some elements and make them work properly
@@ -96,8 +96,13 @@
                         </div>
                         <div class="col-md-4 draggable" ui:sortable="sortableOptions" id="riga_1Col_3">
                             <div class="portlet" id="widgetNews2">
-                                <div class="portlet-header">News2</div>
-                                <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+                                <div ng-controller="widgetWeather">
+                                    <div class="portlet-header">{{title}}</div>
+                                    <div class="portlet-content">
+                                    Temp: {{temperature | kelvin_celsius | number:0 }}
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -105,18 +110,18 @@
                     <div class="row ">
                         <div class="col-md-12 draggable" ui:sortable="sortableOptions" id="riga_2">
                             <div class="portlet" id="widgetShopping">
-                            <div ng-controller="widgetMapsController">
-                                <div class="portlet-header">Shopping</div>
-                                <div class="portlet-content contenitoreMap">
-                                 <div id="map"></div>
-                             </div>
-                              </div>
-                         </div>
-                     </div>
-                 </div>
+                                <div ng-controller="widgetMapsController">
+                                   <div class="portlet-header">{{title}}</div>
+                                    <div class="portlet-content contenitoreMap">
+                                       <div id="map"></div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
 
-                 <!--TERZA RIGA-->
-                 <div class="row ">
+                   <!--TERZA RIGA-->
+                   <div class="row ">
                     <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_3Col_1">
                         <div class="portlet" id="widget5app">
                             <div ng-controller="widget5Controller">
@@ -151,22 +156,103 @@
 </div>
 
 <style type="text/css">
-   .labels {
-     color: red;
-     background-color: white;
-     font-family: "Lucida Grande", "Arial", sans-serif;
-     font-size: 10px;
-     font-weight: bold;
-     text-align: center;
-     width: 40px;
-     border: 2px solid black;
-     white-space: nowrap;
-   }
-   </style>
+ .labels {
+   color: red;
+   background-color: white;
+   font-family: "Lucida Grande", "Arial", sans-serif;
+   font-size: 10px;
+   font-weight: bold;
+   text-align: center;
+   width: 40px;
+   border: 2px solid black;
+   white-space: nowrap;
+}
+</style>
 
 <script>
 
- 
+
+
+
+
+
+
+
+
+
+    function getPosition(){
+
+//default weather - San Francisco
+var weatherPos = {
+    lat: 37.774929, 
+    lng: -122.419416
+};
+
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        weatherPos.lat = position.coords.latitude,
+        weatherPos.lng = position.coords.longitude;
+        alert("lat:"+ weatherPos.lat +"long:"+weatherPos.lng);
+
+    }, function() {
+       console.log('found :)');
+   });
+} else {
+   console.log('Browser does not support Geolocation');
+}
+return weatherPos;
+};
+
+
+
+
+app.controller('widgetWeather', [ "$scope","$rootScope","$http","$compile",
+  function ($scope, $rootScope, $http, $compile) {
+    $scope.title="Weather";
+
+    // var newPos=getPosition();
+// var newPos = {
+//     lat: 37.774929, 
+//     lng: -122.419416
+// };
+
+var newPos = {
+    lat: 39.164428, 
+    lng: 8.522885
+};
+
+$http.get("http://api.openweathermap.org/data/2.5/weather?lat="+newPos.lat+"&lon="+newPos.lng+"&appid=2de143494c0b295cca9337e1e96b00e0").success(function(data){
+
+    console.log('preso:'+JSON.stringify(data));
+
+json= JSON.parse(JSON.stringify(data));
+
+$scope.temperature= json.main.temp;
+
+}).error(function(data){
+
+});
+
+
+}]);
+
+
+app.filter('kelvin_celsius', function() {
+
+  return function(input, optional1, optional2) {
+    var output=input - 272.15;
+    return output;
+  }
+
+});
+
+
+
+
+
+
+
 
 
 </script>

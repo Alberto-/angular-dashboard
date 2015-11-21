@@ -15,12 +15,7 @@ app.controller('widgetMapsController', [ "$scope","$rootScope","$http","$compile
 
 // Data for the markers consisting of a name, a LatLng and a zIndex for the
 // order in which these markers should display on top of each other.
-var beaches = [
-  ['Cagliari', 39.223841, 9.121661, 1],
-  ['San Francisco', 37.774929, -122.419416, 2],
-  ['San Diego', 32.715738, -117.161084, 3],
-  ['Los Angeles', 34.052234, -118.243685, 4],
-];
+var locations = widgetMapFactory.getLocations();
 
 function setMarkers(map) {
   // Adds markers to the map.
@@ -50,9 +45,9 @@ function setMarkers(map) {
   };
 
 
-    for (var i = 0; i < beaches.length; i++) {
-      var beach = beaches[i];
-      if(beach[3]===1){
+    for (var i = 0; i < locations.length; i++) {
+      var beach = locations[i];
+      if(beach[4]==="preferite"){
         var marker = new google.maps.Marker({
           position: {lat: beach[1], lng: beach[2]},
           map: map,
