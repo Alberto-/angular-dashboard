@@ -2,6 +2,14 @@
  	<div class="portlet-header">{{title}}</div>
  	<div class="portlet-content">
  		Temp: {{temperature | kelvin_celsius | number:0 }}
+
+<br>
+ 		Cod: {{code}}
+<br>
+ 	<i class="wi wi-owm-{{code}} fa-3x weatherIcon"></i>
+ 		Description: {{description }}
+
+<br>
+ 		Location: {{location}}
  	</div>
- 	<i class="wi wi-owm-200 fa-3x weatherIcon"></i>
  </div>
