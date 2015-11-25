@@ -35,6 +35,8 @@ and open the template in the editor.
       padding: 0.2em 0.3em;
       margin-bottom: 0.5em;
       position: relative;
+      /*background-color: #2572AF;*/
+    /*color: white;*/
     }
     .portlet-toggle {
       position: absolute;

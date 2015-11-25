@@ -4,6 +4,9 @@ TO-DO
 
 vedi: http://rdash.github.io/#/
 
+vedi: 
+http://themes-pixeden.com/demos/glazzed/
+
 
 	aggiungi calendarietto
 
@@ -16,15 +19,15 @@ vedi: http://rdash.github.io/#/
 
 1) how to run:
 
-(install globally http-server)
+	(install globally http-server)
 
-under app/  run
+	under app/  run
 
-"http-server -a 0.0.0.0 -p 8000"
+	"http-server -a 0.0.0.0 -p 8000"
 
 2) test:
 
-karma start test/karma.conf.js
+	karma start test/karma.conf.js
 
 
 

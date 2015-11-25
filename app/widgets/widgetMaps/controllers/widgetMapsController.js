@@ -77,7 +77,8 @@ app.directive("widgetmap",function(){
   return{
     restrict : "E",
     replace : true,
-    templateUrl: "widgets/widgetMaps/views/vista.html"
+    templateUrl: "widgets/widgetMaps/views/vista.html",
+    controller: 'widgetMapsController'
   }
 
 });
