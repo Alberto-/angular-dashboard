@@ -96,7 +96,7 @@
                         </div>
                         <div class="col-md-4 draggable" ui:sortable="sortableOptions" id="riga_1Col_3">
                             <div class="portlet" id="widgetNews2">
-                                
+
                                 <widgetweather></widgetweather>
                             </div>
                         </div>
@@ -107,55 +107,82 @@
                             <div class="portlet" id="widgetShopping">
                                 <widgetmap></widgetmap>
                             </div>
-                       </div>
-                   </div>
+                        </div>
+                    </div>
 
-                   <!--TERZA RIGA-->
-                   <div class="row ">
-                    <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_3Col_1">
-                        <div class="portlet" id="widget5app">
-                            <div ng-controller="widget5Controller">
+                    <!--TERZA RIGA-->
+                    <div class="row ">
+                        <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_3Col_1">
+                            <div class="portlet" id="widget5app">
+                                <div ng-controller="widget5Controller">
+                                    <div class="portlet-header">{{title}}</div>
+                                    <div class="portlet-content">
+                                        <canvas id="bar" class="chart chart-bar" data="customerData"  series="series" legend="true" options="customerOptions" labels="customerLabels"></canvas> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_2Col_2">
+                            <div class="portlet" ng-controller="widget6Controller" id="widget6Controller">
                                 <div class="portlet-header">{{title}}</div>
+                                <i class="fa fa-pie-chart icon-pie"></i>
                                 <div class="portlet-content">
-                                    <canvas id="bar" class="chart chart-bar" data="customerData"  series="series" legend="true" options="customerOptions" labels="customerLabels"></canvas> 
+                                    <canvas id="doughnut_contracts" class="chart chart-polar-area"  legend="true" labels="contractsLabels" data="contractsData" colours="contractsColours" ></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_2Col_2">
-                        <div class="portlet" ng-controller="widget6Controller" id="widget6Controller">
-                            <div class="portlet-header">{{title}}</div>
-                            <i class="fa fa-pie-chart icon-pie"></i>
-                            <div class="portlet-content">
-                                <canvas id="doughnut_contracts" class="chart chart-polar-area"  legend="true" labels="contractsLabels" data="contractsData" colours="contractsColours" ></canvas>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="button" class="borders">Schema</button>
-                </div>                
-            </div>    
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="borders">Schema</button>
+                    </div>                
+                </div>    
 
-        </section>
-    </div>
+
+                Loading circle
+                <svg class="circleSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92">
+                    <circle style="opacity:0.16;fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;" cx="46" cy="46" r="45"></circle>
+                    <path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;" d="M84.839,68.718C88.749,62.049,91,54.289,91,46C91,21.147,70.853,1,46,1"></path>
+                </svg>
+
+
+                <style type="text/css">
+                   .circleSVG {
+                     width: 150px;
+                 }
+             </style>
+
+
+
+
+
+<div class="c100 p25">
+  <span>25%</span>
+  <div class="slice">
+    <div class="bar"></div>
+    <div class="fill"></div>
+  </div>
 </div>
 
-<style type="text/css">
- .labels {
-   color: red;
-   background-color: white;
-   font-family: "Lucida Grande", "Arial", sans-serif;
-   font-size: 10px;
-   font-weight: bold;
-   text-align: center;
-   width: 40px;
-   border: 2px solid black;
-   white-space: nowrap;
-}
+
+         </section>
+     </div>
+ </div>
+
+ <style type="text/css">
+   .labels {
+     color: red;
+     background-color: white;
+     font-family: "Lucida Grande", "Arial", sans-serif;
+     font-size: 10px;
+     font-weight: bold;
+     text-align: center;
+     width: 40px;
+     border: 2px solid black;
+     white-space: nowrap;
+ }
 </style>
 
 <script>
