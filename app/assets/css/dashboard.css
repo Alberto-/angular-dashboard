@@ -6,28 +6,23 @@ and open the template in the editor.
 /* 
     Created on : 15-ott-2015, 22.32.30
     Author     : A.Piras
-*/
+    */
 
-.container{
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100%;
-}
-
-
-.dash_min_height{
-    min-height: 600px;
-}
-
-.menu{
-    background-color: gray;
-}
+    .container{
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100%;
+    }
 
 
-/*dashboard*/
+    .dash_min_height{
+      min-height: 600px;
+    }
+
+    /*dashboard*/
 
 
- .portlet {
+    .portlet {
       margin: 0 1em 1em 0;
       padding: 0.3em;
     }
@@ -36,7 +31,7 @@ and open the template in the editor.
       margin-bottom: 0.5em;
       position: relative;
       /*background-color: #2572AF;*/
-    /*color: white;*/
+      /*color: white;*/
     }
     .portlet-toggle {
       position: absolute;
@@ -57,10 +52,12 @@ and open the template in the editor.
     /*added*/
 
     .menu{
-        background-color: gray;
-        padding:0.5em;
-        padding-bottom: 1000px;
-        margin-bottom: -1000px;
+      background-color: #394A59;
+      padding:0.5em;
+
+      color: white;
+      padding-bottom: 1000px;
+      margin-bottom: -1000px;
     }
 
     .menu .portlet{
@@ -78,14 +75,14 @@ and open the template in the editor.
     }
 
 
-.showBorders{
-    border: 2px dashed #6EB4E6;
-    min-height: 5em;
-     min-width: 5em;
-}
+    .showBorders{
+      border: 2px dashed #6EB4E6;
+      min-height: 5em;
+      min-width: 5em;
+    }
 
-/*--------------------------------------------------*/
-/*icons*/
+    /*--------------------------------------------------*/
+    /*icons*/
 
 
 /*icone interessanti:
@@ -95,9 +92,72 @@ https://www.iconfinder.com/search/?q=chart
 
 .icon-pie{
   border: 3px solid rgba(0, 0, 0, 0.55);
-    padding: 7px;
-    border-radius: 5px;
-    font-size: 3em;
-    background-color: rgba(0, 188, 212, 0.17);
-    color: rgba(255, 0, 22, 0.38);
+  padding: 7px;
+  border-radius: 5px;
+  font-size: 3em;
+  background-color: rgba(0, 188, 212, 0.17);
+  color: rgba(255, 0, 22, 0.38);
+}
+
+/*header*/
+
+header{
+  background-color: #D0D0D0;
+  min-height: 4em;
+  overflow: auto;
+}
+
+.user-name{
+  font-size: 20px;
+  color: #394A59;
+}
+
+.user-info {
+  float: right;
+  padding: 0.4em;
+  padding-right: 1em;
+}
+
+.inline{
+  display: inline;
+}
+
+.logo{
+  border-bottom:  1px solid white;
+  min-height: 4em;
+}
+
+.no_padding {
+ padding: 0 !important;
+ margin: 0 !important;
+}
+
+
+.marchio{
+  margin:0;
+  display: inline;
+  padding-top: 1.5em;
+  text-transform: uppercase;
+  font-size: 19px;
+  font-weight: 100;
+}
+
+.color1{
+  color: #B2D5F3;
+}
+
+.color2{
+  color: #EEEEEE;
+}
+
+.logo-content{
+  line-height: 4em;
+  padding-left: 0.5em;
+}
+
+
+.title-widgets{
+  font-weight: 100;
+ font-size:  1.2em;
+  color: rgb(238, 238, 238);
 }

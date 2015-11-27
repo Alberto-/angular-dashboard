@@ -2,7 +2,42 @@
 TO-DO
 
 
+aggiungi GAUGE : http://bernii.github.io/gauge.js/
+aggiungi manometro
+
+vedi esempio: http://wrapbootstrap.com/preview/WB07JN5T9
+
+percentuale: 
+
+1) http://www.cssscript.com/animated-circular-progress-bar-using-svg-path-animation/
+	2) http://www.cssscript.com/demo/pure-css-circular-percentage-bar/
+3) http://www.jqueryscript.net/chart-graph/Customizable-Animated-jQuery-HTML5-Gauge-Meter-Plugin.html
+
+
+
+	aggiungi calendarietto
+		Orologio
+		data di oggi
+		+ calendario
+
+	aggiungi mappa(Google maps)
+
+	aggiungi widget meteo (https://erikflowers.github.io/weather-icons/)
+
+	widget barra singola orizzontale
+
+widget piccoli: guarda questo http://bootstraptaste.com/demo/themes/NiceAdmin/index.html
+
+
+Da leggere  
+
+Dashboards: https://wrapbootstrap.com/tag/dashboard
+
+
+
 progress bar example: http://www.cssscript.com/demo/pure-css-circular-percentage-bar/
+esempio grandetto:
+http://jiji262.github.io/Bootstrap_Metro_Dashboard/index.html
 
 *************
 template esempi
@@ -19,17 +54,10 @@ vedi:
 http://themes-pixeden.com/demos/glazzed/
 
 
-	aggiungi calendarietto
-		Orologio
-		data di oggi
-		+ calendario
 
-	aggiungi mappa(Google maps)
 
-	aggiungi widget meteo (https://erikflowers.github.io/weather-icons/)
 
-	widget barra singola orizzontale
-
+Istruzioni
 
 1) how to run:
 
