@@ -197,10 +197,18 @@ header{
   background-color: red !important;
 }*/
 
+
+/*ON DRAGGING*/
 .ui-sortable-helper{
   max-width: 25em !important;
    box-shadow:
     0 27px 24px 0 rgba(0, 0, 0, 0.2),
     0 40px 77px 0 rgba(0, 0, 0, 0.22);
      /*transition: all ease 0.1s;*/
+}
+
+/*ON DRAGGING, INITIAL POSITION (VOID SPACE)*/
+.portlet-placeholder{
+  background-color:transparent;
+  border: 0px !important;
 }
