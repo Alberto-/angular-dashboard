@@ -1,16 +1,16 @@
-app.controller('widget6Controller', ["$scope", "$rootScope", "$http", "$compile", "widget6Factory",
+app.controller('widgetPolarController', ["$scope", "$rootScope", "$http", "$compile", "widgetPolarService",
 
- function ($scope, $rootScope, $http, $compile, widget6Factory) {
+ function ($scope, $rootScope, $http, $compile, widgetPolarService) {
     $scope.title="Grafico 6";
     $scope.desc="grafico descrizione 123456";
 
     console.log('ricarico grafico');
 
 
-    $scope.contractsLabels = widget6Factory.getLabels();
+    $scope.contractsLabels = widgetPolarService.getLabels();
 
 
-    widget6Factory.getInfo().success(function(data){
+    widgetPolarService.getInfo().success(function(data){
       console.log(data); 
 
       $scope.json = data; 
@@ -35,8 +35,7 @@ app.controller('widget6Controller', ["$scope", "$rootScope", "$http", "$compile"
       ];
 
   }).error(function(data){
-      console.log("error loading windget 6");
-
+      console.log("error loading windget Polar");
   });
 
 

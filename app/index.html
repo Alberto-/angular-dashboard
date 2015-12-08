@@ -56,6 +56,7 @@
     <div class="container" ng-app="dashboardApp" >
         <div class="content" ng-controller="mainController">
             <aside class="col-md-2 no_padding dash_min_height menu shadow-z-3">
+            <div class="divSplash">
                 <div class="logo">
                 <div class="logo-content">
                     <h3 class="marchio color1">Angular </h3>
@@ -77,7 +78,7 @@
                         <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                     </div>
                 </div>
-
+</div>
             </aside>
             <div class="col-md-10 dash_min_height  no_padding">
                 <header class="">
@@ -120,7 +121,7 @@
         <div class="col-md-4 draggable" ui:sortable="sortableOptions" id="riga_1Col_3">
             <div class="portlet" id="widgetNews2">
 
-                <widgetweather></widgetweather>
+                <widgetweather> </widgetweather>
             </div>
         </div>
     </div>
@@ -146,12 +147,8 @@
             </div>
         </div>
         <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_2Col_2">
-            <div class="portlet" ng-controller="widget6Controller" id="widget6Controller">
-                <div class="portlet-header">{{title}}</div>
-                <i class="fa fa-pie-chart icon-pie"></i>
-                <div class="portlet-content">
-                    <canvas id="doughnut_contracts" class="chart chart-polar-area"  legend="true" labels="contractsLabels" data="contractsData" colours="contractsColours" ></canvas>
-                </div>
+            <div class="portlet" id="widget6Controller">
+               <widgetpolar></widgetpolar>
             </div>
         </div>
     </div>

@@ -1,15 +1,14 @@
- <div>
- 	<div class="portlet-header">{{title}}</div>
+<div>
+ <div class="portlet-header">{{title}}</div>
  	<div class="portlet-content">
  		Temp: {{temperature | kelvin_celsius | number:0 }}
-
-<br>
+ 		<br>
  		Cod: {{code}}
-<br>
- 	<i class="wi wi-owm-{{code}} fa-3x weatherIcon"></i>
+ 		<br>
+ 		<i class="wi wi-owm-{{code}} fa-3x weatherIcon"></i>
  		Description: {{description }}
 
-<br>
+ 		<br>
  		Location: {{location}}
  	</div>
  </div>

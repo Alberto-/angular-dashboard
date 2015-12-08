@@ -1,4 +1,4 @@
-app.factory('widget6Factory', ["$http", function($http){
+app.factory('widgetPolarService', ["$http", function($http){
 
 	labels=[
 		"Total Active",
@@ -9,7 +9,7 @@ app.factory('widget6Factory', ["$http", function($http){
 
 	return {
 		getInfo: function(){
-			return $http.get('widgets/widget6/services/details.json');
+			return $http.get('widgets/widgetPolar/details.json');
 		},
 		getLabels: function(){
 			return labels;

@@ -1,6 +1,19 @@
 
 TO-DO
 
+Aggiungi sfondo al menu (sfondo che hai scaricato del mondo)
+
+Aggiungi backgroud alla pagina col gradiente:
+
+background: linear-gradient(45deg, rgba(121,165,181,1) 6%,rgba(65,128,153,1) 18%,rgba(65,128,153,1) 18%,rgba(65,128,153,1) 25%,rgba(65,128,153,1) 51%,rgba(47,71,93,1) 81%,rgb(38, 67, 87) 100%);
+
+
+background: -webkitlinear-gradient(45deg, rgba(121,165,181,1) 6%,rgba(65,128,153,1) 18%,rgba(65,128,153,1) 18%,rgba(65,128,153,1) 25%,rgba(65,128,153,1) 51%,rgba(47,71,93,1) 81%,rgb(38, 67, 87) 100%);
+
+
+
+
+
 
 aggiungi GAUGE : http://bernii.github.io/gauge.js/
 aggiungi manometro
