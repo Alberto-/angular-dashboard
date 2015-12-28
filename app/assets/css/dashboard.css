@@ -395,6 +395,25 @@ header{
 }
 
 
+.large_widget .polar{
+
+}
+
+.medium_widget .polar{
+
+
+}
+.small_widget .polar{
+
+}
+
+.x_small_widget .polar{
+
+}
+
+
+/*MEDIA QUERIES*/
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px ) {
 
@@ -414,11 +433,10 @@ header{
 
  }
 
-/* Large devices (large desktops, 1200px and up) */
-@media (max-width:  767px) {
-
-.main_left_content{
-  position: static;
+ /* Large devices (large desktops, 1200px and up) */
+ @media (max-width:  767px) {
+  .main_left_content{
+    position: static;
+  }
 }
- }
 
