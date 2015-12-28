@@ -11,7 +11,7 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
 
   $scope.sortableOptions = {
     connectWith: ".draggable",
-    handle: ".portlet-header",
+    handle: ".portlet-content, .portlet-header",
     cancel: ".portlet-toggle",
     placeholder: "portlet-placeholder ui-corner-all",
     receive: function( event, ui ) {
@@ -20,10 +20,20 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
       var listaId=this.id;
       var cardId=ui.item[0].id;
       alert("update verso colonna :"+listaId+"\n elemento id: "+cardId);
-      reloadChart(cardId);
-
+      reloadChart(cardId)
 //            $scope.moveCard(cardId,listaId);
-    }
+    },
+  start: function( event, ui ) {
+    $(".draggable").addClass("showBorders");
+    $("#showBorders").prop('checked', true);
+  },
+  stop: function( event, ui ) {
+     $(".draggable").removeClass("showBorders");
+      $("#showBorders").prop('checked', false);
+   }
+
+
+    
 
   /** OTHER CONTROLS ON START AND STOP DRAGGING
   start: function( event, ui ) {

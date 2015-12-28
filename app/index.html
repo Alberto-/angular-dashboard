@@ -90,107 +90,127 @@
                 <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
                 <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
             </div> -->
-         <h1>You can add your site here.</h1>
-         <h2>To ensure that material-design theme is working, check out the buttons below.</h2>
-         <h3 class="text-muted">If you can see the ripple effect on clicking them, then you are good to go!</h3>
-         <p class="bs-component">
-            <a href="javascript:void(0)" class="btn btn-default">Default</a>
-            <a href="javascript:void(0)" class="btn btn-primary">Primary</a>
-            <a href="javascript:void(0)" class="btn btn-success">Success</a>
-            <a href="javascript:void(0)" class="btn btn-info">Info</a>
-            <a href="javascript:void(0)" class="btn btn-warning">Warning</a>
-            <a href="javascript:void(0)" class="btn btn-danger">Danger</a>
-            <a href="javascript:void(0)" class="btn btn-link">Link</a>
-        </p> 
+            <h1>Angular Dashboard</h1>
+            <h2>All DOM events you need are catched</h2>
+            <h3 class="text-muted">Drag and drop all widget you want see in the page</h3>
+          <!--   <p class="bs-component">
+                <a href="javascript:void(0)" class="btn btn-default">Default</a>
+                <a href="javascript:void(0)" class="btn btn-primary">Primary</a>
+                <a href="javascript:void(0)" class="btn btn-success">Success</a>
+                <a href="javascript:void(0)" class="btn btn-info">Info</a>
+                <a href="javascript:void(0)" class="btn btn-warning">Warning</a>
+                <a href="javascript:void(0)" class="btn btn-danger">Danger</a>
+                <a href="javascript:void(0)" class="btn btn-link">Link</a>
+            </p>  -->
 
-        <div class="col-md-12">
-            <!--PRIMA RIGA-->
-            <div class="row ">
-                <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_1">
+            <div class="col-md-12">
+
+
+                <!-- Riga ZERO -->
+                <div class="row  ">
+                    <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_1">
+                        <div class="portlet" id="widgetFeeds">
+                            <div class="portlet-header">circle1</div>
+                            <div class="portlet-content">
+                               <div class="c100 p25">
+                                <span>25%</span>
+                                <div class="slice">
+                                    <div class="bar border_warning"></div>
+                                    <div class="fill border_warning"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_2">
                     <div class="portlet" id="widgetFeeds">
                         <div class="portlet-header">circle1</div>
                         <div class="portlet-content">
-                           <div class="c100 p25">
-                            <span>25%</span>
-                            <div class="slice">
-                                <div class="bar border-color1"></div>
-                                <div class="fill"></div>
+                            <div class="c100 p45">
+                                <span>45%</span>
+                                <div class="slice">
+                                    <div class="bar border_medium "></div>
+                                    <div class="fill border_medium"></div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
+                    <div class="portlet" id="widgetFeeds">
+                        <div class="portlet-header">circle1</div>
+                        <div class="portlet-content">
+                            <div class="c100 p75">
+                                <span>75%</span>
+                                <div class="slice">
+                                    <div class="bar border_success"></div>
+                                    <div class="fill border_success"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
+                    <div class="portlet" id="widgetFeeds">
+                        <div class="portlet-header">circle1</div>
+                        <div class="portlet-content">
+                            <div class="c100 p9">
+                                <span>9%</span>
+                                <div class="slice">
+                                    <div class="bar border_error"></div>
+                                    <div class="fill border_error"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--PRIMA RIGA-->
+            <div class="row ">
+
+                <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions"  id="riga_1Col_1">
+                    <div class="portlet" id="widgetFeeds">
+                       <div class="portlet-main">
+                        <div class="portlet-header">Feeds</div>
+                        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                     </div>
                 </div>
             </div>
 
 
-            <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_1">
-                <div class="portlet" id="widgetFeeds">
-                    <div class="portlet-header">circle1</div>
-                    <div class="portlet-content">
-                        <div class="c100 p50">
-                            <span>50%</span>
-                            <div class="slice">
-                                <div class="bar border-color2"></div>
-                                <div class="fill"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_1">
-                <div class="portlet" id="widgetFeeds">
-                    <div class="portlet-header">circle1</div>
-                    <div class="portlet-content">
-                        <div class="c100 p75">
-                            <span>75%</span>
-                            <div class="slice">
-                                <div class="bar border-color3"></div>
-                                <div class="fill"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_1">
-                <div class="portlet" id="widgetFeeds">
-                    <div class="portlet-header">Feeds</div>
-                    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-                </div>
-            </div>
-
-
-            <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_2">
-                <div class="portlet" id="widgetNews">
-                    <div class="portlet-content bg_green">
-                        <div class="col-md-6 col-xs-6 col-lg-6  widgetSmall_image">
+            <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions"  id="riga_1Col_2">
+                <div class="portlet widget_Tile_main" id="widgetNews">
+                    <div class="portlet-content  widget_Tile_Content bg_green">
+                        <div class="col-md-6 col-xs-6 col-lg-6  widget_Tile_left">
                             <i class="fa fa-cloud-download fa-4x"></i>
                         </div>
-                        <div class="col-md-6 col-xs-6 col-lg-6 widgetSmall_right">
-                            <div class="widgetSmall_total">6000</div>
-                            <div class="widgetSmall_text">downloads</div>
+                        <div class="col-md-6 col-xs-6 col-lg-6 widget_Tile_right">
+                            <div class="tile_total">6000</div>
+                            <div class="tile_text">downloads</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 draggable" ui:sortable="sortableOptions" id="riga_1Col_3">
+            <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_3">
                 <widgetweather> </widgetweather>
             </div>
         </div>
         <!--SECONDA RIGA-->
         <div class="row ">
-            <div class="col-md-12 draggable" ui:sortable="sortableOptions" id="riga_2">
+            <div class="col-md-12 draggable large_widget" ui:sortable="sortableOptions" id="riga_2">
                 <widgetmap></widgetmap>
             </div>
         </div>
 
         <!--TERZA RIGA-->
         <div class="row ">
-            <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_3Col_1">
+            <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_1">
                 <div class="portlet" id="widget5app">
                     <div ng-controller="widget5Controller">
                         <div class="portlet-header">{{title}}</div>
@@ -200,13 +220,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_2Col_2">
+            <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_2Col_2">
                 <widgetpolar></widgetpolar>
             </div>
-
-                <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
-                <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
-
+            <div class="col-md-12">
+                    <input type="checkbox" id="showBordersButton" name="showBordersButton" class="borders"/>
+                    <label for="showBordersButton" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
+            </div>
         </div>
     </div>
 </div>  <!-- dashboard main content -->

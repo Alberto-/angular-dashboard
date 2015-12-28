@@ -23,62 +23,62 @@ and open the template in the editor.
 
 
     .portlet {
+      width: 100%;
+      /*display: table;*/
       margin: 0 1em 1em 0;
       background-color: #fff;
       /*same of class shadow-z-1*/
       box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
     }
 
+    .portlet-main{
+     /*display: table-cell;*/
+     /*vertical-align: middle;*/
+     width: 100%;
+   }
 
-    .portlet-header {
-      padding: 0.2em 0.3em;
-      margin-bottom: 0.5em;
-      position: relative;
-      background-color: #2572AF;
-      color: white;
-    }
-    .portlet-toggle {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      margin-top: -8px;
-    }
-    .portlet-content {
-      padding: 0.4em;
-      overflow: auto;
-    }
-    .portlet-placeholder {
-      border: 1px dotted black;
-      margin: 0 1em 1em 0;
-      height: 150px;
-    }
+   .portlet-header {
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+    background-color: #2572AF;
+    color: white;
+  }
+  .portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+  }
+  .portlet-content {
+    padding: 0.4em;
+    overflow: visible;
+  }
 
+  .menu .portlet{
 
+    width: 5em;
+    overflow: hidden;
+  }
 
-    .menu .portlet{
+  .menu .portlet .portlet-content{
+    display: none;
+  }
 
-      width: 5em;
-      overflow: hidden;
-    }
-
-    .menu .portlet .portlet-content{
-      display: none;
-    }
-
-    .menu .portlet .portlet-header span{
-      display: none;
-    }
+  .menu .portlet .portlet-header span{
+    display: none;
+  }
 
 
-    .showBorders{
-      border: 2px dashed #6EB4E6;
-      min-height: 5em;
-      min-width: 5em;
-      /*transition: all ease 1s;*/
-    }
+  .showBorders{
+    border: 2px dashed #6EB4E6;
+    min-height: 200px;
+    min-width: 5em;
+    /*transition: all ease 1s;*/
+  }
 
-    /*--------------------------------------------------*/
-    /*icons*/
+  /*--------------------------------------------------*/
+  /*icons*/
 
 
 /*icone interessanti:
@@ -212,69 +212,64 @@ header{
 
   /*ON DRAGGING, INITIAL POSITION (VOID SPACE)*/
   .portlet-placeholder{
+    content:'aaaaa' !important;
+     height: 200px;
+     color: red !important;
     background-color:transparent;
-    border: 2.5px dashed #2572AF;
+    border: 2.5px dashed blue
   }
 
 
-  .border-color1{
-   border-color: #03A9F4 !important;
+.portlet-placeholder:after{
+    height: 200px;
+    color: red !important;
+    background-color:transparent;
+    border: 2.5px dashed blue
+   
+  }
+
+
+
+
+  .width50{
+    width: 50%;
+  }
+
+
+  /*TILES*/
+
+  .widget_Tile_main{
+    display: table;
+  }
+
+
+
+  .widget_Tile_Content{
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+
+
+  .widget_Tile_left{
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    padding: 1em 0;
+    display: inline-block;
+  }
+
+  .widget_Tile_right{
+   color: #ffffff;
+   display: inline-block;
+   padding: 1em 0;
  }
 
-
- .border-color2{
-   border-color:#0288D1 !important;
- }
-
-
- .border-color3{
-   border-color:#01579B !important;
- }
-
-
-
-
-
- /*widget small*/
-
- .bg_red{
-  background-color: #FB5651;
-}
-
-
-.bg_blue{
-  background-color: #63A3DF;
-}
-
-
-.bg_green{
-  background-color: #1CC09F;
-}
-
-
-.width50{
-  width: 50%;
-}
-
-.widgetSmall_image{
-  color: rgba(255, 255, 255, 0.75);
-  text-align: center;
-  padding: 1em 0;
-  display: inline-block;
-}
-
-.widgetSmall_right{
- color: #ffffff;
- display: inline-block;
- padding: 1em 0;
-}
-
-.widgetSmall_total{
+ .tile_total{
   font-size: 34px;
   font-weight: 700;
 }
 
-.widgetSmall_text{
+.tile_text{
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 600;
@@ -331,21 +326,21 @@ header{
 
 
 /*SHOW TEMPLATE EYE*/
-#showBorders{
+#showBordersButton{
   visibility: hidden;
 }
-#showBorders + label {
+#showBordersButton + label {
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12) !important;
   border-radius: 90% !important;
   background-color: rgba(180, 216, 233, 0.68) !important;
   color: #ffffff;
 } 
-#showBorders:checked + label {
+#showBordersButton:checked + label {
   color: rgb(37, 114, 175) !important;
   background-color: #ffffff !important;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important; 
 } 
-#showBorders:hover + label {
+#showBordersButton:hover + label {
  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
 } 
 .icon_eye{
@@ -382,9 +377,9 @@ header{
 
 /*main layout*/
 .main_right_content{
-      /* margin-left: 16% !important; */
-      /*width: 84%;*/
-      padding: 0;
+  /* margin-left: 16% !important; */
+  /*width: 84%;*/
+  padding: 0;
 }
 
 .main_left_content{
@@ -395,21 +390,26 @@ header{
 }
 
 
-.large_widget .polar{
-
+.large_widget .portlet{
+  min-height: 340px !important;
 }
 
-.medium_widget .polar{
+.medium_widget .portlet{
 
-
+  min-height: 340px !important;
 }
-.small_widget .polar{
+.small_widget .portlet{
 
+  min-height: 200px !important;
 }
 
-.x_small_widget .polar{
+.x_small_widget .portlet{
 
+  min-height: 200px !important;
 }
+
+
+
 
 
 /*MEDIA QUERIES*/
@@ -418,25 +418,80 @@ header{
 @media (min-width: 768px ) {
 
 
- }
+}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width:  992px) { 
 
 
 
- }
+}
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width:  1200px) {
 
 
- }
+}
 
- /* Large devices (large desktops, 1200px and up) */
- @media (max-width:  767px) {
+/* Large devices (large desktops, 1200px and up) */
+@media (max-width:  767px) {
   .main_left_content{
     position: static;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*widget circles*/
+
+.border_success{
+ border-color: #4caf50 !important;
+}
+
+
+.border_medium{
+ border-color: #307bbb !important;
+}
+
+.border_warning{
+ border-color: #ff5722 !important;
+}
+
+.border_error{
+ border-color: #f44336 !important;
+}
+
+
+
+
+ .bg_red{
+  background-color: #FB5651;
+}
+
+
+.bg_blue{
+  background-color: #63A3DF;
+}
+
+
+.bg_green{
+  background-color: #1CC09F;
+}
+
+
+
+
+
+
+
+
 
