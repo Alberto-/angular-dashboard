@@ -25,10 +25,8 @@ and open the template in the editor.
     .portlet {
       margin: 0 1em 1em 0;
       background-color: #fff;
-      /*same of class shadow-z-3*/
-     box-shadow:
-       0 8px 17px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      /*same of class shadow-z-1*/
+      box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
     }
 
 
@@ -47,11 +45,12 @@ and open the template in the editor.
     }
     .portlet-content {
       padding: 0.4em;
+      overflow: auto;
     }
     .portlet-placeholder {
       border: 1px dotted black;
       margin: 0 1em 1em 0;
-      height: 50px;
+      height: 150px;
     }
 
 
@@ -75,6 +74,7 @@ and open the template in the editor.
       border: 2px dashed #6EB4E6;
       min-height: 5em;
       min-width: 5em;
+      /*transition: all ease 1s;*/
     }
 
     /*--------------------------------------------------*/
@@ -126,8 +126,8 @@ header{
 }
 
 .no_padding {
- padding: 0 !important;
- margin: 0 !important;
+ /* padding: 0 !important; */
+ /* margin: 0 !important; */
 }
 
 
@@ -158,6 +158,7 @@ header{
   font-weight: 100;
   font-size:  1.2em;
   color: rgb(238, 238, 238);
+  margin-bottom: 2em;
 }
 
 
@@ -167,8 +168,7 @@ header{
 .divSplash{
   background-color: rgba(94, 93, 101, 0.35);
   overflow: auto;
-  height: 600px;
-
+  height: 100%;
 
 }
 /*added*/
@@ -178,37 +178,247 @@ header{
 }
 .menu{
   background-color: #394A59;
-  padding:0.5em;
-  background-image: url("../../map2.jpg");
-  background-position: 50% 50%;
-  background-size: cover;
+  height: 100%;
+  /*padding:0.5em;*/
+  /*background-image: url("../../map2.jpg");*/
+  /*background-position: 50% 50%;*/
+  /*background-size: cover;*/
   color: white;
-  padding-bottom: 1000px;
-  margin-bottom: -1000px;
-  background-repeat: repeat-x;
-  animation: animatedBackground 29s linear infinite;
+  /*padding-bottom: 1000px;*/
+  /*margin-bottom: -1000px;*/
+  /*background-repeat: repeat-x;
+  animation: animatedBackground 29s linear infinite;*/
 
 }
 
-
+#menu{
+  text-align: center;
+}
 
 /*.dragging-element{
   width: 33% !important;
   background-color: red !important;
-}*/
+  }*/
 
 
-/*ON DRAGGING*/
-.ui-sortable-helper{
-  max-width: 25em !important;
-   box-shadow:
+  /*ON DRAGGING*/
+  .ui-sortable-helper{
+    max-width: 25em !important;
+    box-shadow:
     0 27px 24px 0 rgba(0, 0, 0, 0.2),
     0 40px 77px 0 rgba(0, 0, 0, 0.22);
-     /*transition: all ease 0.1s;*/
+    /*transition: all ease 0.1s;*/
+  }
+
+  /*ON DRAGGING, INITIAL POSITION (VOID SPACE)*/
+  .portlet-placeholder{
+    background-color:transparent;
+    border: 2.5px dashed #2572AF;
+  }
+
+
+  .border-color1{
+   border-color: #03A9F4 !important;
+ }
+
+
+ .border-color2{
+   border-color:#0288D1 !important;
+ }
+
+
+ .border-color3{
+   border-color:#01579B !important;
+ }
+
+
+
+
+
+ /*widget small*/
+
+ .bg_red{
+  background-color: #FB5651;
 }
 
-/*ON DRAGGING, INITIAL POSITION (VOID SPACE)*/
-.portlet-placeholder{
-  background-color:transparent;
-  border: 0px !important;
+
+.bg_blue{
+  background-color: #63A3DF;
 }
+
+
+.bg_green{
+  background-color: #1CC09F;
+}
+
+
+.width50{
+  width: 50%;
+}
+
+.widgetSmall_image{
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  padding: 1em 0;
+  display: inline-block;
+}
+
+.widgetSmall_right{
+ color: #ffffff;
+ display: inline-block;
+ padding: 1em 0;
+}
+
+.widgetSmall_total{
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.widgetSmall_text{
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+
+.portlet:hover{
+  transition: all ease 0.2s;
+  /*.shadow-z-1-hover*/
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+
+/*TOOLTPITS*/
+
+.tooltips {
+  position: relative;
+}
+.tooltips span {
+  padding: 0 0;
+  position: absolute;
+  width: 8em;
+  color: #FFFFFF;
+  background: #c1c1c1;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  visibility: hidden; 
+  border-radius: 0px;
+  font-size: 1em;
+  top: 1em;
+}
+.tooltips span:after {
+  content: '';
+  position: absolute;
+  bottom: 0.5em;
+  left: 0%;
+  margin-left: -18px;
+  width: 0;
+  height: 0;
+  border-bottom: 8px solid transparent;
+  border-right: 12px solid #c1c1c1;
+  border-left: 8px solid transparent;
+  border-top: 8px solid transparent;
+}
+:hover.tooltips span {
+  visibility: visible;
+  opacity: 1;
+  z-index: 999;
+  text-shadow: none;
+  font-family: arial;
+}
+
+
+
+/*SHOW TEMPLATE EYE*/
+#showBorders{
+  visibility: hidden;
+}
+#showBorders + label {
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12) !important;
+  border-radius: 90% !important;
+  background-color: rgba(180, 216, 233, 0.68) !important;
+  color: #ffffff;
+} 
+#showBorders:checked + label {
+  color: rgb(37, 114, 175) !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important; 
+} 
+#showBorders:hover + label {
+ box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
+} 
+.icon_eye{
+  padding: 0.1em 0.5em;
+}
+
+
+.showTemplateContainer{
+  float: right;
+  margin: 1em;
+}
+
+/*SHADOWS*/
+.shadow-z-1 {
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}
+.shadow-z-1-hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.shadow-z-2 {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.shadow-z-3 {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.shadow-z-4 {
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+.shadow-z-5 {
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+
+
+
+/*main layout*/
+.main_right_content{
+      /* margin-left: 16% !important; */
+      /*width: 84%;*/
+      padding: 0;
+}
+
+.main_left_content{
+  height: 100%;
+  position: fixed;
+  /* width: 16%; */
+  padding: 0;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px ) {
+
+
+ }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width:  992px) { 
+
+
+
+ }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width:  1200px) {
+
+
+ }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (max-width:  767px) {
+
+.main_left_content{
+  position: static;
+}
+ }
+

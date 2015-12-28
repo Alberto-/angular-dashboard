@@ -6,65 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Angularjs Dashboard</title>
-
-
     <link rel="import" href="inc/header_inclusions.html">
-
 
     <!-- custom configuration-->
     <link rel="stylesheet" href="assets/css/dashboard.css">
-       <link rel="stylesheet" href="assets/css/roboto.css">
+    <link rel="stylesheet" href="assets/css/roboto.css">
 
     <script src="app.js"></script>
     <link rel="import" href="inc/widgets_inclusions.html">
 
     <script>
-        $(document).ready(function() {
-                // This command is used to initialize some elements and make them work properly
-                $.material.init();
-            });
-    </script>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    #map {
-        height: 100%;
-        width: 100%;
-    }
+    // MATERIAL INIT
+    $(document).ready(function() {
+        $.material.init();
+    });
+</script>
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#map {
+    height: 100%;
+    width: 100%;
+}
 
-    .contenitoreMap{
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        height: 20em;
-    }
+.contenitoreMap{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 20em;
+}
 </style> 
 
 </head>
 <body>
-<script type="text/javascript">
-   $(document).ready(function(){
-   var hash = CryptoJS.MD5("albe45313@gmail.com");
-   document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
-   });    
-</script>
+    <!-- GRAVATAR Start -->
+    <script type="text/javascript">
+     $(document).ready(function(){
+         var hash = CryptoJS.MD5("albe45313@gmail.com");
+         document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
+     });    
+ </script>
+ <!-- GRAVATAR End -->
 
-    <div class="container" ng-app="dashboardApp" >
-        <div class="content" ng-controller="mainController">
-            <aside class="col-md-2 no_padding dash_min_height menu shadow-z-3">
+ <div class="container" ng-app="dashboardApp" >
+    <div class="content" ng-controller="mainController">
+        <aside class="col-md-2 dash_min_height menu main_left_content shadow-z-3">
             <div class="divSplash">
                 <div class="logo">
-                <div class="logo-content">
-                    <h3 class="marchio color1">Angular </h3>
+                    <div class="logo-content">
+                        <h3 class="marchio color1">Angular </h3>
 
-                    <h3 class="marchio color2">Dashboard </h3>
-</div>
+                        <h3 class="marchio color2">Dashboard </h3>
+                    </div>
                 </div>
-
                 <div class="draggable " ui:sortable="sortableOptions" id="menu">
                     <h4 class="title-widgets">Widgets:</h4>
 
@@ -78,138 +76,142 @@
                         <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                     </div>
                 </div>
-</div>
-            </aside>
-            <div class="col-md-10 dash_min_height  no_padding">
-                <header class="">
-                    <div class="user-info">
-                       <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
-                   </div>
-               </header>
-
-<!-- header >
-    immagine
-</header> -->
-<h1>You can add your site here.</h1>
-<h2>To ensure that material-design theme is working, check out the buttons below.</h2>
-<h3 class="text-muted">If you can see the ripple effect on clicking them, then you are good to go!</h3>
-<p class="bs-component">
-    <a href="javascript:void(0)" class="btn btn-default">Default</a>
-    <a href="javascript:void(0)" class="btn btn-primary">Primary</a>
-    <a href="javascript:void(0)" class="btn btn-success">Success</a>
-    <a href="javascript:void(0)" class="btn btn-info">Info</a>
-    <a href="javascript:void(0)" class="btn btn-warning">Warning</a>
-    <a href="javascript:void(0)" class="btn btn-danger">Danger</a>
-    <a href="javascript:void(0)" class="btn btn-link">Link</a>
-</p> 
-
-<div class="col-md-10">
-    <!--PRIMA RIGA-->
-    <div class="row ">
-        <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_1">
-            <div class="portlet" id="widgetFeeds">
-                <div class="portlet-header">Feeds</div>
-                <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
             </div>
-        </div>
-        <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_2">
-            <div class="portlet" id="widgetNews">
-                <div class="portlet-header">News</div>
-                <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-            </div>
-        </div>
-        <div class="col-md-4 draggable" ui:sortable="sortableOptions" id="riga_1Col_3">
-            <div class="portlet" id="widgetNews2">
+        </aside>
 
-                <widgetweather> </widgetweather>
-            </div>
-        </div>
-    </div>
-    <!--SECONDA RIGA-->
-    <div class="row ">
-        <div class="col-md-12 draggable" ui:sortable="sortableOptions" id="riga_2">
-            <div class="portlet" id="widgetShopping">
-                <widgetmap></widgetmap>
-            </div>
-        </div>
-    </div>
+        <!-- dashboard main content -->
+        <div class="col-md-10 col-md-offset-2 dash_min_height main_right_content">
+            <header class="">
+                <div class="user-info">
+                 <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
+             </div>
+         </header>
+        <!--  <div class="showTemplateContainer">
+                <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
+                <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
+            </div> -->
+         <h1>You can add your site here.</h1>
+         <h2>To ensure that material-design theme is working, check out the buttons below.</h2>
+         <h3 class="text-muted">If you can see the ripple effect on clicking them, then you are good to go!</h3>
+         <p class="bs-component">
+            <a href="javascript:void(0)" class="btn btn-default">Default</a>
+            <a href="javascript:void(0)" class="btn btn-primary">Primary</a>
+            <a href="javascript:void(0)" class="btn btn-success">Success</a>
+            <a href="javascript:void(0)" class="btn btn-info">Info</a>
+            <a href="javascript:void(0)" class="btn btn-warning">Warning</a>
+            <a href="javascript:void(0)" class="btn btn-danger">Danger</a>
+            <a href="javascript:void(0)" class="btn btn-link">Link</a>
+        </p> 
 
-    <!--TERZA RIGA-->
-    <div class="row ">
-        <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_3Col_1">
-            <div class="portlet" id="widget5app">
-                <div ng-controller="widget5Controller">
-                    <div class="portlet-header">{{title}}</div>
-                    <div class="portlet-content">
-                        <canvas id="bar" class="chart chart-bar" data="customerData"  series="series" legend="true" options="customerOptions" labels="customerLabels"></canvas> 
+        <div class="col-md-10">
+            <!--PRIMA RIGA-->
+            <div class="row ">
+                <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_1">
+                    <div class="portlet" id="widgetFeeds">
+                        <div class="portlet-header">circle1</div>
+                        <div class="portlet-content">
+                           <div class="c100 p25">
+                            <span>25%</span>
+                            <div class="slice">
+                                <div class="bar border-color1"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_2Col_2">
-            <div class="portlet" id="widget6Controller">
-               <widgetpolar></widgetpolar>
+
+
+            <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_1">
+                <div class="portlet" id="widgetFeeds">
+                    <div class="portlet-header">circle1</div>
+                    <div class="portlet-content">
+                        <div class="c100 p50">
+                            <span>50%</span>
+                            <div class="slice">
+                                <div class="bar border-color2"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_1">
+                <div class="portlet" id="widgetFeeds">
+                    <div class="portlet-header">circle1</div>
+                    <div class="portlet-content">
+                        <div class="c100 p75">
+                            <span>75%</span>
+                            <div class="slice">
+                                <div class="bar border-color3"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_1">
+                <div class="portlet" id="widgetFeeds">
+                    <div class="portlet-header">Feeds</div>
+                    <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 draggable" ui:sortable="sortableOptions"  id="riga_1Col_2">
+                <div class="portlet" id="widgetNews">
+                    <div class="portlet-content bg_green">
+                        <div class="col-md-6 col-xs-6 col-lg-6  widgetSmall_image">
+                            <i class="fa fa-cloud-download fa-4x"></i>
+                        </div>
+                        <div class="col-md-6 col-xs-6 col-lg-6 widgetSmall_right">
+                            <div class="widgetSmall_total">6000</div>
+                            <div class="widgetSmall_text">downloads</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 draggable" ui:sortable="sortableOptions" id="riga_1Col_3">
+                <widgetweather> </widgetweather>
             </div>
         </div>
+        <!--SECONDA RIGA-->
+        <div class="row ">
+            <div class="col-md-12 draggable" ui:sortable="sortableOptions" id="riga_2">
+                <widgetmap></widgetmap>
+            </div>
+        </div>
+
+        <!--TERZA RIGA-->
+        <div class="row ">
+            <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_3Col_1">
+                <div class="portlet" id="widget5app">
+                    <div ng-controller="widget5Controller">
+                        <div class="portlet-header">{{title}}</div>
+                        <div class="portlet-content">
+                            <canvas id="bar" class="chart chart-bar" data="customerData"  series="series" legend="true" options="customerOptions" labels="customerLabels"></canvas> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 draggable" ui:sortable="sortableOptions" id="riga_2Col_2">
+                <widgetpolar></widgetpolar>
+            </div>
+
+                <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
+                <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
+
+        </div>
     </div>
-</div>
+</div>  <!-- dashboard main content -->
+</div> <!-- content --> 
+</div> <!-- container --> 
 
-<div class="row">
-    <div class="col-md-12">
-        <button type="button" class="borders">Schema</button>
-    </div>                
-</div>    
-
-
-Loading circle
-<svg class="circleSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92">
-    <circle style="opacity:0.16;fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;" cx="46" cy="46" r="45"></circle>
-    <path style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;" d="M84.839,68.718C88.749,62.049,91,54.289,91,46C91,21.147,70.853,1,46,1"></path>
-</svg>
-
-
-<style type="text/css">
- .circleSVG {
-   width: 150px;
-}
-</style>
-
-
-
-
-
-<div class="c100 p25">
-  <span>25%</span>
-  <div class="slice">
-    <div class="bar"></div>
-    <div class="fill"></div>
-</div>
-</div>
-
-
-</div>
-</div>
-</div>
-
-<style type="text/css">
- .labels {
-   color: red;
-   background-color: white;
-   font-family: "Lucida Grande", "Arial", sans-serif;
-   font-size: 10px;
-   font-weight: bold;
-   text-align: center;
-   width: 40px;
-   border: 2px solid black;
-   white-space: nowrap;
-}
-</style>
-
-<script>
-
-
-
-
-</script>
 </body>
 </html>
