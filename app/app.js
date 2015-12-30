@@ -24,17 +24,15 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
 //            $scope.moveCard(cardId,listaId);
     },
   start: function( event, ui ) {
-    $(".draggable").addClass("showBorders");
-    $("#showBorders").prop('checked', true);
+    // $(".draggable").addClass("showBorders");
+    // $("#showBorders").prop('checked', true);
+    corticaFireResize();
   },
   stop: function( event, ui ) {
-     $(".draggable").removeClass("showBorders");
-      $("#showBorders").prop('checked', false);
+     // $(".draggable").removeClass("showBorders");
+     //  $("#showBorders").prop('checked', false);
+       corticaFireResize();
    }
-
-
-    
-
   /** OTHER CONTROLS ON START AND STOP DRAGGING
   start: function( event, ui ) {
     console.log(event.target);

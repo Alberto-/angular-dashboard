@@ -1,10 +1,10 @@
 
-app.factory("widget5Factory",["$http", function( $http) {
+app.factory("widgetBarService",["$http", function( $http) {
 
 	labels = ["Customers", "Leads"];
 	return {
 		getInfo: function () {
-			return $http.get('widgets/widget5/services/details.json');
+			return $http.get('widgets/widgetsChart/widgetBar/details.json');
 		},
 		getLabels: function(){
 			return labels;

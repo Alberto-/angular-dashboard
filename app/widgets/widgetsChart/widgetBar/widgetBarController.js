@@ -1,18 +1,18 @@
 'use strict';
-app.controller('widget5Controller', [ "$scope","$rootScope","$http","$compile","widget5Factory",
-  function ($scope, $rootScope, $http, $compile, widget5Factory) {
+app.controller('widgetBarController', [ "$scope","$rootScope","$http","$compile","widgetBarService",
+  function ($scope, $rootScope, $http, $compile, widgetBarService) {
     $scope.title="Grafico 5";
     $scope.desc="grafico descrizione 123456";
 
 
-    widget5Factory.getInfo().success(function(data){
+    widgetBarService.getInfo().success(function(data){
       console.log(data); 
 
       //main chart label
       $scope.customerLabels = ["Customers" + " - " + "Leads"];
 
       //data series
-      $scope.series = widget5Factory.getLabels();
+      $scope.series = widgetBarService.getLabels();
 
       //chart data
       $scope.customerData = [

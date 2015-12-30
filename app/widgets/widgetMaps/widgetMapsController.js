@@ -8,7 +8,8 @@ app.controller('widgetMapsController', [ "$scope","$rootScope","$http","$compile
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 5,
         // California State
-        center: {lat: 36.778261, lng: -119.417932}
+        center: {lat: 36.778261, lng: -119.417932},
+          scrollwheel: false
     });
       setMarkers(map);
   }
@@ -73,12 +74,3 @@ initMap();
 
 }]);
 
-app.directive("widgetmap",function(){
-  return{
-    restrict : "E",
-    replace : true,
-    templateUrl: "widgets/widgetMaps/views/vista.html",
-    controller: 'widgetMapsController'
-  }
-
-});

@@ -9,7 +9,7 @@ app.factory('widgetPolarService', ["$http", function($http){
 
 	return {
 		getInfo: function(){
-			return $http.get('widgets/widgetPolar/details.json');
+			return $http.get('widgets/widgetsChart/widgetPolar/details.json');
 		},
 		getLabels: function(){
 			return labels;
