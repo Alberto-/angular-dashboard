@@ -55,10 +55,20 @@ and open the template in the editor.
     overflow: visible;
   }
 
-  .menu .portlet{
 
-    width: 5em;
-    overflow: hidden;
+/*MENU Start*/
+  .menu .portlet{
+    margin: 0 0px;
+    margin-left: 1em;
+    margin-right: 1em;
+    /* position: static; */
+    width: auto;
+  }
+
+
+  .menu .portlet .portlet-header{
+    background-color: rgba(70, 80, 93, 0.52);
+    height: 3em;
   }
 
   .menu .portlet .portlet-content{
@@ -68,6 +78,22 @@ and open the template in the editor.
   .menu .portlet .portlet-header span{
     display: none;
   }
+
+  .menu .portlet-placeholder{
+    height: 3em;
+    background-color:transparent;
+    border: 5.5px dashed blue
+  }
+
+.menu .portlet-placeholder:after{
+    height: 3em;
+    background-color:transparent;
+    border: 5.5px dashed blue
+  }
+
+
+
+/*end menu*/
 
 
   .showBorders{
@@ -159,6 +185,7 @@ header{
   font-size:  1.2em;
   color: rgb(238, 238, 238);
   margin-bottom: 2em;
+  text-align: center;
 }
 
 
@@ -176,6 +203,7 @@ header{
   from { background-position: 0 0; }
   to { background-position: 100% 0; }
 }
+
 .menu{
   background-color: #394A59;
   height: 100%;
@@ -188,10 +216,6 @@ header{
   /*margin-bottom: -1000px;*/
   /*background-repeat: repeat-x;
   animation: animatedBackground 29s linear infinite;*/
-
-}
-
-#menu{
   text-align: center;
 }
 
@@ -212,23 +236,20 @@ header{
 
   /*ON DRAGGING, INITIAL POSITION (VOID SPACE)*/
   .portlet-placeholder{
-    content:'aaaaa' !important;
-     height: 200px;
-     color: red !important;
-    background-color:transparent;
-    border: 2.5px dashed blue
-  }
-
-
-.portlet-placeholder:after{
     height: 200px;
     color: red !important;
     background-color:transparent;
     border: 2.5px dashed blue
-   
   }
 
 
+  .portlet-placeholder:after{
+    height: 200px;
+    color: red !important;
+    background-color:transparent;
+    border: 2.5px dashed blue
+
+  }
 
 
   .width50{
@@ -473,7 +494,7 @@ header{
 
 
 
- .bg_red{
+.bg_red{
   background-color: #FB5651;
 }
 
@@ -488,7 +509,9 @@ header{
 }
 
 
-
+.draggable{
+  min-height: 200px;
+}
 
 
 
