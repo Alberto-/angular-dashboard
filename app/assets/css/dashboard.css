@@ -68,16 +68,18 @@ and open the template in the editor.
 
   .menu .portlet .portlet-header{
     background-color: rgba(70, 80, 93, 0.52);
-    height: 3em;
-  }
+    height: 5em;
+    line-height: 5em;
+        padding-left: 5px;
+}
 
   .menu .portlet .portlet-content{
     display: none;
   }
 
-  .menu .portlet .portlet-header span{
+ /* .menu .portlet .portlet-header span{
     display: none;
-  }
+  }*/
 
   .menu .portlet-placeholder{
     height: 3em;
@@ -91,8 +93,39 @@ and open the template in the editor.
     border: 5.5px dashed blue
   }
 
+  .widgetTilte{
 
 
+  }
+
+
+.menu .widgetTilte{
+    line-height: 5em;
+    display: inline;
+    float: right;
+    padding: 0 1em;
+  }
+
+  .menu .widgetTitleText{
+  font-size: 21px;
+  font-weight: 600;
+  text-shadow: 0.5px 0.5px black;
+  }
+
+
+.widgetIcon{
+  display: none;
+}
+
+
+.menu .widgetIcon{
+  display: inline;
+  vertical-align: middle;
+   padding: 7px;
+  border-radius: 5px;
+  font-size: 2em;
+  background-color: rgb(37, 114, 175);
+}
 /*end menu*/
 
 
@@ -104,7 +137,7 @@ and open the template in the editor.
   }
 
   /*--------------------------------------------------*/
-  /*icons*/
+  /*ICONS*/
 
 
 /*icone interessanti:
@@ -112,14 +145,9 @@ and open the template in the editor.
 https://www.iconfinder.com/search/?q=chart
 */
 
-.icon-pie{
-  border: 3px solid rgba(0, 0, 0, 0.55);
-  padding: 7px;
-  border-radius: 5px;
-  font-size: 3em;
-  background-color: rgba(0, 188, 212, 0.17);
-  color: rgba(255, 0, 22, 0.38);
-}
+
+
+
 
 /*header*/
 
@@ -514,6 +542,22 @@ header{
 }
 
 
+
+
+/*drag and drop icon*/
+
+.portlet-content:hover{
+
+cursor: pointer;
+
+}
+
+
+.portlet-header:hover{
+
+cursor: pointer;
+
+}
 
 
 
