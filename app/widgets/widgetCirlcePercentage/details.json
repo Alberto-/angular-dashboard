@@ -1,0 +1,18 @@
+{	
+	"widgetCircle1":{
+		"title": "Circle I",
+		"percentage" : 20
+	},
+	"widgetCircle2":{
+		"title": "Circle II",
+		"percentage" : 45
+	},
+	"widgetCircle3":{
+		"title": "Circle III",
+		"percentage" : 60
+	},
+	"widgetCircle4":{
+		"title": "Circle IV",
+		"percentage" : 95
+	}
+}

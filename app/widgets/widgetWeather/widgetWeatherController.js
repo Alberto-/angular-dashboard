@@ -27,9 +27,6 @@ var newPos = {
 // };
 
 
-
-
-
 $http.get("http://api.openweathermap.org/data/2.5/weather?lat="+newPos.lat+"&lon="+newPos.lng+"&appid=2de143494c0b295cca9337e1e96b00e0").success(function(data){
 
   console.log('preso:'+JSON.stringify(data));

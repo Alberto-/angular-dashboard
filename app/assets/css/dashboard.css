@@ -56,7 +56,7 @@ and open the template in the editor.
   }
 
 
-/*MENU Start*/
+  /*MENU Start*/
   .menu .portlet{
     margin: 0 0px;
     margin-left: 1em;
@@ -70,8 +70,8 @@ and open the template in the editor.
     background-color: rgba(70, 80, 93, 0.52);
     height: 5em;
     line-height: 5em;
-        padding-left: 5px;
-}
+    padding-left: 5px;
+  }
 
   .menu .portlet .portlet-content{
     display: none;
@@ -79,65 +79,65 @@ and open the template in the editor.
 
  /* .menu .portlet .portlet-header span{
     display: none;
-  }*/
+    }*/
 
-  .menu .portlet-placeholder{
-    height: 3em;
-    background-color:transparent;
-    border: 5.5px dashed blue
-  }
+    .menu .portlet-placeholder{
+      height: 3em;
+      background-color:transparent;
+      border: 5.5px dashed blue
+    }
 
-.menu .portlet-placeholder:after{
-    height: 3em;
-    background-color:transparent;
-    border: 5.5px dashed blue
-  }
+    .menu .portlet-placeholder:after{
+      height: 3em;
+      background-color:transparent;
+      border: 5.5px dashed blue
+    }
 
-  .widgetTilte{
-
-
-  }
+    .widgetTilte{
 
 
-.menu .widgetTilte{
+    }
+
+
+/*.menu .widgetTilte{
     line-height: 5em;
     display: inline;
     float: right;
     padding: 0 1em;
-  }
+    }*/
 
-  .menu .widgetTitleText{
-  font-size: 21px;
-  font-weight: 600;
-  text-shadow: 0.5px 0.5px black;
-  }
-
-
-.widgetIcon{
-  display: none;
-}
+    .menu .widgetTitleText{
+      font-size: 21px;
+      font-weight: 600;
+      text-shadow: 0.5px 0.5px black;
+    }
 
 
-.menu .widgetIcon{
-  display: inline;
-  vertical-align: middle;
-   padding: 7px;
-  border-radius: 5px;
-  font-size: 2em;
-  background-color: rgb(37, 114, 175);
-}
-/*end menu*/
+    .widgetIcon{
+      display: none;
+    }
 
 
-  .showBorders{
-    border: 2px dashed #6EB4E6;
-    min-height: 200px;
-    min-width: 5em;
-    /*transition: all ease 1s;*/
-  }
+    .menu .widgetIcon{
+      display: inline;
+      vertical-align: middle;
+      padding: 0.3em;
+      border-radius: 5px;
+      font-size: 2em;
+      background-color: rgb(37, 114, 175);
+    }
+    /*end menu*/
 
-  /*--------------------------------------------------*/
-  /*ICONS*/
+
+    .showBorders{
+      border: 2px dashed #6EB4E6;
+      min-height: 200px;
+      min-width: 5em;
+      /*transition: all ease 1s;*/
+    }
+
+    /*--------------------------------------------------*/
+    /*ICONS*/
 
 
 /*icone interessanti:
@@ -548,17 +548,44 @@ header{
 
 .portlet-content:hover{
 
-cursor: pointer;
+  cursor: pointer;
 
 }
 
 
 .portlet-header:hover{
 
-cursor: pointer;
+  cursor: pointer;
 
 }
 
+/*
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
 
+*/
+
+
+.menu .widgetHeadLeft{
+  width: 40%;
+ float:left;
+}
+
+.menu .widgetHeadRight{
+
+  width: 60%;
+  float:left;
+}
 
 

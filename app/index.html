@@ -45,14 +45,14 @@
 <body>
     <!-- GRAVATAR Start -->
     <script type="text/javascript">
-       $(document).ready(function(){
-           var hash = CryptoJS.MD5("albe45313@gmail.com");
-           document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
-       });    
-   </script>
-   <!-- GRAVATAR End -->
+     $(document).ready(function(){
+         var hash = CryptoJS.MD5("albe45313@gmail.com");
+         document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
+     });    
+ </script>
+ <!-- GRAVATAR End -->
 
-   <div class="container" ng-app="dashboardApp" >
+ <div class="container" ng-app="dashboardApp" >
     <div class="content" ng-controller="mainController">
         <aside class="col-md-2 dash_min_height menu main_left_content shadow-z-3">
             <div class="divSplash">
@@ -83,9 +83,9 @@
         <div class="col-md-10 col-md-offset-2 dash_min_height main_right_content">
             <header class="">
                 <div class="user-info">
-                   <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
-               </div>
-           </header>
+                 <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
+             </div>
+         </header>
         <!--  <div class="showTemplateContainer">
                 <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
                 <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
@@ -109,73 +109,32 @@
                 <!-- Riga ZERO -->
                 <div class="row  ">
                     <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_1">
-                        <div class="portlet" id="widgetFeeds">
-                            <div class="portlet-header">circle1</div>
-                            <div class="portlet-content">
-                             <div class="c100 p25">
-                                <span>25%</span>
-                                <div class="slice">
-                                    <div class="bar border_warning"></div>
-                                    <div class="fill border_warning"></div>
-                                </div>
-                            </div>
-                        </div>
+                        
+
+                        <widgetcircle:1><widgetcircle:1/>
+
                     </div>
+                    <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_2">
+                        <widgetcircle:2><widgetcircle:2/>
 
-                </div>
-                <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_2">
-                    <div class="portlet" id="widgetFeeds">
-                        <div class="portlet-header">circle1</div>
-                        <div class="portlet-content">
-                            <div class="c100 p45">
-                                <span>45%</span>
-                                <div class="slice">
-                                    <div class="bar border_medium "></div>
-                                    <div class="fill border_medium"></div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                    <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
+                      <widgetcircle:3><widgetcircle:3/>
+                  </div>
+                  <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
+                      <widgetcircle:4><widgetcircle:4/>
 
-                </div>
-                <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
-                    <div class="portlet" id="widgetFeeds">
-                        <div class="portlet-header">circle1</div>
-                        <div class="portlet-content">
-                            <div class="c100 p75">
-                                <span>75%</span>
-                                <div class="slice">
-                                    <div class="bar border_success"></div>
-                                    <div class="fill border_success"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
-                    <div class="portlet" id="widgetFeeds">
-                        <div class="portlet-header">circle1</div>
-                        <div class="portlet-content">
-                            <div class="c100 p9">
-                                <span>9%</span>
-                                <div class="slice">
-                                    <div class="bar border_error"></div>
-                                    <div class="fill border_error"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  </div>
 
-            </div>
+              </div>
 
 
-            <!--PRIMA RIGA-->
-            <div class="row ">
+              <!--PRIMA RIGA-->
+              <div class="row ">
 
                 <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions"  id="riga_1Col_1">
                     <div class="portlet" id="widgetFeeds">
-                     <div class="portlet-main">
+                       <div class="portlet-main">
                         <div class="portlet-header">Feeds</div>
                         <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
                     </div>
