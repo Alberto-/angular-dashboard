@@ -24,11 +24,12 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
 //            $scope.moveCard(cardId,listaId);
     },
   start: function( event, ui ) {
-    // $(".draggable").addClass("showBorders");
+    $(".draggable").addClass("draggable_min_height");
     // $("#showBorders").prop('checked', true);
     corticaFireResize();
   },
   stop: function( event, ui ) {
+        $(".draggable").removeClass("draggable_min_height");
      // $(".draggable").removeClass("showBorders");
      //  $("#showBorders").prop('checked', false);
        corticaFireResize();

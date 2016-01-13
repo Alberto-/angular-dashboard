@@ -41,9 +41,18 @@ and open the template in the editor.
     padding: 0.2em 0.3em;
     margin-bottom: 0.5em;
     position: relative;
-    background-color: #2572AF;
+    background-color: transparent;
     color: white;
+    background-color: #2572AF;
   }
+
+/*  .portlet-header:hover{
+    background-color: #2572AF;
+    cursor: pointer;
+    height: auto;
+    transition: all ease 0.5s;
+}*/
+
   .portlet-toggle {
     position: absolute;
     top: 50%;
@@ -125,6 +134,7 @@ and open the template in the editor.
       border-radius: 5px;
       font-size: 2em;
       background-color: rgb(37, 114, 175);
+      box-shadow: 0.5px 0.5px black;
     }
     /*end menu*/
 
@@ -311,6 +321,10 @@ header{
    color: #ffffff;
    display: inline-block;
    padding: 1em 0;
+
+   border-left: 1px solid rgba(255, 255, 255, 0.75);
+   padding-left: 3em;
+
  }
 
  .tile_total{
@@ -537,11 +551,13 @@ header{
 }
 
 
-.draggable{
+/*.draggable{
+  min-height: 200px;
+}*/
+
+.draggable_min_height{
   min-height: 200px;
 }
-
-
 
 
 /*drag and drop icon*/
@@ -552,12 +568,6 @@ header{
 
 }
 
-
-.portlet-header:hover{
-
-  cursor: pointer;
-
-}
 
 /*
 ::-webkit-scrollbar {
@@ -579,7 +589,7 @@ header{
 
 .menu .widgetHeadLeft{
   width: 40%;
- float:left;
+  float:left;
 }
 
 .menu .widgetHeadRight{
@@ -589,3 +599,16 @@ header{
 }
 
 
+/*.percent:before{
+content: "%";
+}*/
+
+
+.fa:before{
+
+    text-shadow: 3px 2px 0px rgba(0,0,0,0.30);
+}
+
+.x_small_widget .portlet-header{
+  text-align: center !important;
+}
