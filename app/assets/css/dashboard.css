@@ -8,65 +8,125 @@ and open the template in the editor.
     Author     : A.Piras
     */
 
-    .container{
-      margin: 0 !important;
-      padding: 0 !important;
-      width: 100%;
-    }
+/*
+color palette
+
+1) #0277BD  / #2572AF 
+
+2)#B2D5F3 
+
+3)#E1F5FE
+
+*/
+
+/*main backgroud color
+
+1)#EEEEEE  / #F5F5F5
 
 
-    .dash_min_height{
-      min-height: 600px;
-    }
+*/
 
-    /*dashboard*/
+body {
+  background-color: #F5F5F5;
+}
 
 
-    .portlet {
-      width: 100%;
-      /*display: table;*/
-      margin: 0 1em 1em 0;
-      background-color: #fff;
-      /*same of class shadow-z-1*/
-      box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
-    }
 
-    .portlet-main{
-     /*display: table-cell;*/
-     /*vertical-align: middle;*/
-     width: 100%;
-   }
+.container{
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
 
-   .portlet-header {
+
+.dash_min_height{
+  min-height: 600px;
+}
+
+/*dashboard*/
+
+
+.portlet {
+  width: 100%;
+  /*display: table;*/
+  margin: 0 1em 1em 0;
+  background-color: #fff;
+  /*same of class shadow-z-1*/
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}
+
+.portlet-main{
+ /*display: table-cell;*/
+ /*vertical-align: middle;*/
+ width: 100%;
+}
+
+/*   .portlet-header {
     padding: 0.2em 0.3em;
     margin-bottom: 0.5em;
     position: relative;
     background-color: transparent;
     color: white;
     background-color: #2572AF;
-  }
+    }*/
+
+    .portlet-header {
+      padding: 0.2em 0.2em;
+      position: relative;
+      color: #2572AF;
+      background-color: rgb(222, 238, 238);
+      font-size: 1.5em;
+      font-weight: 500;
+      transition: all ease 0.3s;
+    }
+
+    .portlet:hover .portlet-header{
+      background-color: #2572AF;
+      color: #ffffff;
+    }
+
+
+
+
+
+/*
+  .portlet-header {
+    padding: 0.2em 0.3em;
+    position: relative;
+    background-color: transparent;
+    color: white;
+    background-color: #2572AF;
+    }*/
+
+
+
+
+
 
 /*  .portlet-header:hover{
     background-color: #2572AF;
     cursor: pointer;
     height: auto;
     transition: all ease 0.5s;
-}*/
+    }*/
 
-  .portlet-toggle {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    margin-top: -8px;
-  }
-  .portlet-content {
-    padding: 0.4em;
-    overflow: visible;
-  }
+    .portlet-toggle {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: -8px;
+    }
+    .portlet-content {
+      padding: 1em;
+      overflow: visible;
+    }
 
+    .widgetMap .portlet-content{
+     padding: 0;
+   }
 
-  /*MENU Start*/
-  .menu .portlet{
+   /*MENU Start*/
+   .menu .portlet{
     margin: 0 0px;
     margin-left: 1em;
     margin-right: 1em;
@@ -80,6 +140,11 @@ and open the template in the editor.
     height: 5em;
     line-height: 5em;
     padding-left: 5px;
+    color: white;
+    padding: 0.1em 0em;
+    margin-bottom: 0.5em;
+    position: relative;
+    font-size: 1em;
   }
 
   .menu .portlet .portlet-content{
@@ -265,7 +330,7 @@ header{
 
   /*ON DRAGGING*/
   .ui-sortable-helper{
-    max-width: 25em !important;
+    max-width: 50em !important;
     box-shadow:
     0 27px 24px 0 rgba(0, 0, 0, 0.2),
     0 40px 77px 0 rgba(0, 0, 0, 0.22);
@@ -323,7 +388,7 @@ header{
    padding: 1em 0;
 
    border-left: 1px solid rgba(255, 255, 255, 0.75);
-   padding-left: 3em;
+   text-align: center;
 
  }
 
@@ -454,12 +519,12 @@ header{
 
 
 .large_widget .portlet{
-  min-height: 340px !important;
+  min-height: 318px !important;
 }
 
 .medium_widget .portlet{
 
-  min-height: 340px !important;
+  min-height: 318px !important;
 }
 .small_widget .portlet{
 
@@ -553,20 +618,24 @@ header{
 
 /*.draggable{
   min-height: 200px;
-}*/
+  }*/
 
-.draggable_min_height{
-  min-height: 200px;
-}
+  .draggable_min_height{
+    min-height: 200px;
+  }
 
 
-/*drag and drop icon*/
+  /*drag and drop icon*/
 
-.portlet-content:hover{
+  .portlet-content:hover{
 
-  cursor: pointer;
+    /*cursor: pointer;*/
 
-}
+  }
+
+  .portlet:hover{
+    cursor: -webkit-grab; cursor: -moz-grab;
+  }
 
 
 /*
@@ -606,9 +675,24 @@ content: "%";
 
 .fa:before{
 
-    text-shadow: 3px 2px 0px rgba(0,0,0,0.30);
+  text-shadow: 3px 2px 0px rgba(0,0,0,0.30);
 }
 
 .x_small_widget .portlet-header{
   text-align: center !important;
+}
+
+.small_widget .portlet-header, .large_widget .portlet-header, .medium_widget .portlet-header{
+  text-align: left !important;
+  padding-left: 0.5em;
+}
+
+
+body, html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
