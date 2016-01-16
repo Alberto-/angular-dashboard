@@ -59,6 +59,7 @@ function corticaFireResize(){
 if (document.createEvent) { // W3C
   var ev = document.createEvent('Event');
   ev.initEvent('resize', true, true);
+  //lancia evento
   window.dispatchEvent(ev);
 }
 else { // IE

@@ -74,19 +74,68 @@ body {
       padding: 0.2em 0.2em;
       position: relative;
       color: #2572AF;
-      background-color: rgb(222, 238, 238);
       font-size: 1.5em;
       font-weight: 500;
-      transition: all ease 0.3s;
+
+
+/*
+      background-color: rgb(222, 238, 238);
+      transition*/: all ease 0.3s;
+
+
+      background: rgb(222, 238, 238);
+      background: -webkit-linear-gradient(#2876b2, #549ad0);
+      background: -moz-linear-gradient(#2876b2, #549ad0);
+      background: -o-linear-gradient(#2876b2, #549ad0);
+      background: linear-gradient(rgb(222, 238, 238) 50%, #549ad0 50%);
+      background-repeat: repeat;
+      -webkit-background-size: 100% 200%;
+      -moz-background-size: 100% 200%;
+      background-size: 100% 200%;
+      -webkit-transition: all .5s linear;
+      -moz-transition: all .5s linear;
+      -o-transition: all .5s linear;
+      transition: all .5s linear;
+
+
     }
 
     .portlet:hover .portlet-header{
-      background-color: #2572AF;
       color: #ffffff;
+
+      /*background-color: #2572AF;*/
+
+      background-position: 0 -100%;
+
     }
 
 
 
+    /*dropdown background*/
+
+
+    .headerDdwn_bg{
+     background: #2876b2;
+     background: -webkit-linear-gradient(#2876b2, #549ad0);
+     background: -moz-linear-gradient(#2876b2, #549ad0);
+     background: -o-linear-gradient(#2876b2, #549ad0);
+     background: linear-gradient(#2876b2, #549ad0);
+     background-repeat: repeat;
+     -webkit-background-size: 100% 200%;
+     -moz-background-size: 100% 200%;
+     background-size: 100% 200%;
+     -webkit-transition: all .5s linear;
+     -moz-transition: all .5s linear;
+     -o-transition: all .5s linear;
+     transition: all .5s linear;
+   }
+
+   .box:hover .headerDdwn_bg{
+     background-position: 0 -102%;
+   }
+
+
+   /*END dropdown background*/
 
 
 /*
@@ -132,11 +181,12 @@ body {
     margin-right: 1em;
     /* position: static; */
     width: auto;
+    display: block;
   }
 
 
   .menu .portlet .portlet-header{
-    background-color: rgba(70, 80, 93, 0.52);
+    background: rgba(70, 80, 93, 0.52);
     height: 5em;
     line-height: 5em;
     padding-left: 5px;
@@ -696,3 +746,34 @@ body, html {
   -ms-user-select: none;
   user-select: none;
 }
+
+.cursorGrap{
+  cursor: -webkit-grab;
+}
+
+.widget_Tile_main .portlet-header{
+  display: none;
+}
+
+.widget_Tile_main:hover .portlet-header{
+  display: table-header-group;
+}
+
+.widget_Tile_main .portlet-header:hover{
+  display: table-header-group;
+}
+
+.menu .widget_Tile_main .portlet-header{
+ display: block;
+}
+
+.menu .widget_Tile_main{
+  display: block;
+}
+
+
+
+
+
+
+
