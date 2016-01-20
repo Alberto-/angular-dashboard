@@ -10,6 +10,7 @@ app.controller('widgetMapsController', [ "$scope","$rootScope","$http","$compile
         // California State
         center: {lat: 36.778261, lng: -119.417932},
           scrollwheel: false
+          // draggable: false
     });
       setMarkers(map);
   }

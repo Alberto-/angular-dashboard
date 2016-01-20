@@ -77,7 +77,6 @@ body {
       font-size: 1.5em;
       font-weight: 500;
 
-
 /*
       background-color: rgb(222, 238, 238);
       transition*/: all ease 0.3s;
@@ -87,7 +86,8 @@ body {
       background: -webkit-linear-gradient(#2876b2, #549ad0);
       background: -moz-linear-gradient(#2876b2, #549ad0);
       background: -o-linear-gradient(#2876b2, #549ad0);
-      background: linear-gradient(rgb(222, 238, 238) 50%, #549ad0 50%);
+      /*background: linear-gradient(rgb(222, 238, 238) 50%, #549ad0 50%);*/
+      background: linear-gradient(rgba(222, 238, 238, 0.5) 50%, #549ad0 50%);
       background-repeat: repeat;
       -webkit-background-size: 100% 200%;
       -moz-background-size: 100% 200%;
@@ -102,11 +102,10 @@ body {
 
     .portlet:hover .portlet-header{
       color: #ffffff;
-
       /*background-color: #2572AF;*/
-
       background-position: 0 -100%;
-
+      height: auto;
+      visibility: visible;
     }
 
 
@@ -684,7 +683,8 @@ header{
   }
 
   .portlet:hover{
-    cursor: -webkit-grab; cursor: -moz-grab;
+   /* disabled on 20/01
+    cursor: -webkit-grab; cursor: -moz-grab;*/
   }
 
 
@@ -737,7 +737,6 @@ content: "%";
   padding-left: 0.5em;
 }
 
-
 body, html {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -752,7 +751,9 @@ body, html {
 }
 
 .widget_Tile_main .portlet-header{
-  display: none;
+  visibility: hidden;
+  /*height: 0;*/
+  /*padding: 0;*/
 }
 
 .widget_Tile_main:hover .portlet-header{
@@ -775,5 +776,45 @@ body, html {
 
 
 
+/**REFACTOR**/
+/*refactor widgetstructure*/
+.portlet-header{
+ text-align: left;
+ padding-left: 0.5em;
+ position: absolute;
+ top: 0;
+ z-index: 9999;
+ width: 100%;
+ cursor: -webkit-grab;
+}
+
+.portlet-content {
+  padding: 1em;
+  overflow: visible;
+  position: relative;
+  padding-top: 4em;
+}
+
+.contenitoreMap{
+  min-height: 318px !important;
+}
+
+.portlet{
+  position: relative;
+}
+
+.menu .portlet .portlet-header {
+
+  text-align: center;
+
+}
 
 
+.gmnoprint{
+  margin-top: 4em !important;
+}
+
+
+ .move:hover{
+    cursor: -webkit-grab; cursor: -moz-grab;
+  }

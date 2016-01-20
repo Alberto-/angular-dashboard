@@ -45,14 +45,14 @@
 <body>
     <!-- GRAVATAR Start -->
     <script type="text/javascript">
-       $(document).ready(function(){
-           var hash = CryptoJS.MD5("albe45313@gmail.com");
-           document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
-       });    
-   </script>
-   <!-- GRAVATAR End -->
+     $(document).ready(function(){
+         var hash = CryptoJS.MD5("albe45313@gmail.com");
+         document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
+     });    
+ </script>
+ <!-- GRAVATAR End -->
 
-   <div class="container" ng-app="dashboardApp" >
+ <div class="container" ng-app="dashboardApp" >
     <div class="content" ng-controller="mainController">
         <aside class="col-md-2 dash_min_height menu main_left_content shadow-z-3">
             <div class="divSplash">
@@ -83,9 +83,9 @@
         <div class="col-md-10 col-md-offset-2 dash_min_height main_right_content">
             <header class="">
                 <div class="user-info">
-                   <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
-               </div>
-           </header>
+                 <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
+             </div>
+         </header>
         <!--  <div class="showTemplateContainer">
                 <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
                 <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
@@ -157,6 +157,14 @@
 
                 <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions"  id="riga_1Col_2">
                     <div class="portlet widget_Tile_main" id="widgetNews">
+                        <div class="portlet-header">
+                            <div class="widgetHeadLeft">
+                                <i class="fa fa-circle-o-notch widgetIcon iconCircle"></i>
+                            </div>
+                            <div class="widgetHeadRight">
+                            <div class="widgetTilte"><span class="widgetTitleText">{{title}}Downloads</span></div>
+                            </div>
+                        </div>
                         <div class="portlet-content  widget_Tile_Content bg_green">
                             <div class="col-md-6 col-xs-6 col-lg-6  widget_Tile_left">
                                 <i class="fa fa-cloud-download fa-5x"></i>
@@ -195,9 +203,6 @@
             </div>
 
         </div>
-
-
-
 
     </div>  <!-- dashboard main content -->
 </div> <!-- content --> 
