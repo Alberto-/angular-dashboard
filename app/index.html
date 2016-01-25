@@ -6,14 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Angularjs Dashboard</title>
-    <link rel="import" href="inc/header_inclusions.html">
+    <!-- <link rel="import" href="inc/header_inclusions.html"> -->
+
+    <!-- ### HEADER INCLUSIONS -->
+    <!-- JQuery -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--font Awesome-->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap Material-->
+    <link rel="stylesheet" href="assets/lib/material/css/material.min.css">
+    <link rel="stylesheet" href="assets/lib/material/css/material-fullpalette.min.css">
+    <link rel="stylesheet" href="assets/lib/material/css/ripples.min.css">
+    <link rel="stylesheet" href="assets/lib/material/css/roboto.min.css">
+    <script src="assets/lib/material/js/material.min.js"></script>
+    <script src="assets/lib/material/js/ripples.min.js"></script> 
+    <!--Angular -->
+    <script src="assets/lib/angularjs/angular.min.js"></script> 
+    <script src="assets/lib/angularjs/sortable.js"></script> 
+    <script src="assets/lib/angularjs/angular-route.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js" ></script>
+    <!-- chartjs -->
+    <script src="assets/lib/chartjs/Chart.js"></script>
+    <script src="assets/lib/angular-chart/angular-chart.js"></script>
+    <link rel="stylesheet" href="assets/lib/angular-chart/angular-chart.css">
+    <!-- weather-icons -->
+    <link rel="stylesheet" href="assets/lib/weather-icons-master/css/weather-icons.css">
+    <link rel="stylesheet" href="assets/lib/css-percentage-circle/circle.css">
+    <!-- crypto -->
+    <script src="assets/lib/crypto.js"></script>
+
 
     <!-- custom configuration-->
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/css/roboto.css">
 
     <script src="app.js"></script>
-    <link rel="import" href="inc/widgets_inclusions.html">
+    <!-- <link rel="import" href="inc/widgets_inclusions.html"> -->
+
+
+    <!-- **#WIDGET INCLUSIONS** -->
+    <!-- WIDGET_Chart_Bar  -->
+    <script src="widgets/widgetsChart/widgetBar/widgetBarController.js"></script>
+    <script src="widgets/widgetsChart/widgetBar/widgetBarService.js"></script>
+    <script src="widgets/widgetsChart/widgetBar/widgetBarDirective.js"></script>
+    <!-- WIDGET_Chart_Polar -->
+    <script src="widgets/widgetsChart/widgetPolar/widgetPolarService.js"></script>
+    <script src="widgets/widgetsChart/widgetPolar/widgetPolarController.js"></script>
+    <script src="widgets/widgetsChart/widgetPolar/widgetPolarDirective.js"></script>
+    <script src="widgets/widgetsChart/widgetPolar/widgetPolarView.html"></script>
+    <!-- WIDGET_Maps -->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
+    <script src="widgets/widgetMaps/services.js"></script>
+    <script src="widgets/widgetMaps/widgetMapsController.js"></script>
+    <script src="widgets/widgetMaps/widgetMapsDirectives.js"></script>
+    <!-- WIDGET_Weather -->
+    <script src="widgets/widgetWeather/widgetWeatherService.js"></script>
+    <script src="widgets/widgetWeather/widgetWeatherController.js"></script>
+    <script src="widgets/widgetWeather/widgetWeatherDirective.js"></script>
+    <script src="widgets/widgetWeather/widgetWeatherFilter.js"></script>
+    <script src="widgets/widgetWeather/widgetWeatherView.html"></script>
+    <!-- **WIDGET_Circles** -->
+    <script src="widgets/widgetCirlcePercentage/widgetCircleService.js"></script>
+    <!-- WidgetCircle I -->
+    <script src="widgets/widgetCirlcePercentage/widgetCircle_I/widgetCircleDirective.js"></script>
+    <script src="widgets/widgetCirlcePercentage/widgetCircle_I/widgetCircleController.js"></script>
+    <!-- WidgetCircle II -->
+    <script src="widgets/widgetCirlcePercentage/widgetCircle_II/widgetCircleDirective.js"></script>
+    <script src="widgets/widgetCirlcePercentage/widgetCircle_II/widgetCircleController.js"></script>
+    <!-- WidgetCircle III -->
+    <script src="widgets/widgetCirlcePercentage/widgetCircle_III/widgetCircleDirective.js"></script>
+    <script src="widgets/widgetCirlcePercentage/widgetCircle_III/widgetCircleController.js"></script>
+    <!-- WidgetCircle IV -->
+    <script src="widgets/widgetCirlcePercentage/widgetCircle_IV/widgetCircleDirective.js"></script>
+    <script src="widgets/widgetCirlcePercentage/widgetCircle_IV/widgetCircleController.js"></script>
 
     <script>
     // MATERIAL INIT
@@ -45,14 +116,14 @@
 <body>
     <!-- GRAVATAR Start -->
     <script type="text/javascript">
-     $(document).ready(function(){
-         var hash = CryptoJS.MD5("albe45313@gmail.com");
-         document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
-     });    
- </script>
- <!-- GRAVATAR End -->
+       $(document).ready(function(){
+           var hash = CryptoJS.MD5("albe45313@gmail.com");
+           document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
+       });    
+   </script>
+   <!-- GRAVATAR End -->
 
- <div class="container" ng-app="dashboardApp" >
+   <div class="container" ng-app="dashboardApp" >
     <div class="content" ng-controller="mainController">
         <aside class="col-md-2 dash_min_height menu main_left_content shadow-z-3">
             <div class="divSplash">
@@ -83,9 +154,9 @@
         <div class="col-md-10 col-md-offset-2 dash_min_height main_right_content">
             <header class="">
                 <div class="user-info">
-                 <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
-             </div>
-         </header>
+                   <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
+               </div>
+           </header>
         <!--  <div class="showTemplateContainer">
                 <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
                 <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
@@ -162,7 +233,7 @@
                                 <i class="fa fa-circle-o-notch widgetIcon iconCircle"></i>
                             </div>
                             <div class="widgetHeadRight">
-                            <div class="widgetTilte"><span class="widgetTitleText">{{title}}Downloads</span></div>
+                                <div class="widgetTilte"><span class="widgetTitleText">{{title}}Downloads</span></div>
                             </div>
                         </div>
                         <div class="portlet-content  widget_Tile_Content bg_green">

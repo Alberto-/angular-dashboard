@@ -89,9 +89,9 @@ body {
       /*background: linear-gradient(rgb(222, 238, 238) 50%, #549ad0 50%);*/
       background: linear-gradient(rgba(222, 238, 238, 0.5) 50%, #549ad0 50%);
       background-repeat: repeat;
-      -webkit-background-size: 100% 200%;
-      -moz-background-size: 100% 200%;
-      background-size: 100% 200%;
+      -webkit-background-size: 100% 201%;
+      -moz-background-size: 100% 201%;
+      background-size: 100% 201%;
       -webkit-transition: all .5s linear;
       -moz-transition: all .5s linear;
       -o-transition: all .5s linear;
@@ -684,8 +684,8 @@ header{
 
   .portlet:hover{
    /* disabled on 20/01
-    cursor: -webkit-grab; cursor: -moz-grab;*/
-  }
+   cursor: -webkit-grab; cursor: -moz-grab;*/
+ }
 
 
 /*
@@ -747,7 +747,8 @@ body, html {
 }
 
 .cursorGrap{
-  cursor: -webkit-grab;
+  cursor: grab;
+
 }
 
 .widget_Tile_main .portlet-header{
@@ -785,7 +786,8 @@ body, html {
  top: 0;
  z-index: 9999;
  width: 100%;
- cursor: -webkit-grab;
+ cursor: grab;
+ cursor: pointer;
 }
 
 .portlet-content {
@@ -815,6 +817,23 @@ body, html {
 }
 
 
- .move:hover{
-    cursor: -webkit-grab; cursor: -moz-grab;
-  }
+.move:hover{
+  cursor: -webkit-grab; 
+  cursor: -moz-grab;
+}
+
+
+
+.menu .widget_Tile_main .portlet-header{
+  visibility: visible;
+}
+
+/*cross browser compatibility*/
+/*
+.main_right_content{
+  margin:0 !important;
+}
+
+.container {
+  width: 100%;
+}*/
