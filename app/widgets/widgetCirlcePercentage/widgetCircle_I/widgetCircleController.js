@@ -2,17 +2,21 @@ app.controller('widgetCircleController_I', ["$scope", "$rootScope", "$http", "$c
 
 	function ($scope, $rootScope, $http, $compile, widgetCircleService) {
 
+		$scope.percentage;
+		$scope.loadInfo = function(){
 
-		widgetCircleService.getInfo().success(function(data){
+			widgetCircleService.getInfo().success(function(data){
 
-			$scope.json = data.widgetCircle1; 
-			$scope.percentage = $scope.json.percentage;
-			$scope.title=$scope.json.title;
-		$scope.colorBar=widgetCircleService.checkLevel($scope.percentage);
+				$scope.json = data.widgetCircle1; 
+				$scope.percentage = $scope.json.percentage;
+				$scope.title=$scope.json.title;
+				$scope.colorBar=widgetCircleService.checkLevel($scope.percentage);
 
-		}).error(function(data){
-			console.log("error loading windget Circle I");
-		});
+			}).error(function(data){
+				console.log("error loading windget Circle I");
+			});
+		}
 
+		$scope.loadInfo();
 
 	}]);

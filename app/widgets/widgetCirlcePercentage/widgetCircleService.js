@@ -3,9 +3,6 @@ app.factory('widgetCircleService', ["$http", function($http){
 	var labels = ["success","medium","warning","error"];
 
 	function checkLevelColors (val){
-
-		console.log('\n\nchecking'+val);
-
 		switch(true){
 			case val>=75:
 			return labels[0];

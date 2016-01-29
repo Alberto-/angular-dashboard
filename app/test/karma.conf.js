@@ -6,7 +6,7 @@ module.exports = function(config){
     files : [
       'assets/lib/angularjs/angular.min.js',
       'assets/lib/angularjs/angular-route.min.js',
-         'assets/lib/angularjs/sortable.js',
+      'assets/lib/angularjs/sortable.js',
       'assets/lib/chartjs/*.js',
       'assets/lib/angular-chart/*.js',
       'assets/lib/angular-mocks/angular-mocks.js',
