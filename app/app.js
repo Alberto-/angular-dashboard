@@ -25,12 +25,13 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
     },
   start: function( event, ui ) {
     $(".draggable").addClass("draggable_min_height");
+     $(".draggable").addClass("showBordersMobile");
     // $("#showBorders").prop('checked', true);
     corticaFireResize();
   },
   stop: function( event, ui ) {
         $(".draggable").removeClass("draggable_min_height");
-     // $(".draggable").removeClass("showBorders");
+     $(".draggable").removeClass("showBordersMobile");
      //  $("#showBorders").prop('checked', false);
        corticaFireResize();
    }

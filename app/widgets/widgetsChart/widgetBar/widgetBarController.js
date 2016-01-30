@@ -1,62 +1,36 @@
 'use strict';
 app.controller('widgetBarController', [ "$scope","$rootScope","$http","$compile","widgetBarService",
   function ($scope, $rootScope, $http, $compile, widgetBarService) {
-    $scope.title="Grafico 5";
-    $scope.desc="grafico descrizione 123456";
-
+    $scope.title="Bar chart";
+    $scope.desc="Bar chart description";
 
     widgetBarService.getInfo().success(function(data){
       console.log(data); 
 
       //main chart label
-      $scope.customerLabels = ["Customers" + " - " + "Leads"];
+      $scope.chartBarLabels = ["Customers" + " - " + "Leads"];
 
       //data series
       $scope.series = widgetBarService.getLabels();
 
       //chart data
-      $scope.customerData = [
-        [data.customers.total],
-        [data.leads.total]
+      $scope.chartBarData = [
+      [data.customers.total],
+      [data.leads.total]
       ];
-
-
     }).error(function(data){
-      console.log("error loading windget 5");
+      console.log("error loading windget Bar chart");
 
     });
 
 
 
 
-// {
-//   "customers":{
-//     label : "Customers",
-//     value : 55
-//   },
-//   "leads":{
-//     label : "Leads",
-//     value : 100
-//   }
-
-// }
-
-//
-//               widget5Factory.getInfo().success(function(data){
-//                alert(data);
-//              }).error(function(data){
-//
-//              })
-
-
-
-$scope.customerOptions = {
-              //                    barValueSpacing: 150,
-              //                    barDatasetSpacing: -10,
-            };
-
-
-          }]);
+    $scope.chartBarOptions = {
+      //barValueSpacing: 150,
+      //barDatasetSpacing: -10,
+    };
+}]);
 
 
 

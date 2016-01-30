@@ -611,11 +611,11 @@ header{
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (max-width:  767px) {
+/*@media (max-width:  767px) {
   .main_left_content{
     position: static;
   }
-}
+  }*/
 
 
 
@@ -628,29 +628,29 @@ header{
 
 
 
-/*widget circles*/
+  /*widget circles*/
 
-.border_success{
- border-color: #4caf50 !important;
-}
-
-
-.border_medium{
- border-color: #307bbb !important;
-}
-
-.border_warning{
- border-color: #ff5722 !important;
-}
-
-.border_error{
- border-color: #f44336 !important;
-}
+  .border_success{
+   border-color: #4caf50 !important;
+ }
 
 
+ .border_medium{
+   border-color: #307bbb !important;
+ }
+
+ .border_warning{
+   border-color: #ff5722 !important;
+ }
+
+ .border_error{
+   border-color: #f44336 !important;
+ }
 
 
-.bg_red{
+
+
+ .bg_red{
   background-color: #FB5651;
 }
 
@@ -836,4 +836,37 @@ body, html {
 
 .container {
   width: 100%;
-}*/
+  }*/
+
+
+  .logoHeader{
+    float: left;
+    display: none;
+  }
+
+  /* Small devices (tablets, 768px and up) */
+  @media (max-width: 768px ) {
+    .logoHeader{
+      float: left;
+      display: block;
+    }
+.user-info{
+   display: none;
+}
+
+.logoMenu{
+ display: none; 
+  }
+
+  .menu .portlet{
+    margin: 0;
+  }
+
+  .showBordersMobile{
+border: 2px dashed #6EB4E6;
+      min-height: 200px;
+      min-width: 5em;
+  }
+
+}
+

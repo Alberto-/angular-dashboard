@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+<script src="assets/lib/jquery.ui.touch-punch.min.js"></script>
+
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -125,9 +130,9 @@
 
    <div class="container" ng-app="dashboardApp" >
     <div class="content" ng-controller="mainController">
-        <aside class="col-md-2 dash_min_height menu main_left_content shadow-z-3">
+        <aside class="col-xs-2 col-sm-2 col-md-2 dash_min_height menu main_left_content shadow-z-3">
             <div class="divSplash">
-                <div class="logo">
+                <div class="logo logoMenu">
                     <div class="logo-content">
                         <h3 class="marchio color1">Angular </h3>
 
@@ -151,8 +156,14 @@
         </aside>
 
         <!-- dashboard main content -->
-        <div class="col-md-10 col-md-offset-2 dash_min_height main_right_content">
+        <div class="col-xs-10 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 dash_min_height main_right_content">
             <header class="">
+            <div class="logo logoHeader">
+                <div class="logo-content">
+                    <h3 class="marchio color1">Angular </h3>
+                    <h3 class="marchio color2">Dashboard </h3>
+                </div>
+            </div>
                 <div class="user-info">
                    <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
                </div>
