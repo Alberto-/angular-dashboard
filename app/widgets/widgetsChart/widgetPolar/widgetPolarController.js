@@ -1,41 +1,36 @@
 app.controller('widgetPolarController', ["$scope", "$rootScope", "$http", "$compile", "widgetPolarService",
 
  function ($scope, $rootScope, $http, $compile, widgetPolarService) {
-    $scope.title="Grafico 6";
-    $scope.desc="grafico descrizione 123456";
+  $scope.title="Polar chart";
+  $scope.desc="Polar chart description";
 
-    console.log('ricarico grafico');
-
-
-    $scope.contractsLabels = widgetPolarService.getLabels();
+  console.log('Loading chart ...');
 
 
-    widgetPolarService.getInfo().success(function(data){
-      console.log(data); 
+  $scope.chartPolarLabels = widgetPolarService.getLabels();
+  $scope.chartPolarColours = widgetPolarService.getColors();
 
-      $scope.json = data; 
 
-      $scope.totalActive = $scope.json.active;
-      $scope.totalNotActive =  $scope.json.notActive;
-      $scope.totalCancelled =  $scope.json.cancelled;
-      $scope.totalTerminated =  $scope.json.terminated;
+  widgetPolarService.getInfo().success(function(data){
+    console.log(data); 
 
-      $scope.contractsData = [
-      $scope.totalActive,
-      $scope.totalNotActive,
-      $scope.totalCancelled,
-      $scope.totalTerminated
-      ];
+    $scope.json = data; 
 
-      $scope.contractsColours = [
-      "#9ED54C",
-      "#91C249",
-      "#EC2A2D",
-      "#8D0521"
-      ];
+    $scope.totalActive = $scope.json.active;
+    $scope.totalNotActive =  $scope.json.notActive;
+    $scope.totalCancelled =  $scope.json.cancelled;
+    $scope.totalTerminated =  $scope.json.terminated;
+
+    $scope.chartPolarData = [
+    $scope.totalActive,
+    $scope.totalNotActive,
+    $scope.totalCancelled,
+    $scope.totalTerminated
+    ];
+
 
   }).error(function(data){
-      console.log("error loading windget Polar");
+    console.log("error loading windget Polar");
   });
 
 

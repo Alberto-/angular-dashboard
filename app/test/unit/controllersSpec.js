@@ -4,7 +4,7 @@
 describe('Dashboard widgets', function() {
 
 
-	describe('Test Servces - Widget cirles', function() {
+	describe('Test Services - Widget cirles', function() {
 		beforeEach(module('dashboardApp'));
 
 		var $controller;
@@ -17,7 +17,7 @@ describe('Dashboard widgets', function() {
 		}));
 
 		describe('widgetCircleService', function() {
-			it('Json data widget1 expect percentage = 90', function() {
+			it('Json data widget circle 1 expect percentage = 90, ', function() {
 				var $scope = {};
 				var controller = $controller('widgetCircleController_I', { $scope: $scope });
 				var result;
@@ -29,19 +29,7 @@ describe('Dashboard widgets', function() {
 					expect(result).not.toBe(null);
 				});
 			});
-
-
-			it('expect check level colors ', function() {
-				var result;
-				expect(service.checkLevel(75)).toMatch("success");
-				expect(service.checkLevel(50)).toMatch("medium");
-				expect(service.checkLevel(25)).toMatch("warning");
-				expect(service.checkLevel(5)).toMatch("error");
-			});
-
-
 		});
-
 
 
 	});
