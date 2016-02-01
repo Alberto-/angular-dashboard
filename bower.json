@@ -1,0 +1,17 @@
+{
+  "name": "ngular-dashboard-bower",
+  "description": "bower inclusions",
+  "version": "0.0.0",
+  "homepage": "https://bitbucket.org/apiras/dashboard.git",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+   "jquery": "1.11.3",
+   "jquery-ui": "1.11.3",
+   "angular": "1.4.7",
+   "angular-ui-sortable": "0.13.4",
+   "angular-route": "1.4.7",
+   "angular-mocks": "1.4.7",
+   "bootstrap": "3.1.1"
+ }
+}

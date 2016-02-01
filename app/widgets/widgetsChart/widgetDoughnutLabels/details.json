@@ -1,0 +1,11 @@
+{
+	
+	"active" : 5,
+	
+	"notActive" : 2,
+
+	"cancelled" : 3,
+
+	"terminated" : 1
+
+}

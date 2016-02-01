@@ -755,7 +755,10 @@ body, html {
 
 .cursorGrap{
   cursor: grab;
+}
 
+.cursorPointer{
+  cursor: pointer;
 }
 
 .widget_Tile_main .portlet-header{

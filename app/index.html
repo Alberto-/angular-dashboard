@@ -6,55 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Angularjs Dashboard</title>
+    <!-- ### HEADER INCLUSIONS -->
     <!-- <link rel="import" href="inc/header_inclusions.html"> -->
 
-    <!-- ### HEADER INCLUSIONS -->
     <!-- JQuery -->
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-
-<script src="assets/lib/jquery.ui.touch-punch.min.js"></script>
-
+    <script src="assets/bower_components/jquery/dist/jquery.js"></script>
+    <script src="assets/bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/lib/jquery.ui.touch-punch.min.js"></script>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <!--font Awesome-->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/lib/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- Bootstrap Material-->
-    <link rel="stylesheet" href="assets/lib/material/css/material.min.css">
-    <link rel="stylesheet" href="assets/lib/material/css/material-fullpalette.min.css">
-    <link rel="stylesheet" href="assets/lib/material/css/ripples.min.css">
-    <link rel="stylesheet" href="assets/lib/material/css/roboto.min.css">
-    <script src="assets/lib/material/js/material.min.js"></script>
-    <script src="assets/lib/material/js/ripples.min.js"></script> 
+    <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/material.min.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/material-fullpalette.min.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/ripples.min.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/roboto.min.css">
+    <script src="assets/lib/bootstrap-material-design/js/material.min.js"></script>
+    <script src="assets/lib/bootstrap-material-design/js/ripples.min.js"></script> 
     <!--Angular -->
-    <script src="assets/lib/angularjs/angular.min.js"></script> 
-    <script src="assets/lib/angularjs/sortable.js"></script> 
-    <script src="assets/lib/angularjs/angular-route.min.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js" ></script>
+    <script src="assets/bower_components/angular/angular.min.js"></script> 
+    <script src="assets/bower_components/angular-ui-sortable/sortable.js"></script> 
+    <script src="assets/bower_components/angular-route/angular-route.min.js"></script>
+
     <!-- chartjs -->
     <script src="assets/lib/chartjs/Chart.js"></script>
     <script src="assets/lib/angular-chart/angular-chart.js"></script>
     <link rel="stylesheet" href="assets/lib/angular-chart/angular-chart.css">
+
+
+
+    <!-- morris -->
+    <link rel="stylesheet" href="assets/lib/morris/morris.css">
+    <script src="assets/lib/raphael/raphael.js"></script>
+    <script src="assets/lib/morris/morris.min.js"></script>
+
     <!-- weather-icons -->
     <link rel="stylesheet" href="assets/lib/weather-icons-master/css/weather-icons.css">
-    <link rel="stylesheet" href="assets/lib/css-percentage-circle/circle.css">
+    <link rel="stylesheet" href="assets/lib/css-percentage-circle/circle2.css">
     <!-- crypto -->
     <script src="assets/lib/crypto.js"></script>
 
 
     <!-- custom configuration-->
     <link rel="stylesheet" href="assets/css/dashboard.css">
-    <link rel="stylesheet" href="assets/css/roboto.css">
-
     <script src="app.js"></script>
-    <!-- <link rel="import" href="inc/widgets_inclusions.html"> -->
 
 
     <!-- **#WIDGET INCLUSIONS** -->
+    <!-- <link rel="import" href="inc/widgets_inclusions.html"> -->
     <!-- WIDGET_Chart_Bar  -->
     <script src="widgets/widgetsChart/widgetBar/widgetBarController.js"></script>
     <script src="widgets/widgetsChart/widgetBar/widgetBarService.js"></script>
@@ -92,6 +96,8 @@
     <script src="widgets/widgetCirlcePercentage/widgetCircle_IV/widgetCircleController.js"></script>
 
     <script>
+
+
     // MATERIAL INIT
     $(document).ready(function() {
         $.material.init();
@@ -158,12 +164,12 @@
         <!-- dashboard main content -->
         <div class="col-xs-10 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 dash_min_height main_right_content">
             <header class="">
-            <div class="logo logoHeader">
-                <div class="logo-content">
-                    <h3 class="marchio color1">Angular </h3>
-                    <h3 class="marchio color2">Dashboard </h3>
+                <div class="logo logoHeader">
+                    <div class="logo-content">
+                        <h3 class="marchio color1">Angular </h3>
+                        <h3 class="marchio color2">Dashboard </h3>
+                    </div>
                 </div>
-            </div>
                 <div class="user-info">
                    <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
                </div>
@@ -274,18 +280,38 @@
             <div class="row ">
                 <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_1">
                     <widgetbar></widgetbar>
+
+
+<!-- 
+morris:
+
+<div id="graph"></div>
+<script type="text/javascript">
+   Morris.Donut({
+  element: 'graph',
+  data: [
+    {value: 70, label: 'foo'},
+    {value: 15, label: 'bar'},
+    {value: 10, label: 'baz'},
+    {value: 5, label: 'A really really long label'}
+  ],
+  formatter: function (x) { return x + "%"}
+}).on('click', function(i, row){
+  console.log(i, row);
+});
+</script>
+ -->
+
                 </div>
                 <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_2">
                     <widgetpolar></widgetpolar>
                 </div>
                 <div class="col-md-12">
                     <input type="checkbox" id="showBordersButton" name="showBordersButton" class="borders"/>
-                    <label for="showBordersButton" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
+                    <label for="showBordersButton" class="btn-eye tooltips cursorPointer"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
                 </div>
             </div>
-
         </div>
-
     </div>  <!-- dashboard main content -->
 </div> <!-- content --> 
 </div> <!-- container --> 

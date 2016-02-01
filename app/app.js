@@ -19,7 +19,7 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
       console.log(ui);
       var listaId=this.id;
       var cardId=ui.item[0].id;
-      alert("update verso colonna :"+listaId+"\n elemento id: "+cardId);
+      console.log("-->update verso colonna :"+listaId+"\n elemento id: "+cardId);
       reloadChart();
 //            $scope.moveCard(cardId,listaId);
     },
@@ -50,10 +50,11 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
 
 
 
-
-
-
 function reloadChart(){
+  
+  //
+  $(window).trigger('resize');
+
 if (document.createEvent) { // W3C
   var ev = document.createEvent('Event');
   ev.initEvent('resize', true, true);

@@ -91,6 +91,12 @@ Instructions:
 
 prerequisites : node
 
+npm install
+
+that also  runs : bower install
+
+
+
 1) how to run:
 
 	(install globally http-server : npm install http-server -g)
