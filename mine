@@ -87,9 +87,9 @@ http://themes-pixeden.com/demos/glazzed/
 
 
 
-Instructions:
+Istruzioni
 
-prerequisites : node
+install node
 
 1) how to run:
 
@@ -99,8 +99,8 @@ prerequisites : node
 
 	"http-server -a 0.0.0.0 -p 8000"
 
-or 
 
+or:
 under app/
 
  node assets/lib/http-server/bin/http-server -a 0.0.0.0 -p 8000

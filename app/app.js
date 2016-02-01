@@ -20,20 +20,20 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
       var listaId=this.id;
       var cardId=ui.item[0].id;
       alert("update verso colonna :"+listaId+"\n elemento id: "+cardId);
-      reloadChart(cardId)
+      reloadChart();
 //            $scope.moveCard(cardId,listaId);
     },
   start: function( event, ui ) {
     $(".draggable").addClass("draggable_min_height");
      $(".draggable").addClass("showBordersMobile");
     // $("#showBorders").prop('checked', true);
-    corticaFireResize();
+    reloadChart();
   },
   stop: function( event, ui ) {
         $(".draggable").removeClass("draggable_min_height");
      $(".draggable").removeClass("showBordersMobile");
      //  $("#showBorders").prop('checked', false);
-       corticaFireResize();
+       reloadChart();
    }
   /** OTHER CONTROLS ON START AND STOP DRAGGING
   start: function( event, ui ) {
@@ -51,12 +51,9 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
 
 
 
-function reloadChart(id){
-  corticaFireResize();
-}
 
 
-function corticaFireResize(){
+function reloadChart(){
 if (document.createEvent) { // W3C
   var ev = document.createEvent('Event');
   ev.initEvent('resize', true, true);

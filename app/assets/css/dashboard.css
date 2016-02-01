@@ -414,7 +414,9 @@ header{
   .widget_Tile_main{
     display: table;
   }
-
+.widget_Tile_main .portlet-content{
+  padding-top: 2em;
+}
 
 
   .widget_Tile_Content{
@@ -576,8 +578,13 @@ header{
   min-height: 318px !important;
 }
 .small_widget .portlet{
+height: 318px;
+  /*min-height: 200px !important;*/
+}
 
-  min-height: 200px !important;
+
+.small_widget .widget_Tile_main{
+  height: 153px;
 }
 
 .x_small_widget .portlet{
@@ -869,4 +876,7 @@ border: 2px dashed #6EB4E6;
   }
 
 }
+
+
+
 

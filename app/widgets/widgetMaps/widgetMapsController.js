@@ -29,7 +29,7 @@ function setMarkers(map) {
   // direction to the right and in the Y direction down.
   var imagePoint = {
       /*point perfect centered*/
-      url: 'map-marker-icon-32.png',
+      url: 'assets/img/map-marker-icon-32.png',
       // url: 'map-marker-icon.png',
       // This marker is 20 pixels wide by 32 pixels high.
       size: new google.maps.Size(32, 32),
@@ -40,13 +40,13 @@ function setMarkers(map) {
   };
 
  var imageHeart = {
-      url: 'heart32.png',
+      url: 'assets/img/heart32.png',
       size: new google.maps.Size(32, 32),
       origin: new google.maps.Point(0, 0),
       anchor: new google.maps.Point(16, 32)
   };
 
-
+// sets all points in the map
     for (var i = 0; i < locations.length; i++) {
       var beach = locations[i];
       if(beach[4]==="preferite"){
