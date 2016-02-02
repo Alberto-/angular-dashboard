@@ -24,20 +24,6 @@ app.controller('widgetBarController', [ "$scope","$rootScope","$http","$compile"
     });
 
 
-    Morris.Donut({
-      element: 'graph',
-      resize: true,
-      data: [
-      {value: 70, label: 'foo'},
-      {value: 15, label: 'bar'},
-      {value: 10, label: 'baz'},
-      {value: 5, label: 'A really really long label'}
-      ],
-      formatter: function (x) { return 20 + "%"}
-    }).on('click', function(i, row){
-      console.log(i, row);
-    });
-
     $scope.chartBarOptions = {
       //barValueSpacing: 150,
       //barDatasetSpacing: -10,

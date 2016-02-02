@@ -1,17 +1,17 @@
-app.controller('widgetPolarController', ["$scope", "$rootScope", "$http", "$compile", "widgetPolarService",
+app.controller('widgetDoughnutController', ["$scope", "$rootScope", "$http", "$compile", "widgetDoughnutService",
 
- function ($scope, $rootScope, $http, $compile, widgetPolarService) {
+ function ($scope, $rootScope, $http, $compile, widgetDoughnutService) {
   $scope.title="Polar chart";
   $scope.desc="Polar chart description";
 
   console.log('Loading chart ...');
 
 
-  $scope.chartPolarLabels = widgetPolarService.getLabels();
-  $scope.chartPolarColours = widgetPolarService.getColors();
+  $scope.chartPolarLabels = widgetDoughnutService.getLabels();
+  $scope.chartPolarColours = widgetDoughnutService.getColors();
 
 
-  widgetPolarService.getInfo().success(function(data){
+  widgetDoughnutService.getInfo().success(function(data){
     console.log(data); 
 
     $scope.json = data; 

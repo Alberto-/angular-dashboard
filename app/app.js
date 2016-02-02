@@ -7,6 +7,7 @@ app.config(function ($httpProvider) {
 
 
 app.controller('mainController', function ($scope, $rootScope, $http, $compile) {
+
   $scope.test="test";
   $scope.sortableOptions = {
     connectWith: ".draggable",

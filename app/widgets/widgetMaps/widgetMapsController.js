@@ -1,7 +1,7 @@
 'use strict';
 app.controller('widgetMapsController', [ "$scope","$rootScope","$http","$compile","widgetMapFactory",
   function ($scope, $rootScope, $http, $compile, widgetMapFactory) {
-    $scope.title="Mappa";
+    $scope.title="Headquarters Map";
 
 
      function initMap() {

@@ -1,4 +1,4 @@
-app.factory('widgetPolarService', ["$http", function($http){
+app.factory('widgetDoughnutService', ["$http", function($http){
 
 	labels = [
 	"Total Active",
@@ -17,7 +17,7 @@ app.factory('widgetPolarService', ["$http", function($http){
 
 	return {
 		getInfo: function(){
-			return $http.get('widgets/widgetsChart/widgetPolar/details.json');
+			return $http.get('widgets/widgetsChart/widgetDoughnut/details.json');
 		},
 		getLabels: function(){
 			return labels;

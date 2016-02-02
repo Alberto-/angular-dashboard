@@ -414,9 +414,9 @@ header{
   .widget_Tile_main{
     display: table;
   }
-.widget_Tile_main .portlet-content{
-  padding-top: 2em;
-}
+  .widget_Tile_main .portlet-content{
+    padding-top: 2em;
+  }
 
 
   .widget_Tile_Content{
@@ -571,14 +571,17 @@ header{
 
 .large_widget .portlet{
   min-height: 318px !important;
+  /*max-height: 350px;*/
 }
+
 
 .medium_widget .portlet{
 
   min-height: 318px !important;
+  max-height: 358px !important;
 }
 .small_widget .portlet{
-height: 318px;
+  height: 318px;
   /*min-height: 200px !important;*/
 }
 
@@ -592,6 +595,21 @@ height: 318px;
   min-height: 200px !important;
 }
 
+.x_small_widget .portlet .morrisChart{
+  height: 170px !important;
+  margin-top: -1.5em;
+  margin-bottom: -2em;
+}
+
+.small_widget .portlet .morrisChart{
+  height: 280px !important;
+  margin-top: -1.5em;
+  margin-bottom: -2em;
+}
+
+.morrisChart{
+  height: 300px;
+}
 
 
 
@@ -818,7 +836,7 @@ body, html {
 .menu .portlet .portlet-header {
 
   text-align: center;
-
+  overflow: hidden;
 }
 
 
@@ -860,26 +878,22 @@ body, html {
       float: left;
       display: block;
     }
-.user-info{
-   display: none;
-}
+    .user-info{
+     display: none;
+   }
 
-.logoMenu{
- display: none; 
-  }
+   .logoMenu{
+     display: none; 
+   }
 
-  .menu .portlet{
+   .menu .portlet{
     margin: 0;
   }
 
   .showBordersMobile{
-border: 2px dashed #6EB4E6;
-      min-height: 200px;
-      min-width: 5em;
+    border: 2px dashed #6EB4E6;
+    min-height: 200px;
+    min-width: 5em;
   }
 
 }
-
-
-
-

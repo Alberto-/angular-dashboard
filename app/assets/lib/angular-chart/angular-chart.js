@@ -1,11 +1,13 @@
 (function (factory) {
   'use strict';
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['angular', 'chart.js'], factory);
-  } else if (typeof exports === 'object') {
+  if (typeof exports === 'object') {
     // Node/CommonJS
-    module.exports = factory(require('angular'), require('chart.js'));
+    module.exports = factory(
+      typeof angular !== 'undefined' ? angular : require('angular'),
+      typeof Chart !== 'undefined' ? Chart : require('chart.js'));
+  }  else if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['angular', 'chart'], factory);
   } else {
     // Browser globals
     factory(angular, Chart);
@@ -26,9 +28,15 @@
     '#4D5360'  // dark grey
   ];
 
-  angular.module('chart.js', [])
+  var usingExcanvas = typeof window.G_vmlCanvasManager === 'object' &&
+    window.G_vmlCanvasManager !== null &&
+    typeof window.G_vmlCanvasManager.initElement === 'function';
+
+  if (usingExcanvas) Chart.defaults.global.animation = false;
+
+  return angular.module('chart.js', [])
     .provider('ChartJs', ChartJsProvider)
-    .factory('ChartJsFactory', ['ChartJs', ChartJsFactory])
+    .factory('ChartJsFactory', ['ChartJs', '$timeout', ChartJsFactory])
     .directive('chartBase', ['ChartJsFactory', function (ChartJsFactory) { return new ChartJsFactory(); }])
     .directive('chartLine', ['ChartJsFactory', function (ChartJsFactory) { return new ChartJsFactory('Line'); }])
     .directive('chartBar', ['ChartJsFactory', function (ChartJsFactory) { return new ChartJsFactory('Bar'); }])
@@ -75,21 +83,30 @@
     };
   }
 
-  function ChartJsFactory (ChartJs) {
+  function ChartJsFactory (ChartJs, $timeout) {
     return function chart (type) {
       return {
         restrict: 'CA',
         scope: {
-          data: '=',
-          labels: '=',
-          options: '=',
-          series: '=',
+          data: '=?',
+          labels: '=?',
+          options: '=?',
+          series: '=?',
           colours: '=?',
           getColour: '=?',
           chartType: '=',
           legend: '@',
-          click: '=',
-          hover: '='
+          click: '=?',
+          hover: '=?',
+
+          chartData: '=?',
+          chartLabels: '=?',
+          chartOptions: '=?',
+          chartSeries: '=?',
+          chartColours: '=?',
+          chartLegend: '@',
+          chartClick: '=?',
+          chartHover: '=?'
         },
         link: function (scope, elem/*, attrs */) {
           var chart, container = document.createElement('div');
@@ -97,11 +114,25 @@
           elem.replaceWith(container);
           container.appendChild(elem[0]);
 
-          if (typeof window.G_vmlCanvasManager === 'object' && window.G_vmlCanvasManager !== null) {
-            if (typeof window.G_vmlCanvasManager.initElement === 'function') {
-              window.G_vmlCanvasManager.initElement(elem[0]);
-            }
+          if (usingExcanvas) window.G_vmlCanvasManager.initElement(elem[0]);
+
+          ['data', 'labels', 'options', 'series', 'colours', 'legend', 'click', 'hover'].forEach(deprecated);
+          function aliasVar (fromName, toName) {
+            scope.$watch(fromName, function (newVal) {
+              if (typeof newVal === 'undefined') return;
+              scope[toName] = newVal;
+            });
           }
+          /* provide backward compatibility to "old" directive names, by
+           * having an alias point from the new names to the old names. */
+          aliasVar('chartData', 'data');
+          aliasVar('chartLabels', 'labels');
+          aliasVar('chartOptions', 'options');
+          aliasVar('chartSeries', 'series');
+          aliasVar('chartColours', 'colours');
+          aliasVar('chartLegend', 'legend');
+          aliasVar('chartClick', 'click');
+          aliasVar('chartHover', 'hover');
 
           // Order of setting "watch" matter
 
@@ -111,11 +142,11 @@
             if (! chartType) return;
 
             if (chart) {
-              if (canUpdateChart(newVal, oldVal)) return updateChart(chart, newVal, scope);
+              if (canUpdateChart(newVal, oldVal)) return updateChart(chart, newVal, scope, elem);
               chart.destroy();
             }
 
-            chart = createChart(chartType, scope, elem);
+            createChart(chartType);
           }, true);
 
           scope.$watch('series', resetChart, true);
@@ -127,7 +158,7 @@
             if (isEmpty(newVal)) return;
             if (angular.equals(newVal, oldVal)) return;
             if (chart) chart.destroy();
-            chart = createChart(newVal, scope, elem);
+            createChart(newVal);
           });
 
           scope.$on('$destroy', function () {
@@ -144,7 +175,41 @@
             // so we have to re-create the chart entirely
             if (chart) chart.destroy();
 
-            chart = createChart(chartType, scope, elem);
+            createChart(chartType);
+          }
+
+          function createChart (type) {
+            if (isResponsive(type, scope) && elem[0].clientHeight === 0 && container.clientHeight === 0) {
+              return $timeout(function () {
+                createChart(type);
+              }, 50, false);
+            }
+            if (! scope.data || ! scope.data.length) return;
+            scope.getColour = typeof scope.getColour === 'function' ? scope.getColour : getRandomColour;
+            scope.colours = getColours(type, scope);
+            var cvs = elem[0], ctx = cvs.getContext('2d');
+            var data = Array.isArray(scope.data[0]) ?
+              getDataSets(scope.labels, scope.data, scope.series || [], scope.colours) :
+              getData(scope.labels, scope.data, scope.colours);
+            var options = angular.extend({}, ChartJs.getOptions(type), scope.options);
+            chart = new ChartJs.Chart(ctx)[type](data, options);
+            scope.$emit('create', chart);
+
+            // Bind events
+            cvs.onclick = scope.click ? getEventHandler(scope, chart, 'click', false) : angular.noop;
+            cvs.onmousemove = scope.hover ? getEventHandler(scope, chart, 'hover', true) : angular.noop;
+
+            if (scope.legend && scope.legend !== 'false') setLegend(elem, chart);
+          }
+
+          function deprecated (attr) {
+            if (typeof console !== 'undefined' && ChartJs.getOptions().env !== 'test') {
+              var warn = typeof console.warn === 'function' ? console.warn : console.log;
+              if (!! scope[attr]) {
+                warn.call(console, '"%s" is deprecated and will be removed in a future version. ' +
+                  'Please use "chart-%s" instead.', attr, attr);
+              }
+            }
           }
         }
       };
@@ -153,7 +218,8 @@
     function canUpdateChart (newVal, oldVal) {
       if (newVal && oldVal && newVal.length && oldVal.length) {
         return Array.isArray(newVal[0]) ?
-        newVal.length === oldVal.length && newVal[0].length === oldVal[0].length :
+        newVal.length === oldVal.length && newVal.every(function (element, index) {
+          return element.length === oldVal[index].length; }) :
           oldVal.reduce(sum, 0) > 0 ? newVal.length === oldVal.length : false;
       }
       return false;
@@ -163,32 +229,17 @@
       return carry + val;
     }
 
-    function createChart (type, scope, elem) {
-      if (! scope.data || ! scope.data.length) return;
-      scope.getColour = typeof scope.getColour === 'function' ? scope.getColour : getRandomColour;
-      scope.colours = getColours(type, scope);
-      var cvs = elem[0], ctx = cvs.getContext('2d');
-      var data = Array.isArray(scope.data[0]) ?
-        getDataSets(scope.labels, scope.data, scope.series || [], scope.colours) :
-        getData(scope.labels, scope.data, scope.colours);
-      var options = angular.extend({}, ChartJs.getOptions(type), scope.options);
-      var chart = new ChartJs.Chart(ctx)[type](data, options);
-      scope.$emit('create', chart);
-
-      ['hover', 'click'].forEach(function (action) {
-        if (scope[action]) cvs[action === 'click' ? 'onclick' : 'onmousemove'] = getEventHandler(scope, chart, action);
-      });
-      if (scope.legend && scope.legend !== 'false') setLegend(elem, chart);
-      return chart;
-    }
-
-    function getEventHandler (scope, chart, action) {
+    function getEventHandler (scope, chart, action, triggerOnlyOnChange) {
+      var lastState = null;
       return function (evt) {
         var atEvent = chart.getPointsAtEvent || chart.getBarsAtEvent || chart.getSegmentsAtEvent;
         if (atEvent) {
           var activePoints = atEvent.call(chart, evt);
-          scope[action](activePoints, evt);
-          scope.$apply();
+          if (triggerOnlyOnChange === false || angular.equals(lastState, activePoints) === false) {
+            lastState = activePoints;
+            scope[action](activePoints, evt);
+            scope.$apply();
+          }
         }
       };
     }
@@ -231,7 +282,12 @@
     }
 
     function rgba (colour, alpha) {
-      return 'rgba(' + colour.concat(alpha).join(',') + ')';
+      if (usingExcanvas) {
+        // rgba not supported by IE8
+        return 'rgb(' + colour.join(',') + ')';
+      } else {
+        return 'rgba(' + colour.concat(alpha).join(',') + ')';
+      }
     }
 
     // Credit: http://stackoverflow.com/a/11508164/1190235
@@ -248,22 +304,22 @@
       return {
         labels: labels,
         datasets: data.map(function (item, i) {
-          var dataSet = angular.copy(colours[i]);
-          dataSet.label = series[i];
-          dataSet.data = item;
-          return dataSet;
+          return angular.extend({}, colours[i], {
+            label: series[i],
+            data: item
+          });
         })
       };
     }
 
     function getData (labels, data, colours) {
       return labels.map(function (label, i) {
-        return {
+        return angular.extend({}, colours[i], {
           label: label,
           value: data[i],
           color: colours[i].strokeColor,
           highlight: colours[i].pointHighlightStroke
-        };
+        });
       });
     }
 
@@ -275,7 +331,7 @@
       else $parent.append(legend);
     }
 
-    function updateChart (chart, values, scope) {
+    function updateChart (chart, values, scope, elem) {
       if (Array.isArray(scope.data[0])) {
         chart.datasets.forEach(function (dataset, i) {
           (dataset.points || dataset.bars).forEach(function (dataItem, j) {
@@ -289,6 +345,7 @@
       }
       chart.update();
       scope.$emit('update', chart);
+      if (scope.legend && scope.legend !== 'false') setLegend(elem, chart);
     }
 
     function isEmpty (value) {
@@ -297,5 +354,9 @@
         (typeof value === 'object' && ! Object.keys(value).length);
     }
 
+    function isResponsive (type, scope) {
+      var options = angular.extend({}, Chart.defaults.global, ChartJs.getOptions(type), scope.options);
+      return options.responsive;
+    }
   }
 }));

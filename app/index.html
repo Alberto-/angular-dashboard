@@ -63,11 +63,22 @@
     <script src="widgets/widgetsChart/widgetBar/widgetBarController.js"></script>
     <script src="widgets/widgetsChart/widgetBar/widgetBarService.js"></script>
     <script src="widgets/widgetsChart/widgetBar/widgetBarDirective.js"></script>
-    <!-- WIDGET_Chart_Polar -->
-    <script src="widgets/widgetsChart/widgetPolar/widgetPolarService.js"></script>
-    <script src="widgets/widgetsChart/widgetPolar/widgetPolarController.js"></script>
-    <script src="widgets/widgetsChart/widgetPolar/widgetPolarDirective.js"></script>
-    <script src="widgets/widgetsChart/widgetPolar/widgetPolarView.html"></script>
+    <!-- WIDGET_Chart_widgetDoughnut -->
+    <script src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutService.js"></script>
+    <script src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutController.js"></script>
+    <script src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutDirective.js"></script>
+    <script src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutView.html"></script>
+    <!-- WIDGET_Chart_doughnut morris  -->
+    <script src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMService.js"></script>
+    <script src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMController.js"></script>
+    <script src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMDirective.js"></script>
+    <script src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMView.html"></script>
+    <!-- WIDGET_Chart_widgetLine -->
+    <script src="widgets/widgetsChart/widgetLine/widgetLineService.js"></script>
+    <script src="widgets/widgetsChart/widgetLine/widgetLineController.js"></script>
+    <script src="widgets/widgetsChart/widgetLine/widgetLineDirective.js"></script>
+    <script src="widgets/widgetsChart/widgetLine/widgetLineView.html"></script>
+
     <!-- WIDGET_Maps -->
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
     <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
@@ -127,14 +138,14 @@
 <body>
     <!-- GRAVATAR Start -->
     <script type="text/javascript">
-       $(document).ready(function(){
-           var hash = CryptoJS.MD5("albe45313@gmail.com");
-           document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
-       });    
-   </script>
-   <!-- GRAVATAR End -->
+     $(document).ready(function(){
+         var hash = CryptoJS.MD5("albe45313@gmail.com");
+         document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
+     });    
+ </script>
+ <!-- GRAVATAR End -->
 
-   <div class="container" ng-app="dashboardApp" >
+ <div class="container" ng-app="dashboardApp" >
     <div class="content" ng-controller="mainController">
         <aside class="col-xs-2 col-sm-2 col-md-2 dash_min_height menu main_left_content shadow-z-3">
             <div class="divSplash">
@@ -171,9 +182,9 @@
                     </div>
                 </div>
                 <div class="user-info">
-                   <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
-               </div>
-           </header>
+                 <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
+             </div>
+         </header>
         <!--  <div class="showTemplateContainer">
                 <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
                 <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
@@ -273,6 +284,7 @@
             <div class="row ">
                 <div class="col-md-12 draggable large_widget" ui:sortable="sortableOptions" id="riga_2">
                     <widgetmap></widgetmap>
+                     <widgetline></widgetline>
                 </div>
             </div>
 
@@ -280,31 +292,10 @@
             <div class="row ">
                 <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_1">
                     <widgetbar></widgetbar>
-
-
-<!-- 
-morris:
-
-<div id="graph"></div>
-<script type="text/javascript">
-   Morris.Donut({
-  element: 'graph',
-  data: [
-    {value: 70, label: 'foo'},
-    {value: 15, label: 'bar'},
-    {value: 10, label: 'baz'},
-    {value: 5, label: 'A really really long label'}
-  ],
-  formatter: function (x) { return x + "%"}
-}).on('click', function(i, row){
-  console.log(i, row);
-});
-</script>
- -->
-
+                    <widgetdoughnutm></widgetdoughnutm>
                 </div>
                 <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_2">
-                    <widgetpolar></widgetpolar>
+                    <widgetdoughnut></widgetdoughnut>
                 </div>
                 <div class="col-md-12">
                     <input type="checkbox" id="showBordersButton" name="showBordersButton" class="borders"/>
