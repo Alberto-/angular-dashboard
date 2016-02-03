@@ -1,0 +1,22 @@
+{	
+	"widgetTileFacebook":{
+		"title": "Facebook",
+		"description": "Likes",
+		"value" : 90
+	},
+	"widgetTileTwitter":{
+		"title": "Twitter",
+		"description": "Twitter followers",
+		"value" : 45
+	},
+	"widgetTileDownloads":{
+		"title": "Downloads",
+		"description": "Downloads amount",
+		"value" : 6000
+	},
+	"widgetTileWeather":{
+		"title": "S.Francisco Weather",
+		"description": "S.Francisco Weather",
+		"percentage" : 95
+	}
+}

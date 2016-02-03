@@ -93,18 +93,14 @@
     <script src="widgets/widgetWeather/widgetWeatherView.html"></script>
     <!-- **WIDGET_Circles** -->
     <script src="widgets/widgetCirlcePercentage/widgetCircleService.js"></script>
-    <!-- WidgetCircle I -->
-    <script src="widgets/widgetCirlcePercentage/widgetCircle_I/widgetCircleDirective.js"></script>
-    <script src="widgets/widgetCirlcePercentage/widgetCircle_I/widgetCircleController.js"></script>
-    <!-- WidgetCircle II -->
-    <script src="widgets/widgetCirlcePercentage/widgetCircle_II/widgetCircleDirective.js"></script>
-    <script src="widgets/widgetCirlcePercentage/widgetCircle_II/widgetCircleController.js"></script>
-    <!-- WidgetCircle III -->
-    <script src="widgets/widgetCirlcePercentage/widgetCircle_III/widgetCircleDirective.js"></script>
-    <script src="widgets/widgetCirlcePercentage/widgetCircle_III/widgetCircleController.js"></script>
-    <!-- WidgetCircle IV -->
-    <script src="widgets/widgetCirlcePercentage/widgetCircle_IV/widgetCircleDirective.js"></script>
-    <script src="widgets/widgetCirlcePercentage/widgetCircle_IV/widgetCircleController.js"></script>
+    <script src="widgets/widgetCirlcePercentage/widgetCircleDirectives.js"></script>
+    <script src="widgets/widgetCirlcePercentage/widgetCircleController.js"></script>
+    <!-- **WIDGET_Tiles** -->
+    <script src="widgets/widgetTile/widgetTileService.js"></script>
+    <script src="widgets/widgetTile/widgetTileDirectives.js"></script>
+    <script src="widgets/widgetTile/widgetTileController.js"></script>
+
+
 
     <script>
 
@@ -138,14 +134,14 @@
 <body>
     <!-- GRAVATAR Start -->
     <script type="text/javascript">
-     $(document).ready(function(){
-         var hash = CryptoJS.MD5("albe45313@gmail.com");
-         document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
-     });    
- </script>
- <!-- GRAVATAR End -->
+       $(document).ready(function(){
+           var hash = CryptoJS.MD5("albe45313@gmail.com");
+           document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
+       });    
+   </script>
+   <!-- GRAVATAR End -->
 
- <div class="container" ng-app="dashboardApp" >
+   <div class="container" ng-app="dashboardApp" >
     <div class="content" ng-controller="mainController">
         <aside class="col-xs-2 col-sm-2 col-md-2 dash_min_height menu main_left_content shadow-z-3">
             <div class="divSplash">
@@ -182,9 +178,9 @@
                     </div>
                 </div>
                 <div class="user-info">
-                 <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
-             </div>
-         </header>
+                   <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
+               </div>
+           </header>
         <!--  <div class="showTemplateContainer">
                 <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
                 <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
@@ -209,106 +205,73 @@
                 <div class="row  ">
                     <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_1">
 
+                        <widgetcircle data-widgetcode="widgetCircle1"><widgetcircle/>
 
-                        <widgetcircle:1><widgetcircle:1/>
+                        </div>
+                        <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_2">
+                            <widgetcircle data-widgetcode="widgetCircle2"><widgetcircle/>
 
-                    </div>
-                    <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_2">
-                        <widgetcircle:2><widgetcircle:2/>
-
-                    </div>
-                    <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
-                      <widgetcircle:3><widgetcircle:3/>
-                  </div>
-                  <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
-                      <widgetcircle:4><widgetcircle:4/>
-
-                  </div>
-
-              </div>
-
-
-              <!--PRIMA RIGA-->
-              <div class="row ">
-
-                <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions"  id="riga_1Col_1">
-                    <div class="portlet widget_Tile_main" id="widgetFBLikes">
-                        <div class="portlet-header">
-                            <div class="widgetHeadLeft">
-                                <i class="fa fa-thumbs-o-up widgetIcon iconCircle"></i>
                             </div>
-                            <div class="widgetHeadRight">
-                                <div class="widgetTilte"><span class="widgetTitleText">{{title}}Facebook</span></div>
+                            <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
+                              <widgetcircle data-widgetcode="widgetCircle3"><widgetcircle/>
+                              </div>
+                              <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
+                                  <widgetcircle data-widgetcode="widgetCircle4"><widgetcircle/>
+
+                                  </div>
+
+                              </div>
+
+
+                              <!--PRIMA RIGA-->
+                              <div class="row ">
+
+                                <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions"  id="riga_1Col_1">
+
+                                    <widgettile widgetcode="widgetTileFacebook" widget-tile-class="bg_blue"widget-tile-icon="fa-thumbs-o-up"></widgettile>
+
+                                    <widgettile widgetcode="widgetTileDownloads" widget-tile-class="bg_green"  widget-tile-icon="fa-cloud-download"></widgettile>
+
+
+                                </div>
+
+
+
+                                <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_2">
+                                  <widgetdoughnutm></widgetdoughnutm>
+                              </div>
+                              <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_3">
+                                <widgetweather> </widgetweather>
                             </div>
                         </div>
-                        <div class="portlet-content  widget_Tile_Content bg_blue">
-                            <div class="col-md-6 col-xs-6 col-lg-6  widget_Tile_left">
-                                <i class="fa fa-thumbs-o-up fa-5x"></i>
-                            </div>
-                            <div class="col-md-6 col-xs-6 col-lg-6 widget_Tile_right">
-                                <div class="tile_total">525</div>
-                                <div class="tile_text">Likes</div>
+                        <!--SECONDA RIGA-->
+                        <div class="row ">
+                            <div class="col-md-12 draggable large_widget" ui:sortable="sortableOptions" id="riga_2">
+                                <widgetmap></widgetmap>
+                                <widgetline></widgetline>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-
-                <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions"  id="riga_1Col_2">
-                    <div class="portlet widget_Tile_main" id="widgetNews">
-                        <div class="portlet-header">
-                            <div class="widgetHeadLeft">
-                                <i class="fa fa-circle-o-notch widgetIcon iconCircle"></i>
+                        <!--TERZA RIGA-->
+                        <div class="row ">
+                            <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_1">
+                                <widgetbar></widgetbar>
                             </div>
-                            <div class="widgetHeadRight">
-                                <div class="widgetTilte"><span class="widgetTitleText">{{title}}Downloads</span></div>
+                            <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_2">
+                                <widgetdoughnut></widgetdoughnut>
                             </div>
-                        </div>
-                        <div class="portlet-content  widget_Tile_Content bg_green">
-                            <div class="col-md-6 col-xs-6 col-lg-6  widget_Tile_left">
-                                <i class="fa fa-cloud-download fa-5x"></i>
-                            </div>
-                            <div class="col-md-6 col-xs-6 col-lg-6 widget_Tile_right">
-                                <div class="tile_total">6000</div>
-                                <div class="tile_text">downloads</div>
+                            <div class="col-md-12">
+                                <input type="checkbox" id="showBordersButton" name="showBordersButton" class="borders"/>
+                                <label for="showBordersButton" class="btn-eye tooltips cursorPointer"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  <!-- dashboard main content -->
+            </div> <!-- content --> 
+        </div> <!-- container --> 
 
-                <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_3">
-                    <widgetweather> </widgetweather>
-                </div>
-            </div>
-            <!--SECONDA RIGA-->
-            <div class="row ">
-                <div class="col-md-12 draggable large_widget" ui:sortable="sortableOptions" id="riga_2">
-                    <widgetmap></widgetmap>
-                     <widgetline></widgetline>
-                </div>
-            </div>
-
-            <!--TERZA RIGA-->
-            <div class="row ">
-                <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_1">
-                    <widgetbar></widgetbar>
-                    <widgetdoughnutm></widgetdoughnutm>
-                </div>
-                <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_2">
-                    <widgetdoughnut></widgetdoughnut>
-                </div>
-                <div class="col-md-12">
-                    <input type="checkbox" id="showBordersButton" name="showBordersButton" class="borders"/>
-                    <label for="showBordersButton" class="btn-eye tooltips cursorPointer"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
-                </div>
-            </div>
-        </div>
-    </div>  <!-- dashboard main content -->
-</div> <!-- content --> 
-</div> <!-- container --> 
-
-</body>
-</html>
+    </body>
+    </html>
 
 
 
