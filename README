@@ -1,11 +1,14 @@
 
 TO-DO
 
+gauge
+tempo
+
+CHARTIST.JS 
 
 maps: leaflet.js maps
 
 
-grafici: morrisjs, chartjs, c3js
 
 ->
 dash bootstrap
@@ -18,9 +21,6 @@ aggiungi widget orologio !
 ##
 aggiungi widget Twitter
 
-
-Morrisjs
-http://morrisjs.github.io/morris.js/#license
 
 Aggiungi sfondo al menu (sfondo che hai scaricato del mondo)
 

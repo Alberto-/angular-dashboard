@@ -166,8 +166,13 @@ body {
     }
     .portlet-content {
       padding: 1em;
-      overflow: visible;
+      overflow: auto;
+      /*min-height: 200px;*/
+      position: relative;
+      padding-top: 4em;
+      text-align: center;
     }
+
 
     .widgetMap .portlet-content{
      padding: 0;
@@ -233,6 +238,7 @@ body {
       font-size: 21px;
       font-weight: 600;
       text-shadow: 0.5px 0.5px black;
+      word-break: break-all;
     }
 
 
@@ -328,7 +334,6 @@ header{
 
 .logo-content{
   line-height: 4em;
-  padding-left: 0.5em;
 }
 
 
@@ -592,7 +597,8 @@ header{
 
 .x_small_widget .portlet{
 
-  min-height: 200px !important;
+  min-height: 130px !important;
+  max-height: 200px !important;
 }
 
 .x_small_widget .portlet .morrisChart{
@@ -759,7 +765,7 @@ content: "%";
 
 .small_widget .portlet-header, .large_widget .portlet-header, .medium_widget .portlet-header{
   text-align: left !important;
-  padding-left: 0.5em;
+  /*padding-left: 0.5em;*/
 }
 
 body, html {
@@ -809,7 +815,6 @@ body, html {
 /*refactor widgetstructure*/
 .portlet-header{
  text-align: left;
- padding-left: 0.5em;
  position: absolute;
  top: 0;
  z-index: 9999;
@@ -818,12 +823,6 @@ body, html {
  cursor: pointer;
 }
 
-.portlet-content {
-  padding: 1em;
-  overflow: visible;
-  position: relative;
-  padding-top: 4em;
-}
 
 .contenitoreMap{
   min-height: 318px !important;
@@ -874,6 +873,12 @@ body, html {
 
   /* Small devices (tablets, 768px and up) */
   @media (max-width: 768px ) {
+
+    .logo-content{
+      line-height: 4em;
+      padding-left: 0.5em;
+    }
+
     .logoHeader{
       float: left;
       display: block;
@@ -895,5 +900,25 @@ body, html {
     min-height: 200px;
     min-width: 5em;
   }
+
+}
+
+
+#gaugeChart{
+  width: 100%;
+}
+
+.relative{
+  position: relative !important;
+}
+
+#widget-gaugeM .portlet-content{
+  overflow: visible;
+
+}
+
+
+.gauge-chart{
+
 
 }

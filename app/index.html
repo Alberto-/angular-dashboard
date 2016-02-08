@@ -67,17 +67,14 @@
     <script src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutService.js"></script>
     <script src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutController.js"></script>
     <script src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutDirective.js"></script>
-    <script src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutView.html"></script>
     <!-- WIDGET_Chart_doughnut morris  -->
     <script src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMService.js"></script>
     <script src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMController.js"></script>
     <script src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMDirective.js"></script>
-    <script src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMView.html"></script>
     <!-- WIDGET_Chart_widgetLine -->
     <script src="widgets/widgetsChart/widgetLine/widgetLineService.js"></script>
     <script src="widgets/widgetsChart/widgetLine/widgetLineController.js"></script>
     <script src="widgets/widgetsChart/widgetLine/widgetLineDirective.js"></script>
-    <script src="widgets/widgetsChart/widgetLine/widgetLineView.html"></script>
 
     <!-- WIDGET_Maps -->
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
@@ -90,7 +87,6 @@
     <script src="widgets/widgetWeather/widgetWeatherController.js"></script>
     <script src="widgets/widgetWeather/widgetWeatherDirective.js"></script>
     <script src="widgets/widgetWeather/widgetWeatherFilter.js"></script>
-    <script src="widgets/widgetWeather/widgetWeatherView.html"></script>
     <!-- **WIDGET_Circles** -->
     <script src="widgets/widgetCirlcePercentage/widgetCircleService.js"></script>
     <script src="widgets/widgetCirlcePercentage/widgetCircleDirectives.js"></script>
@@ -100,11 +96,16 @@
     <script src="widgets/widgetTile/widgetTileDirectives.js"></script>
     <script src="widgets/widgetTile/widgetTileController.js"></script>
 
+<script src="assets/lib/canvas-gauge/gauge.min.js"></script>
+
+<!-- WIDGET GAUGE -->
+     <script src="widgets/widgetsChart/widgetGauge/widgetGaugeService.js"></script>
+    <script src="widgets/widgetsChart/widgetGauge/widgetGaugeController.js"></script>
+    <script src="widgets/widgetsChart/widgetGauge/widgetGaugeDirective.js"></script>
+
 
 
     <script>
-
-
     // MATERIAL INIT
     $(document).ready(function() {
         $.material.init();
@@ -134,14 +135,14 @@
 <body>
     <!-- GRAVATAR Start -->
     <script type="text/javascript">
-       $(document).ready(function(){
-           var hash = CryptoJS.MD5("albe45313@gmail.com");
-           document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
-       });    
-   </script>
-   <!-- GRAVATAR End -->
+     $(document).ready(function(){
+         var hash = CryptoJS.MD5("albe45313@gmail.com");
+         document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
+     });    
+ </script>
+ <!-- GRAVATAR End -->
 
-   <div class="container" ng-app="dashboardApp" >
+ <div class="container" ng-app="dashboardApp" >
     <div class="content" ng-controller="mainController">
         <aside class="col-xs-2 col-sm-2 col-md-2 dash_min_height menu main_left_content shadow-z-3">
             <div class="divSplash">
@@ -178,9 +179,9 @@
                     </div>
                 </div>
                 <div class="user-info">
-                   <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
-               </div>
-           </header>
+                 <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
+             </div>
+         </header>
         <!--  <div class="showTemplateContainer">
                 <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
                 <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
@@ -232,16 +233,25 @@
 
                                     <widgettile widgetcode="widgetTileDownloads" widget-tile-class="bg_green"  widget-tile-icon="fa-cloud-download"></widgettile>
 
-
                                 </div>
 
-
-
                                 <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_2">
+
+
                                   <widgetdoughnutm></widgetdoughnutm>
+
+
                               </div>
                               <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_3">
+
                                 <widgetweather> </widgetweather>
+
+
+                                <widgetgauge> </widgetgauge>
+
+
+
+
                             </div>
                         </div>
                         <!--SECONDA RIGA-->
@@ -269,7 +279,6 @@
                 </div>  <!-- dashboard main content -->
             </div> <!-- content --> 
         </div> <!-- container --> 
-
     </body>
     </html>
 
