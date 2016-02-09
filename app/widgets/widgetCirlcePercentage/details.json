@@ -1,18 +1,22 @@
 {	
 	"widgetCircle1":{
-		"title": "Entrate",
+		"title": "Sales",
+		"description" : "Sales last year",
 		"percentage" : 90
 	},
 	"widgetCircle2":{
-		"title": "Circle II",
+		"title": "Incomes",
+		"description" : "Incomes last year",
 		"percentage" : 45
 	},
 	"widgetCircle3":{
-		"title": "Circle III",
+		"title": "Customers",
+		"description" : "Company Customers",
 		"percentage" : 60
 	},
 	"widgetCircle4":{
-		"title": "Circle IV",
+		"title": "Orders",
+		"description" : "Orders of last years",
 		"percentage" : 95
 	}
 }

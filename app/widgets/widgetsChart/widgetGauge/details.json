@@ -1,6 +1,7 @@
 {
 	
-	"active" : 5,
-	"description" : "percentuale"
+	"gaugeValue" : 70,
+	"title" : "Stock availability",
+	"description" : "Box used on storage"
 
 }

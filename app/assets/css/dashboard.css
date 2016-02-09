@@ -23,6 +23,10 @@ color palette
 
 1)#EEEEEE  / #F5F5F5
 
+*/
+
+/*menu color
+rgba(94, 93, 101, 0.35);
 
 */
 
@@ -164,13 +168,15 @@ body {
       right: 0;
       margin-top: -8px;
     }
+
+
     .portlet-content {
-      padding: 1em;
+      padding: 4em 1em 1em 1em;
       overflow: auto;
       /*min-height: 200px;*/
       position: relative;
-      padding-top: 4em;
       text-align: center;
+      /*cursor: pointer;*/
     }
 
 
@@ -587,17 +593,16 @@ header{
 }
 .small_widget .portlet{
   height: 318px;
-  /*min-height: 200px !important;*/
 }
 
 
 .small_widget .widget_Tile_main{
-  height: 153px;
+  height: 154px;
 }
 
 .x_small_widget .portlet{
 
-  min-height: 130px !important;
+  min-height: 200px !important;
   max-height: 200px !important;
 }
 
@@ -623,10 +628,49 @@ header{
 /*MEDIA QUERIES*/
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px ) {
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px ) {
+
+  .logo-content{
+    line-height: 4em;
+    padding-left: 0.5em;
+  }
+
+  .logoHeader{
+    float: left;
+    display: block;
+  }
+  .user-info{
+   display: none;
+ }
+
+ .logoMenu{
+   display: none; 
+ }
+
+.menu .portlet{
+  margin: 0;
+}
+
+.showBordersMobile{
+  border: 2px dashed #6EB4E6;
+  min-height: 200px;
+  min-width: 5em;
+}
+
+.portlet-header {
+  color: #ffffff;  
+}
+
+/*MOBILE NOT DRAGGABLE*/
+aside.menu{
+  display: none !important;
+}
 
 
 }
+
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width:  992px) { 
@@ -720,33 +764,81 @@ header{
 
 
 /*
-::-webkit-scrollbar {
+ 
+ .menu ::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background-color: red;
+}
+
+ .menu ::-webkit-scrollbar {
     width: 12px;
 }
  
-::-webkit-scrollbar-track {
+.menu ::-webkit-scrollbar-track {
+    border-radius: 0;
+     background-color: rgba(94, 93, 101, 0.35);
+}
+ 
+.menu ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+     background-color: #eee;
+}
+
+
+
+
+ .main_right_content ::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+  .main_right_content ::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+  .main_right_content ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
     border-radius: 10px;
 }
  
-::-webkit-scrollbar-thumb {
+  .main_right_content ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }*/
+
+/*
+::-webkit-scrollbar {
+    width: 10px;
 }
-
-*/
-
-
-.menu .widgetHeadLeft{
-  width: 40%;
-  float:left;
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(94, 93, 101, 0.35);
+        background-color: #E1F5FE;
 }
+ 
+::-webkit-scrollbar-thumb {
+    background-color: #0277BD;
+    -webkit-box-shadow: inset 0 0 6px rgba(94, 93, 101, 0.35);; 
+    }*/
 
-.menu .widgetHeadRight{
 
-  width: 60%;
-  float:left;
-}
+    .menu .widgetHeadLeft{
+      width: 40%;
+      float:left;
+    }
+
+
+
+    .menu .widgetHeadLeft{
+      width: 40%;
+      float:left;
+    }
+
+    .menu .widgetHeadRight{
+
+      width: 60%;
+      float:left;
+    }
 
 
 /*.percent:before{
@@ -871,54 +963,64 @@ body, html {
     display: none;
   }
 
+
+  #gaugeChart{
+    width: 100%;
+  }
+
+  .relative{
+    position: relative !important;
+  }
+
+  #widget-gaugeM .portlet-content{
+    overflow: visible;
+
+  }
+
+
+  .gauge-chart{
+
+
+  }
+
+
+  .menu #gauge-widget .widgetIcon {
+    padding: 0.5em 0.2em 0.1em 0.2em !important;
+  }
+
+
+
+
+  .icon_gauge:before{
+    content: url('gaugeIcon.png');
+  }
+
+
+
+  .w_percentage_description{
+
+  }
+
+  /*centered*/
+  .wrap-centered{
+    float: left;
+    position: relative;
+    left: 50%;
+  }
+
+  .content_centered{
+    display: table;
+    margin: 0 auto;
+  }
+
   /* Small devices (tablets, 768px and up) */
   @media (max-width: 768px ) {
-
-    .logo-content{
-      line-height: 4em;
-      padding-left: 0.5em;
+    aside.menu{
+      display: none !important;
     }
-
-    .logoHeader{
-      float: left;
-      display: block;
-    }
-    .user-info{
-     display: none;
-   }
-
-   .logoMenu{
-     display: none; 
-   }
-
-   .menu .portlet{
-    margin: 0;
   }
 
-  .showBordersMobile{
-    border: 2px dashed #6EB4E6;
-    min-height: 200px;
-    min-width: 5em;
-  }
-
-}
-
-
-#gaugeChart{
-  width: 100%;
-}
-
-.relative{
-  position: relative !important;
-}
-
-#widget-gaugeM .portlet-content{
-  overflow: visible;
-
-}
-
-
-.gauge-chart{
-
-
+.widgetDescription{
+  text-align: center;
+  font-size: 1.5em;
 }
