@@ -1,8 +1,8 @@
 app.controller('widgetDoughnutController', ["$scope", "$rootScope", "$http", "$compile", "widgetDoughnutService",
 
  function ($scope, $rootScope, $http, $compile, widgetDoughnutService) {
-  $scope.title="Polar chart";
-  $scope.desc="Polar chart description";
+  $scope.title="Contracts chart";
+  $scope.desc="Contracts chart description";
 
   console.log('Loading chart ...');
 

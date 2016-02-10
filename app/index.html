@@ -137,19 +137,19 @@
 <body>
     <!-- GRAVATAR Start -->
     <script type="text/javascript">
-       $(document).ready(function(){
-           var hash = CryptoJS.MD5("albe45313@gmail.com");
-           document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
-       });    
-   </script>
-   <!-- GRAVATAR End -->
+     $(document).ready(function(){
+         var hash = CryptoJS.MD5("albe45313@gmail.com");
+         document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/"+hash;   
+     });    
+ </script>
+ <!-- GRAVATAR End -->
 
-   <div class="container" ng-app="dashboardApp" >
+ <div class="container" ng-app="dashboardApp" >
     <div id="mainController" class="content" ng-controller="mainController">
 
         <!-- /*MOBILE NOT DRAGGABLE*/ -->
         <!-- col-xs-2  -->
-        <aside class="col-md-2 dash_min_height menu main_left_content shadow-z-3">
+        <aside class="col-md-2 col-sm-2  dash_min_height menu main_left_content shadow-z-3">
             <div class="divSplash">
                 <div class="logo logoMenu">
                     <div class="logo-content">
@@ -161,15 +161,9 @@
                 <h4 class="title-widgets">Widgets:</h4>
                 <div class="draggable " ui:sortable="sortableOptions" id="menu">
 
-                    <div class="portlet">
-                        <div class="portlet-header">Chart</div>
-                        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-                    </div>
+                      <widgetbar></widgetbar>
 
-                    <div class="portlet">
-                        <div class="portlet-header">Table</div>
-                        <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-                    </div>
+                    <widgetgauge> </widgetgauge>
                 </div>
             </div>
         </aside>
@@ -178,7 +172,7 @@
 
         <!-- /*MOBILE NOT DRAGGABLE*/ -->
         <!-- col-sm-10  col-xs-10  col-xs-offset-2  col-sm-offset-2  -->
-        <div class="col-xs-12  col-sm-12  col-md-10 col-md-offset-2 dash_min_height main_right_content">
+        <div class="col-xs-12  col-sm-10  col-sm-offset-2 col-md-10 col-md-offset-2 dash_min_height main_right_content">
             <header class="">
                 <div class="logo logoHeader">
                     <div class="logo-content">
@@ -187,9 +181,9 @@
                     </div>
                 </div>
                 <div class="user-info">
-                   <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Alberto Piras</span>
-               </div>
-           </header>
+                 <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" />&nbsp;&nbsp;<span class="user-name inline">Gravatar Image</span>
+             </div>
+         </header>
         <!--  <div class="showTemplateContainer">
                 <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
                 <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
@@ -237,10 +231,9 @@
 
                                 <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions"  id="riga_1Col_1">
 
-                                    <widgettile widgetcode="widgetTileFacebook" widget-tile-class="bg_blue"widget-tile-icon="fa-thumbs-o-up"></widgettile>
+                                    <widgettile widgetcode="widgetTileFacebook" widget-tile-class="bg_facebook"widget-tile-icon="fa-thumbs-o-up"></widgettile>
 
                                     <widgettile widgetcode="widgetTileDownloads" widget-tile-class="bg_green"  widget-tile-icon="fa-cloud-download"></widgettile>
-
                                 </div>
 
                                 <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_2">
@@ -253,27 +246,20 @@
                               <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_3">
 
                                 <widgetweather> </widgetweather>
-
-
-                                <widgetgauge> </widgetgauge>
-
-
-
-
+                                <widgettile widgetcode="widgetTileTwitter" widget-tile-class="bg_twitter"widget-tile-icon="fa-twitter"></widgettile>
                             </div>
                         </div>
                         <!--SECONDA RIGA-->
                         <div class="row ">
                             <div class="col-md-12 draggable large_widget" ui:sortable="sortableOptions" id="riga_2">
                                 <widgetmap></widgetmap>
-                                <widgetline></widgetline>
                             </div>
                         </div>
 
                         <!--TERZA RIGA-->
                         <div class="row ">
                             <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_1">
-                                <widgetbar></widgetbar>
+                                <widgetline></widgetline>
                             </div>
                             <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_2">
                                 <widgetdoughnut></widgetdoughnut>

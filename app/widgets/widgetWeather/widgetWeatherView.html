@@ -1,21 +1,21 @@
-<div class="portlet">
+ <div class="portlet widget_Tile_main" id="widgetWheather">
 	<div class="portlet-header">
- 		<div class="widgetHeadLeft">
- 			<i class="fa fa-sun-o widgetIcon"></i>
- 		</div>
- 		<div class="widgetHeadRight">
- 			<div class="widgetTilte"><span class="widgetTitleText">{{title}}</span></div>
- 		</div>
- 	</div>
- 	<div class="portlet-content">
- 		Temp: {{temperature | kelvin_celsius | number:0 }}
- 		<br>
- 		Cod: {{code}}
- 		<br>
- 		<i class="wi wi-owm-{{code}} fa-3x weatherIcon"></i>
- 		Description: {{description }}
-
- 		<br>
- 		Location: {{location}}
- 	</div>
- </div>
+		<div class="widgetHeadLeft">
+			<i class="fa fa-sun-o widgetIcon"></i>
+		</div>
+		<div class="widgetHeadRight">
+		<div class="widgetTilte"><span class="widgetTitleText">{{title}}</span>
+		</div>
+		</div>
+	</div>
+	<div class="portlet-content  widget_Tile_Content bg_orange">
+		<div class="col-md-6 col-xs-6 col-lg-6  widget_Tile_left">
+			<i class="wi wi-owm-{{code}} fa-5x weatherIcon"></i>
+		</div>
+		<div class="col-md-6 col-xs-6 col-lg-6 widget_Tile_right">
+			<div class="tile_total">{{temperature | kelvin_celsius | number:0 }}°</div>
+			<div class="tile_text">{{location}}</div>
+		<i>{{description }}</i>
+		</div>
+	</div>
+</div>

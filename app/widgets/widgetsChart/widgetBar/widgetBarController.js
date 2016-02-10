@@ -1,8 +1,8 @@
 'use strict';
 app.controller('widgetBarController', [ "$scope","$rootScope","$http","$compile","widgetBarService",
   function ($scope, $rootScope, $http, $compile, widgetBarService) {
-    $scope.title="Bar chart";
-    $scope.desc="Bar chart description";
+    $scope.title="Leads chart";
+    $scope.desc="Leads chart description";
 
     widgetBarService.getInfo().success(function(data){
       console.log(data); 

@@ -207,6 +207,10 @@ body {
     font-size: 1em;
   }
 
+  .menu .widgetDescription{
+    display: none;
+  }
+
   .menu .portlet .portlet-content{
     display: none;
   }
@@ -588,7 +592,7 @@ header{
 
 .medium_widget .portlet{
 
-  min-height: 318px !important;
+  min-height: 358px !important;
   max-height: 358px !important;
 }
 .small_widget .portlet{
@@ -605,6 +609,11 @@ header{
   min-height: 200px !important;
   max-height: 200px !important;
 }
+
+.x_small_widget .widget_Tile_main{
+  height: 200px;
+}
+
 
 .x_small_widget .portlet .morrisChart{
   height: 170px !important;
@@ -649,7 +658,7 @@ header{
    display: none; 
  }
 
-.menu .portlet{
+ .menu .portlet{
   margin: 0;
 }
 
@@ -734,11 +743,25 @@ aside.menu{
   background-color: #63A3DF;
 }
 
+.bg_facebook{
+  background-color: #3B5999;
+}
+
+.bg_twitter{
+  background-color: #55ACEF;
+}
+
+
 
 .bg_green{
   background-color: #1CC09F;
 }
 
+
+.bg_orange{
+  background-color: #F57C00;
+  /*#F57C00*/
+}
 
 /*.draggable{
   min-height: 200px;
@@ -1020,7 +1043,12 @@ body, html {
     }
   }
 
-.widgetDescription{
-  text-align: center;
-  font-size: 1.5em;
+  .widgetDescription{
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+
+#widgetWheather .widget_Tile_left{
+  padding: 1.5em 0;
 }
