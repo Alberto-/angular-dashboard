@@ -394,7 +394,7 @@ header{
 
   /*ON DRAGGING*/
   .ui-sortable-helper{
-    max-width: 50em !important;
+    max-width: 30em !important;
     box-shadow:
     0 27px 24px 0 rgba(0, 0, 0, 0.2),
     0 40px 77px 0 rgba(0, 0, 0, 0.22);
@@ -771,6 +771,9 @@ aside.menu{
     min-height: 200px;
   }
 
+  .menu .draggable_min_height.showBorders{
+    min-height: 400px;
+  }
 
   /*drag and drop icon*/
 
@@ -1049,6 +1052,6 @@ body, html {
   }
 
 
-#widgetWheather .widget_Tile_left{
-  padding: 1.5em 0;
-}
+  #widgetWheather .widget_Tile_left{
+    padding: 1.5em 0;
+  }
