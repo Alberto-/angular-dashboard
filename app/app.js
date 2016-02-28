@@ -45,6 +45,7 @@ if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
        // $(".draggable").removeClass("showBordersMobile");
        //  $("#showBorders").prop('checked', false);
        reloadChart();
+       window.dispatchEvent(changeDashboard);
      }
     /** OTHER CONTROLS ON START AND STOP DRAGGING
     start: function( event, ui ) {
@@ -64,7 +65,9 @@ if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
   }
 });
 
-
+ var changeDashboard = document.createEvent('Event');
+    changeDashboard.initEvent('changeDashboard', true, true);
+    
 
 function reloadChart(){
   $(window).trigger('resize');

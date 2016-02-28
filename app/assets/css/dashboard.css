@@ -180,6 +180,10 @@ body {
     }
 
 
+.portlet-content #widgetGauge{
+    margin-top: -1em;
+}
+
     .widgetMap .portlet-content{
      padding: 0;
    }

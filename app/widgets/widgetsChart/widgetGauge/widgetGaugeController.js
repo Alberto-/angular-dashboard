@@ -20,13 +20,13 @@ app.controller('widgetGaugeController', ["$scope", "$rootScope", "$http", "$comp
 
 
  if(window.addEventListener) {
-  window.addEventListener('resize', function() {
-    console.log('addEventListener - resize');
+  window.addEventListener('changeDashboard', function() {
+    console.log('addEventListener - changeDashboard');
     $scope.loadGauge();
-  }, false);
+  }, true);
 }
 else {
-  console.log('your browser does not support - resize');
+  console.log('your browser does not support - changeDashboard');
 }
 
 
@@ -35,21 +35,24 @@ $scope.loadGauge = function(){
  var parentHeight = 0;
  var parentWidth = 0;
 
- parentHeight = $("#widgetGauge").parent().height();
+ parentHeight = $("#widgetGauge").parent().parent().height()-50;
  parentWidth = $("#widgetGauge").parent().width();
 
 
  console.log('height : ' + parentHeight + "  width : " + parentWidth);
+console.log('gauge height : ' + $("#widgetGauge").height());
+
+
 
  var gauge = new Gauge({
-      valueBox: {
-        visible: false
-      },
-      valueText: {
-        visible: false
-      },
+  valueBox: {
+    visible: false
+  },
+  valueText: {
+    visible: false
+  },
 
-      renderTo  : 'widgetGauge',
+  renderTo  : 'widgetGauge',
       // width     : parentWidth,
       height    : parentHeight,
       glow      : true,
@@ -74,7 +77,7 @@ $scope.loadGauge = function(){
         duration: 300,
         fn : 'bounce'
       }
-});
+    });
 
 
  gauge.setValue($scope.gaugeValue);
