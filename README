@@ -1,97 +1,13 @@
-
-TO-DO
-
-gauge
-tempo
-
-CHARTIST.JS 
-
-maps: leaflet.js maps
-
-
-
-->
-dash bootstrap
-http://www.prepbootstrap.com/bootstrap-theme/lightway-admin/preview/index.html
-
-##
-aggiungi widget orologio !
-
-
-##
-aggiungi widget Twitter
-
-
-Aggiungi sfondo al menu (sfondo che hai scaricato del mondo)
-
-Aggiungi backgroud alla pagina col gradiente:
-
-background: linear-gradient(45deg, rgba(121,165,181,1) 6%,rgba(65,128,153,1) 18%,rgba(65,128,153,1) 18%,rgba(65,128,153,1) 25%,rgba(65,128,153,1) 51%,rgba(47,71,93,1) 81%,rgb(38, 67, 87) 100%);
-
-
-background: -webkitlinear-gradient(45deg, rgba(121,165,181,1) 6%,rgba(65,128,153,1) 18%,rgba(65,128,153,1) 18%,rgba(65,128,153,1) 25%,rgba(65,128,153,1) 51%,rgba(47,71,93,1) 81%,rgb(38, 67, 87) 100%);
-
-
-
-aggiungi GAUGE : http://bernii.github.io/gauge.js/
-aggiungi manometro
-
-vedi esempio: http://wrapbootstrap.com/preview/WB07JN5T9
-
-percentuale: 
-
-1) http://www.cssscript.com/animated-circular-progress-bar-using-svg-path-animation/
-	2) http://www.cssscript.com/demo/pure-css-circular-percentage-bar/
-3) http://www.jqueryscript.net/chart-graph/Customizable-Animated-jQuery-HTML5-Gauge-Meter-Plugin.html
-
-
-
-	aggiungi calendarietto
-		Orologio
-		data di oggi
-		+ calendario
-
-	widget barra singola orizzontale
-
-widget piccoli: guarda questo http://bootstraptaste.com/demo/themes/NiceAdmin/index.html
-
-
-Da leggere  
-
-Dashboards: https://wrapbootstrap.com/tag/dashboard
-
-
-
-progress bar example: http://www.cssscript.com/demo/pure-css-circular-percentage-bar/
-esempio grandetto:
-http://jiji262.github.io/Bootstrap_Metro_Dashboard/index.html
-
-*************
-template esempi
-vedi esempi: https://www.freshdesignweb.com/responsive-admin-templates/
-************
-
-vedi esempio online:
-http://livedemo.base5builder.com/circloid_html/type_1/templates/blue/?click_source=demo_page_img#
-
-
-vedi: http://rdash.github.io/#/
-
-vedi: 
-http://themes-pixeden.com/demos/glazzed/
-
-
-
-
-
 Instructions:
+
+
+Install:
 
 prerequisites : node
 
-npm install
+# npm install
 
-that also  runs : bower install
-
+(that also automatically runs : bower install)
 
 
 1) how to run:
@@ -127,20 +43,11 @@ npm install karma-jasmine  -g
 
 
 
-
-
-
-
-
-
 What is a dashboard?
 
 E’ un sistema di visualizzazione delle informazioni caratterizzato da facilità di lettura ed immediatezza.
 
 Le dashboard forniscono una visione grafica e realtime degli indicatori chiave di performance di un'organizzazione relativamente ad uno o più processi aziendali 
-
-
-
 
 
 MONITORARE L'ATTIVITA
@@ -157,42 +64,3 @@ offrirà i widget in grado di allacciarsi (con un minimo di lavoro) a quei servi
 nella dashboard.
 -
 -------------------------------------------
-
-
-Entando può creare dei servizi di collegamento verso i vostri sistemi, prendere i dati e mostrarli nella
-dashboard.
-
-Dunque puoi utilizzare Entando come unica web app che ti offre una dashboard con le statistiche della
-tua azienda.
-
-(sarebbe una dashboard di circa 60 MB)
-
---------------------------------------------
-
-
-Altrimenti, basa il tuo sistema su architettura entando, creati nuove funzionalità con edo ed utilizza la dashboard
-direttamente sul portale.
-
---------------------------------------------
-
-
-
-Versioni:
-
-1)versione pubblica:
-
-
-Dashboard tutta in angular, con un numero di widget fissi (10).
-Quindi lo sviluppatore farà puntare quei widget a certi servizi esterni per prendere valori diversi.
-
-
-
-2) versione per entando:
-
-Crei una dashboard analoga ma in jquery con tutti i widget in angular (singole SPA).
-
-quindi ogni widget sarà indipendente e pubblicabile in ogni pagina.
-
-
-
-

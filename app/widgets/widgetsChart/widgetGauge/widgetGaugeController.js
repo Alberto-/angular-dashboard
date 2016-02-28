@@ -2,6 +2,7 @@ app.controller('widgetGaugeController', ["$scope", "$rootScope", "$http", "$comp
 
  function ($scope, $rootScope, $http, $compile, widgetGaugeService) {
 
+  var minCanvasHeightToRemove = 50;
 
   widgetGaugeService.getInfo().success(function(data){
    $scope.title = data.title;
@@ -31,18 +32,14 @@ else {
 
 
 $scope.loadGauge = function(){
- console.log('Loading Gauge ...');
+ //console.debug('Loading Gauge ...');
  var parentHeight = 0;
  var parentWidth = 0;
 
- parentHeight = $("#widgetGauge").parent().parent().height()-50;
+ parentHeight = $("#widgetGauge").parent().parent().height() - minCanvasHeightToRemove;
  parentWidth = $("#widgetGauge").parent().width();
-
-
- console.log('height : ' + parentHeight + "  width : " + parentWidth);
-console.log('gauge height : ' + $("#widgetGauge").height());
-
-
+ // console.debug('height : ' + parentHeight + "  width : " + parentWidth);
+ // console.debug('gauge height : ' + $("#widgetGauge").height());
 
  var gauge = new Gauge({
   valueBox: {
@@ -84,9 +81,6 @@ console.log('gauge height : ' + $("#widgetGauge").height());
  gauge.draw();
 
 }
-
-
-
 
 }]);
 
