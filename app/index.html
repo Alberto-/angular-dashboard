@@ -1,104 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Angularjs Dashboard</title>
-    <!-- ***** HEADER INCLUSIONS *******
-    <script src="assets/bower_components/webcomponentsjs/HTMLImports.min.js"></script>
-    <link rel="import" href="inc/header_inclusions.html">
-  -->
-  <!-- JQuery -->
-  <script  type="text/javascript" src="assets/bower_components/jquery/dist/jquery.js"></script>
-  <script  type="text/javascript" src="assets/bower_components/jquery-ui/jquery-ui.js"></script>
-  <script  type="text/javascript" src="assets/lib/jquery.ui.touch-punch.min.js"></script>
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <script  type="text/javascript" src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!--font Awesome-->
-  <link href="assets/lib/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
-  <!-- Bootstrap Material-->
-  <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/material.min.css">
-  <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/material-fullpalette.min.css">
-  <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/ripples.min.css">
-  <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/roboto.min.css">
-  <script  type="text/javascript" src="assets/lib/bootstrap-material-design/js/material.min.js"></script>
-  <script  type="text/javascript" src="assets/lib/bootstrap-material-design/js/ripples.min.js"></script> 
-  <!--Angular -->
-  <script  type="text/javascript" src="assets/bower_components/angular/angular.min.js"></script> 
-  <script  type="text/javascript" src="assets/bower_components/angular-ui-sortable/sortable.js"></script> 
-  <script  type="text/javascript" src="assets/bower_components/angular-route/angular-route.min.js"></script>
-  <!-- chartjs -->
-  <script  type="text/javascript" src="assets/lib/chartjs/Chart.js"></script>
-  <script  type="text/javascript" src="assets/lib/angular-chart/angular-chart.js"></script>
-  <link rel="stylesheet" href="assets/lib/angular-chart/angular-chart.css">
-  <!-- morris -->
-  <link rel="stylesheet" href="assets/lib/morris/morris.css">
-  <script  type="text/javascript" src="assets/lib/raphael/raphael.js"></script>
-  <script  type="text/javascript" src="assets/lib/morris/morris.min.js"></script>
-  <!-- weather-icons -->
-  <link rel="stylesheet" href="assets/lib/weather-icons-master/css/weather-icons.css">
-  <link rel="stylesheet" href="assets/lib/css-percentage-circle/circle2.css">
-  <!-- crypto -->
-  <script  type="text/javascript" src="assets/lib/crypto.js"></script>
-  <!-- custom configuration-->
-  <link rel="stylesheet" href="assets/css/dashboard.css">
-  <script  type="text/javascript" src="app.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Angularjs Dashboard</title>
 
-  <!-- **#WIDGET INCLUSIONS** -->
-  <!-- <link rel="import" href="inc/widgets_inclusions.html"> -->
-  <!-- WIDGET_Chart_Bar  -->
-  <script type="text/javascript" src="widgets/widgetsChart/widgetBar/widgetBarController.js"></script>
-  <script type="text/javascript" src="widgets/widgetsChart/widgetBar/widgetBarService.js"></script>
-  <script type="text/javascript" src="widgets/widgetsChart/widgetBar/widgetBarDirective.js"></script>
-  <!-- WIDGET_Chart_widgetDoughnut -->
-  <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutService.js"></script>
-  <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutController.js"></script>
-  <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutDirective.js"></script>
-  <!-- WIDGET_Chart_doughnut morris  -->
-  <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMService.js"></script>
-  <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMController.js"></script>
-  <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMDirective.js"></script>
-  <!-- WIDGET_Chart_widgetLine -->
-  <script type="text/javascript" src="widgets/widgetsChart/widgetLine/widgetLineService.js"></script>
-  <script type="text/javascript" src="widgets/widgetsChart/widgetLine/widgetLineController.js"></script>
-  <script type="text/javascript" src="widgets/widgetsChart/widgetLine/widgetLineDirective.js"></script>
-  <!-- WIDGET_Maps -->
-  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
-  <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
-  <script type="text/javascript" src="widgets/widgetMaps/services.js"></script>
-  <script type="text/javascript" src="widgets/widgetMaps/widgetMapsController.js"></script>
-  <script type="text/javascript" src="widgets/widgetMaps/widgetMapsDirectives.js"></script>
-  <!-- WIDGET_Weather -->
-  <script type="text/javascript" src="widgets/widgetWeather/widgetWeatherService.js"></script>
-  <script type="text/javascript" src="widgets/widgetWeather/widgetWeatherController.js"></script>
-  <script type="text/javascript" src="widgets/widgetWeather/widgetWeatherDirective.js"></script>
-  <script type="text/javascript" src="widgets/widgetWeather/widgetWeatherFilter.js"></script>
-  <!-- **WIDGET_Circles** -->
-  <script pe="text/javascript" src="widgets/widgetCirlcePercentage/widgetCircleService.js"></script>
-  <script type="text/javascript" src="widgets/widgetCirlcePercentage/widgetCircleDirectives.js"></script>
-  <script type="text/javascript" src="widgets/widgetCirlcePercentage/widgetCircleController.js"></script>
-  <!-- **WIDGET_Tiles** -->
-  <script type="text/javascript" src="widgets/widgetTile/widgetTileService.js"></script>
-  <script type="text/javascript" src="widgets/widgetTile/widgetTileDirectives.js"></script>
-  <script type="text/javascript" src="widgets/widgetTile/widgetTileController.js"></script>
+    <!-- ******* HEADER INCLUSIONS *******
+      <script src="assets/bower_components/webcomponentsjs/HTMLImports.min.js"></script>
+      <link rel="import" href="inc/header_inclusions.html">
+    -->
+    <!-- JQuery -->
+    <script  type="text/javascript" src="assets/bower_components/jquery/dist/jquery.js"></script>
+    <script  type="text/javascript" src="assets/bower_components/jquery-ui/jquery-ui.js"></script>
+    <script  type="text/javascript" src="assets/lib/jquery.ui.touch-punch.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script  type="text/javascript" src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--font Awesome-->
+    <link href="assets/lib/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap Material-->
+    <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/material.min.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/material-fullpalette.min.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/ripples.min.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap-material-design/css/roboto.min.css">
+    <script  type="text/javascript" src="assets/lib/bootstrap-material-design/js/material.min.js"></script>
+    <script  type="text/javascript" src="assets/lib/bootstrap-material-design/js/ripples.min.js"></script> 
+    <!--Angular -->
+    <script  type="text/javascript" src="assets/bower_components/angular/angular.min.js"></script> 
+    <script  type="text/javascript" src="assets/bower_components/angular-ui-sortable/sortable.js"></script> 
+    <script  type="text/javascript" src="assets/bower_components/angular-route/angular-route.min.js"></script>
+    <!-- chartjs -->
+    <script  type="text/javascript" src="assets/lib/chartjs/Chart.js"></script>
+    <script  type="text/javascript" src="assets/lib/angular-chart/angular-chart.js"></script>
+    <link rel="stylesheet" href="assets/lib/angular-chart/angular-chart.css">
+    <!-- morris -->
+    <link rel="stylesheet" href="assets/lib/morris/morris.css">
+    <script  type="text/javascript" src="assets/lib/raphael/raphael.js"></script>
+    <script  type="text/javascript" src="assets/lib/morris/morris.min.js"></script>
+    <!-- weather-icons -->
+    <link rel="stylesheet" href="assets/lib/weather-icons-master/css/weather-icons.css">
+    <link rel="stylesheet" href="assets/lib/css-percentage-circle/circle2.css">
+    <!-- crypto -->
+    <script  type="text/javascript" src="assets/lib/crypto.js"></script>
+    <!-- custom configuration-->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <script  type="text/javascript" src="app.js"></script>
 
-  <script type="text/javascript" src="assets/lib/canvas-gauge/gauge.min.js"></script>
-
-  <!-- WIDGET GAUGE -->
-  <script type="text/javascript" src="widgets/widgetsChart/widgetGauge/widgetGaugeService.js"></script>
-  <script ype="text/javascript"  src="widgets/widgetsChart/widgetGauge/widgetGaugeController.js"></script>
-  <script ype="text/javascript"  src="widgets/widgetsChart/widgetGauge/widgetGaugeDirective.js"></script>
-  <script>
-    // MATERIAL INIT
-    $(document).ready(function() {
-      $.material.init();
-    });
-  </script>
-</head>
-<body>
+    <!-- *******#WIDGET INCLUSIONS******* -->
+    <!-- <link rel="import" href="inc/widgets_inclusions.html"> -->
+    <!-- WIDGET_Chart_Bar  -->
+    <script type="text/javascript" src="widgets/widgetsChart/widgetBar/widgetBarController.js"></script>
+    <script type="text/javascript" src="widgets/widgetsChart/widgetBar/widgetBarService.js"></script>
+    <script type="text/javascript" src="widgets/widgetsChart/widgetBar/widgetBarDirective.js"></script>
+    <!-- WIDGET_Chart_widgetDoughnut -->
+    <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutService.js"></script>
+    <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutController.js"></script>
+    <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnut/widgetDoughnutDirective.js"></script>
+    <!-- WIDGET_Chart_doughnut morris  -->
+    <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMService.js"></script>
+    <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMController.js"></script>
+    <script type="text/javascript" src="widgets/widgetsChart/widgetDoughnutM/widgetDoughnutMDirective.js"></script>
+    <!-- WIDGET_Chart_widgetLine -->
+    <script type="text/javascript" src="widgets/widgetsChart/widgetLine/widgetLineService.js"></script>
+    <script type="text/javascript" src="widgets/widgetsChart/widgetLine/widgetLineController.js"></script>
+    <script type="text/javascript" src="widgets/widgetsChart/widgetLine/widgetLineDirective.js"></script>
+    <!-- WIDGET_Maps -->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
+    <script type="text/javascript" src="widgets/widgetMaps/services.js"></script>
+    <script type="text/javascript" src="widgets/widgetMaps/widgetMapsController.js"></script>
+    <script type="text/javascript" src="widgets/widgetMaps/widgetMapsDirectives.js"></script>
+    <!-- WIDGET_Weather -->
+    <script type="text/javascript" src="widgets/widgetWeather/widgetWeatherService.js"></script>
+    <script type="text/javascript" src="widgets/widgetWeather/widgetWeatherController.js"></script>
+    <script type="text/javascript" src="widgets/widgetWeather/widgetWeatherDirective.js"></script>
+    <script type="text/javascript" src="widgets/widgetWeather/widgetWeatherFilter.js"></script>
+    <!-- **WIDGET_Circles** -->
+    <script pe="text/javascript" src="widgets/widgetCirlcePercentage/widgetCircleService.js"></script>
+    <script type="text/javascript" src="widgets/widgetCirlcePercentage/widgetCircleDirectives.js"></script>
+    <script type="text/javascript" src="widgets/widgetCirlcePercentage/widgetCircleController.js"></script>
+    <!-- **WIDGET_Tiles** -->
+    <script type="text/javascript" src="widgets/widgetTile/widgetTileService.js"></script>
+    <script type="text/javascript" src="widgets/widgetTile/widgetTileDirectives.js"></script>
+    <script type="text/javascript" src="widgets/widgetTile/widgetTileController.js"></script>
+    <!-- WIDGET GAUGE -->
+    <script type="text/javascript" src="assets/lib/canvas-gauge/gauge.min.js"></script>
+    <script type="text/javascript" src="widgets/widgetsChart/widgetGauge/widgetGaugeService.js"></script>
+    <script ype="text/javascript"  src="widgets/widgetsChart/widgetGauge/widgetGaugeController.js"></script>
+      <script ype="text/javascript"  src="widgets/widgetsChart/widgetGauge/widgetGaugeDirective.js"></script>
+      <script>
+        // MATERIAL INIT
+        $(document).ready(function() {
+          $.material.init();
+        });
+      </script>
+  </head>
+  <body>
   <!-- GRAVATAR Start -->
   <script type="text/javascript">
    $(document).ready(function(){
@@ -107,41 +106,35 @@
    });    
  </script>
  <!-- GRAVATAR End -->
-
- <div class="container" ng-app="dashboardApp" >
-  <div id="mainController" class="content" ng-controller="mainController">
-
+    <div class="container" ng-app="dashboardApp" >
+      <div id="mainController" class="content" ng-controller="mainController">
     <!-- /*MOBILE NOT DRAGGABLE*/ -->
     <!-- col-xs-2  -->
-    <aside class="col-md-2 col-sm-2  dash_min_height menu main_left_content shadow-z-3">
-      <div class="divSplash">
-        <div class="logo logoMenu">
-          <div class="logo-content">
-            <h3 class="marchio color1">Angular </h3>
-
-            <h3 class="marchio color2">Dashboard </h3>
+        <aside class="col-md-2 col-sm-2  dash_min_height menu main_left_content shadow-z-3">
+          <div class="divSplash">
+            <div class="logo logoMenu">
+              <div class="logo-content">
+                <h3 class="marchio menu-color1">Angular </h3>
+                <h3 class="marchio menu-color2">Dashboard </h3>
+              </div>
+            </div>
+            <h4 class="title-widgets">Widgets:</h4>
+            <div class="draggable " ui:sortable="sortableOptions" id="menu">
+              <widgetbar></widgetbar>
+              <widgetgauge> </widgetgauge>
+            </div>
           </div>
-        </div>
-        <h4 class="title-widgets">Widgets:</h4>
-        <div class="draggable " ui:sortable="sortableOptions" id="menu">
-
-          <widgetbar></widgetbar>
-
-          <widgetgauge> </widgetgauge>
-        </div>
-      </div>
     </aside>
 
     <!-- dashboard main content -->
-
     <!-- /*MOBILE NOT DRAGGABLE*/ -->
     <!-- col-sm-10  col-xs-10  col-xs-offset-2  col-sm-offset-2  -->
     <div class="col-xs-12  col-sm-10  col-sm-offset-2 col-md-10 col-md-offset-2 dash_min_height main_right_content">
       <header class="">
         <div class="logo logoHeader">
           <div class="logo-content">
-            <h3 class="marchio color1">Angular </h3>
-            <h3 class="marchio color2">Dashboard </h3>
+            <h3 class="marchio text-primary">Angular </h3>
+            <h3 class="marchio text-acc">Dashboard </h3>
           </div>
         </div>
         <div class="user-info">
@@ -149,97 +142,63 @@
            <img height="45" width="45"class=" inline img-responsive img-circle" id="authorPhoto" src="http://www.gravatar.com/avatar/000?s=130" /></a>&nbsp;&nbsp;<span class="user-name inline">Gravatar Image</span>
          </div>
        </header>
-        <!--  <div class="showTemplateContainer">
-                <input type="checkbox" id="showBorders" name="showBorders" class="borders"/>
-                <label for="showBorders" class="btn-eye tooltips"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
-              </div> -->
-              <h1>Angular Dashboard</h1>
-              <h2>All DOM events you need are catched</h2>
-              <h3 class="text-muted">Drag and drop all widget you want see in the page</h3>
-          <!--   <p class="bs-component">
-                <a href="javascript:void(0)" class="btn btn-default">Default</a>
-                <a href="javascript:void(0)" class="btn btn-primary">Primary</a>
-                <a href="javascript:void(0)" class="btn btn-success">Success</a>
-                <a href="javascript:void(0)" class="btn btn-info">Info</a>
-                <a href="javascript:void(0)" class="btn btn-warning">Warning</a>
-                <a href="javascript:void(0)" class="btn btn-danger">Danger</a>
-                <a href="javascript:void(0)" class="btn btn-link">Link</a>
-              </p>  -->
+       <!-- <h1>Angular Dashboard</h1> -->
+       <!-- <h2>Drag and drop all widget you want see in the page</h2> -->
+      <h2 id="briefDesc">Change the position of the widgets on the page or add new ones from left menu</h2>
 
-              <div class="col-md-12">
-
-
-                <!-- Riga ZERO -->
-                <div class="row  ">
-                  <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_1">
-
-                    <widgetcircle data-widgetcode="widgetCircle1"><widgetcircle/>
-
-                    </div>
-                    <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_2">
-                      <widgetcircle data-widgetcode="widgetCircle2"><widgetcircle/>
-
-                      </div>
-                      <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
-                        <widgetcircle data-widgetcode="widgetCircle3"><widgetcircle/>
-                        </div>
-                        <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
-                          <widgetcircle data-widgetcode="widgetCircle4"><widgetcircle/>
-
-                          </div>
-
-                        </div>
-
-
-                        <!--PRIMA RIGA-->
-                        <div class="row ">
-
-                          <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions"  id="riga_1Col_1">
-
-                            <widgettile widgetcode="widgetTileFacebook" widget-tile-class="bg_facebook"widget-tile-icon="fa-thumbs-o-up"></widgettile>
-
-                            <widgettile widgetcode="widgetTileDownloads" widget-tile-class="bg_green"  widget-tile-icon="fa-cloud-download"></widgettile>
-                          </div>
-
-                          <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_2">
-
-
-                            <widgetdoughnutm></widgetdoughnutm>
-
-
-                          </div>
-                          <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_3">
-
-                            <widgetweather> </widgetweather>
-                            <widgettile widgetcode="widgetTileTwitter" widget-tile-class="bg_twitter"widget-tile-icon="fa-twitter"></widgettile>
-                          </div>
-                        </div>
-                        <!--SECONDA RIGA-->
-                        <div class="row ">
-                          <div class="col-md-12 draggable large_widget" ui:sortable="sortableOptions" id="riga_2">
-                            <widgetmap></widgetmap>
-                          </div>
-                        </div>
-
-                        <!--TERZA RIGA-->
-                        <div class="row ">
-                          <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_1">
-                            <widgetline></widgetline>
-                          </div>
-                          <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_2">
-                            <widgetdoughnut></widgetdoughnut>
-                          </div>
-                          <div class="col-md-12">
-                            <input type="checkbox" id="showBordersButton" name="showBordersButton" class="borders"/>
-                            <label for="showBordersButton" class="btn-eye tooltips cursorPointer"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
-                          </div>
-                        </div>
-                      </div>
-                    </div>  <!-- dashboard main content -->
-                  </div> <!-- content --> 
-                </div> <!-- container --> 
-              </body>
-              </html>
-
-
-
+     <!--   <h3 class="text-muted">Drag and drop all widget you want see in the page</h3> -->
+       <div class="col-md-12">
+        <!-- Riga ZERO -->
+        <div class="row  ">
+          <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_1">
+            <widgetcircle data-widgetcode="widgetCircle1"><widgetcircle/>
+            </div>
+            <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_2">
+              <widgetcircle data-widgetcode="widgetCircle2"><widgetcircle/>
+              </div>
+              <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
+                <widgetcircle data-widgetcode="widgetCircle3"><widgetcircle/>
+                </div>
+                <div class="col-md-3 draggable x_small_widget" ui:sortable="sortableOptions"  id="riga_0Col_3">
+                  <widgetcircle data-widgetcode="widgetCircle4"><widgetcircle/>
+                  </div>
+                </div>
+                <!--PRIMA RIGA-->
+                <div class="row ">
+                  <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions"  id="riga_1Col_1">
+                    <widgettile widgetcode="widgetTileFacebook" widget-tile-class="bg_facebook"widget-tile-icon="fa-thumbs-o-up"></widgettile>
+                    <widgettile widgetcode="widgetTileDownloads" widget-tile-class="bg_green"  widget-tile-icon="fa-cloud-download"></widgettile>
+                  </div>
+                  <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_2">
+                    <widgetdoughnutm></widgetdoughnutm>
+                  </div>
+                  <div class="col-md-4 draggable small_widget" ui:sortable="sortableOptions" id="riga_1Col_3">
+                    <widgetweather> </widgetweather>
+                    <widgettile widgetcode="widgetTileTwitter" widget-tile-class="bg_twitter"widget-tile-icon="fa-twitter"></widgettile>
+                  </div>
+                </div>
+                <!--SECONDA RIGA-->
+                <div class="row ">
+                  <div class="col-md-12 draggable large_widget" ui:sortable="sortableOptions" id="riga_2">
+                    <widgetmap></widgetmap>
+                  </div>
+                </div>
+                <!--TERZA RIGA-->
+                <div class="row ">
+                  <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_1">
+                    <widgetline></widgetline>
+                  </div>
+                  <div class="col-md-6 draggable medium_widget" ui:sortable="sortableOptions" id="riga_3Col_2">
+                    <widgetdoughnut></widgetdoughnut>
+                  </div>
+                  <div class="col-md-12">
+                    <input type="checkbox" id="showBordersButton" name="showBordersButton" class="borders"/>
+                    <label for="showBordersButton" class="btn-eye tooltips cursorPointer"><i class="fa fa-eye fa-3x icon_eye"></i><span>Show template</span></label> 
+                  </div>
+                </div>
+              </div>
+          </div>  <!-- dashboard main content -->
+      </div> <!-- content --> 
+    </div> <!-- container --> 
+  </body>
+</html> 

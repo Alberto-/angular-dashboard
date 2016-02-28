@@ -9,26 +9,67 @@ and open the template in the editor.
     */
 
 /*
-color palette
 
-1) #0277BD  / #2572AF 
-
-2)#B2D5F3 
-
-3)#E1F5FE
+Primary color: #0277BD;
+.dark-primary-color    { background: #303F9F; }
+.default-primary-color { background: #3F51B5; }
+.light-primary-color   { background: #C5CAE9; }
 
 */
 
-/*main backgroud color
 
-1)#EEEEEE  / #F5F5F5
 
-*/
+/*******COLORS************/
+/*
+
+background-color: #FAFAFA 
+(main #FAFAFA , secundary #EEEEEE)
+
+PRIMARY COLOR:
+
+Dark  primary color { background: #0B62A4; }  text/icon = #FFFFFF
+Default primary color { background: #0277BD; /#2572AF } text/icon = #FFFFFF
+Medium primary color   { background: #B2D5F3; } text/icon = #FFFFFF/#2572AF
+Light primary color   { background: #E1F5FE; } text/icon = #2572AF
+
+Text general : #FFFFFF
+Text primary    { color: #0277BD; }
+Text secondary  { color: #727272; }
+
+ACCENT color          { background: #9E9E9E; }
+
+divider-color         { border-color: #B6B6B6; }
+
+borders:  rgba(179, 179, 179, 0.69)
+
 
 /*menu color
 rgba(94, 93, 101, 0.35);
 
+
+---------
+
+
+
 */
+
+
+.text-general{
+  color: #FFFFFF;
+}
+
+.text-primary{
+  color: #0277BD;
+}
+
+.text-sec{
+  color: #727272;
+}
+
+.text-acc{
+  color: #9E9E9E;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -79,37 +120,28 @@ body {
  width: 100%;
 }
 
-/*   .portlet-header {
-    padding: 0.2em 0.3em;
-    margin-bottom: 0.5em;
-    position: relative;
-    background-color: transparent;
-    color: white;
-    background-color: #2572AF;
-    }*/
-
-    .portlet-header {
-      padding: 0.2em 0.2em;
-      position: relative;
-      color: #2572AF;
-      font-size: 1.5em;
-      font-weight: 500;
-/*    background-color: rgb(222, 238, 238);
-transition*/: all ease 0.3s;
-background: rgb(222, 238, 238);
-background: -webkit-linear-gradient(#2876b2, #549ad0);
-background: -moz-linear-gradient(#2876b2, #549ad0);
-background: -o-linear-gradient(#2876b2, #549ad0);
-/*background: linear-gradient(rgb(222, 238, 238) 50%, #549ad0 50%);*/
-background: linear-gradient(rgba(222, 238, 238, 0.5) 50%, #549ad0 50%);
-background-repeat: repeat;
--webkit-background-size: 100% 201%;
--moz-background-size: 100% 201%;
-background-size: 100% 201%;
--webkit-transition: all .5s linear;
--moz-transition: all .5s linear;
--o-transition: all .5s linear;
-transition: all .5s linear;
+.portlet-header {
+  padding: 0.2em 0.2em;
+  position: relative;
+  color: #2572AF;
+  font-size: 1.5em;
+  font-weight: 500;
+  /*    background-color: rgb(222, 238, 238);
+  transition*/: all ease 0.3s;
+  background: rgb(222, 238, 238);
+  background: -webkit-linear-gradient(#2876b2, #549ad0);
+  background: -moz-linear-gradient(#2876b2, #549ad0);
+  background: -o-linear-gradient(#2876b2, #549ad0);
+  /*background: linear-gradient(rgb(222, 238, 238) 50%, #549ad0 50%);*/
+  background: linear-gradient(rgba(222, 238, 238, 0.5) 50%, #549ad0 50%);
+  background-repeat: repeat;
+  -webkit-background-size: 100% 201%;
+  -moz-background-size: 100% 201%;
+  background-size: 100% 201%;
+  -webkit-transition: all .5s linear;
+  -moz-transition: all .5s linear;
+  -o-transition: all .5s linear;
+  transition: all .5s linear;
 }
 
 .portlet:hover .portlet-header{
@@ -139,6 +171,11 @@ transition: all .5s linear;
 
 .box:hover .headerDdwn_bg{
  background-position: 0 -102%;
+}
+
+#briefDesc{
+  color: #9E9E9E;
+  padding: 0.5em;
 }
 
 /*END dropdown background*/
@@ -309,11 +346,11 @@ transition: all .5s linear;
     font-weight: 100;
   }
 
-  .color1{
+  .menu-color1{
     color: #B2D5F3;
   }
 
-  .color2{
+  .menu-color2{
     color: #EEEEEE;
   }
 
@@ -622,35 +659,51 @@ transition: all .5s linear;
   }
 
   .logoHeader{
-    float: left;
-    display: block;
+    float: none !important;
+    display: block !important;
+    text-align: center;
   }
+
+  .user-name{
+    display: none;
+  }
+  .logoMenu{
+    display: none; 
+  }
+
+  .menu .portlet{
+    margin: 0;
+  }
+
+  .showBordersMobile{
+    border: 2px dashed #6EB4E6;
+    min-height: 200px;
+    min-width: 5em;
+  }
+
+  .portlet-header {
+    color: #ffffff;  
+  }
+
+  #briefDesc{
+    display: none;
+  }
+
   .user-info{
-   display: none;
- }
+ /*   position: absolute;
+    top: 0;
+    right: 0;*/
+    display: none;
+  }
 
- .logoMenu{
-   display: none; 
- }
+  header{
+    margin-bottom: 1em;
+  }
 
- .menu .portlet{
-  margin: 0;
-}
-
-.showBordersMobile{
-  border: 2px dashed #6EB4E6;
-  min-height: 200px;
-  min-width: 5em;
-}
-
-.portlet-header {
-  color: #ffffff;  
-}
-
-/*MOBILE NOT DRAGGABLE*/
-aside.menu{
-  display: none !important;
-}
+  /*MOBILE NOT DRAGGABLE*/
+  aside.menu{
+    display: none !important;
+  }
 
 }
 
@@ -685,9 +738,6 @@ aside.menu{
 .border_error{
  border-color: #f44336 !important;
 }
-
-
-
 
 .bg_red{
   background-color: #FB5651;
@@ -809,86 +859,86 @@ aside.menu{
       float:left;
     }
 
- .menu .widgetHeadLeft.iconGauge{
+    .menu .widgetHeadLeft.iconGauge{
      margin-top: 0.3em;
-    }
-
-
-    .menu .widgetHeadRight{
-      width: 60%;
-      float:left;
-    }
-
-    .fa:before{
-      text-shadow: 3px 2px 0px rgba(0,0,0,0.30);
-    }
-
-    .x_small_widget .portlet-header{
-      text-align: center !important;
-    }
-
-    .small_widget .portlet-header, .large_widget .portlet-header, .medium_widget .portlet-header{
-      text-align: left !important;
-      /*padding-left: 0.5em;*/
-    }
-
-    body, html {
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    .cursorGrap{
-      cursor: grab;
-    }
-
-    .cursorPointer{
-      cursor: pointer;
-    }
-
-    .widget_Tile_main .portlet-header{
-      visibility: hidden;
-      /*height: 0;*/
-      /*padding: 0;*/
-    }
-
-    .widget_Tile_main:hover .portlet-header{
-      display: table-header-group;
-    }
-
-    .widget_Tile_main .portlet-header:hover{
-      display: table-header-group;
-    }
-
-    .menu .widget_Tile_main .portlet-header{
-     display: block;
    }
 
-   .menu .widget_Tile_main{
-    display: block;
+
+   .menu .widgetHeadRight{
+    width: 60%;
+    float:left;
   }
 
+  .fa:before{
+    text-shadow: 3px 2px 0px rgba(0,0,0,0.30);
+  }
 
+  .x_small_widget .portlet-header{
+    text-align: center !important;
+  }
 
+  .small_widget .portlet-header, .large_widget .portlet-header, .medium_widget .portlet-header{
+    text-align: left !important;
+    /*padding-left: 0.5em;*/
+  }
 
+  body, html {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-  /**REFACTOR**/
-  /*refactor widgetstructure*/
-  .portlet-header{
-   text-align: left;
-   position: absolute;
-   top: 0;
-   z-index: 9999;
-   width: 100%;
-   cursor: grab;
-   cursor: pointer;
+  .cursorGrap{
+    cursor: grab;
+  }
+
+  .cursorPointer{
+    cursor: pointer;
+  }
+
+  .widget_Tile_main .portlet-header{
+    visibility: hidden;
+    /*height: 0;*/
+    /*padding: 0;*/
+  }
+
+  .widget_Tile_main:hover .portlet-header{
+    display: table-header-group;
+  }
+
+  .widget_Tile_main .portlet-header:hover{
+    display: table-header-group;
+  }
+
+  .menu .widget_Tile_main .portlet-header{
+   display: block;
  }
 
+ .menu .widget_Tile_main{
+  display: block;
+}
 
- .contenitoreMap{
+
+
+
+
+/**REFACTOR**/
+/*refactor widgetstructure*/
+.portlet-header{
+ text-align: left;
+ position: absolute;
+ top: 0;
+ z-index: 9999;
+ width: 100%;
+ cursor: grab;
+ cursor: pointer;
+}
+
+
+.contenitoreMap{
   min-height: 318px !important;
 }
 
