@@ -4,33 +4,22 @@ app.controller('widgetDoughnutMController', ["$scope", "$rootScope", "$http", "$
   $scope.title="Advertising";
   $scope.description="People reached with email advertising";
 
-  console.log('Loading chart ...');
-
-  $scope.chartPolarLabels = widgetDoughnutMService.getLabels();
-  $scope.chartPolarColours = widgetDoughnutMService.getColors();
+  // console.info('Loading chart ...');
 
   widgetDoughnutMService.getInfo().success(function(data){
-
-
-  }).error(function(data){
-    console.log("error loading windget Polar");
-  });
-
+  // console.debug('Chart M data: ' + data);
     Morris.Donut({
       element: 'widgetDoughnutM',
       resize: true,
-      data: [
-
-        {value: 60, label: 'Opened'},
-        {value: 25, label: 'Visit website'},
-        {value: 10, label: 'Registered'},
-        {value: 5, label: 'Deleted'}
-
-      ],
+      data: data,
       formatter: function (x) { return x + "%"}
     }).on('click', function(i, row){
       console.log(i, row);
     });
+
+  }).error(function(data){
+    console.error("error loading windget Polar");
+  });
 
 
 }]);

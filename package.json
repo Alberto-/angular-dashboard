@@ -1,12 +1,12 @@
 {
   "name": "angular-dashboard",
   "version": "1.0.0",
-  "description": "An Angular UI that offers you a page with different draggable widgets, ready to get data from external web services.",
+  "description": "The Angular UI that offers you a page with different draggable widgets, ready to get data from external web services.",
   "main": "index.html",
-  "repository": "https://bitbucket.org/apiras/dashboard.git",
+  "repository": "https://github.com/Alberto-/dashboard.git",
   "author": "Alberto Piras",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/apiras/dashboard#readme",
+  "homepage": "https://github.com/Alberto-/dashboard#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
     },

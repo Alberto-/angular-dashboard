@@ -5,7 +5,7 @@ app.controller('widgetBarController', [ "$scope","$rootScope","$http","$compile"
     $scope.desc="Leads chart description";
 
     widgetBarService.getInfo().success(function(data){
-      console.log(data); 
+      //console.debug(data); 
 
       //main chart label
       $scope.chartBarLabels = ["Customers" + " - " + "Leads"];
@@ -19,7 +19,7 @@ app.controller('widgetBarController', [ "$scope","$rootScope","$http","$compile"
       [data.leads.total]
       ];
     }).error(function(data){
-      console.log("error loading windget Bar chart");
+      console.error("error loading windget Bar chart");
 
     });
 

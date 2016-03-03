@@ -8,8 +8,7 @@ app.controller('widgetCircleController', ["$scope", "$rootScope", "$http", "$com
 			$scope.title=$scope.json.title;
 			$scope.colorBar=widgetCircleService.checkLevel($scope.percentage);
 		}).error(function(data){
-			console.log("error loading windget Circle: " + $scope.widgetcode);
-		});
+			console.error("error loading windget Circle: " + $scope.widgetcode);
+	});
 
-
-	}]);
+}]);

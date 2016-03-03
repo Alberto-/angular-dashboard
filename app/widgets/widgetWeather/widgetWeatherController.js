@@ -4,72 +4,66 @@ app.controller('widgetWeatherController', [ "$scope","$rootScope","$http","$comp
   function ($scope, $rootScope, $http, $compile) {
     $scope.title="Weather";
 
+    //San Francisco
+    var newPos = {
+        lat: 37.774929, 
+        lng: -122.419416
+    };
 
-// var newPos=getPosition();
+    // Carbonia
+    // var newPos = {
+    //   lat: 39.164428, 
+    //   lng: 8.522885
+    // };
 
-//San Francisco
-var newPos = {
-    lat: 37.774929, 
-    lng: -122.419416
-};
+    // Milano
+    //  var newPos = {
+    //   lat: 45.46542, 
+    //   lng: 9.18592
+    // };
 
-// Carbonia
-// var newPos = {
-//   lat: 39.164428, 
-//   lng: 8.522885
-// };
+    // var newPos=getPosition();
 
+    $http.get("http://api.openweathermap.org/data/2.5/weather?lat="+newPos.lat+"&lon="+newPos.lng+"&appid=44db6a862fba0b067b1930da0d769e98").success(function(data){
 
-// Milano
-//  var newPos = {
-//   lat: 45.46542, 
-//   lng: 9.18592
-// };
+      //console.debug('weather json:'+JSON.stringify(data));
+      var json= JSON.parse(JSON.stringify(data));
+      $scope.temperature= json.main.temp;
+      $scope.code = json.weather[0].id;
+      $scope.description = json.weather[0].description;
+      $scope.location = json.name;
 
-
-$http.get("http://api.openweathermap.org/data/2.5/weather?lat="+newPos.lat+"&lon="+newPos.lng+"&appid=44db6a862fba0b067b1930da0d769e98").success(function(data){
-
-  console.log('preso:'+JSON.stringify(data));
-
-  var json= JSON.parse(JSON.stringify(data));
-
-  $scope.temperature= json.main.temp;
-  $scope.code = json.weather[0].id;
-
- $scope.description = json.weather[0].description;
-
-
-  $scope.location = json.name;
-
-}).error(function(data){
-
-});
-
+    }).error(function(data){
+      console.error("error reading weather");
+    });
 
 }]);
 
 
+/* function getPosition - dynami geolocalization 
 
 function getPosition(){
 
-//default weather - San Francisco
-var weatherPos = {
-  lat: 37.774929, 
-  lng: -122.419416
+  //default weather - San Francisco
+  var weatherPos = {
+    lat: 37.774929, 
+    lng: -122.419416
+  };
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      weatherPos.lat = position.coords.latitude,
+      weatherPos.lng = position.coords.longitude;
+      alert("lat:"+ weatherPos.lat +"long:"+weatherPos.lng);
+
+    }, function() {
+     console.log('position found');
+   });
+  } else {
+   console.log('Browser does not support Geolocation');
+  }
+
+  return weatherPos;
 };
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    weatherPos.lat = position.coords.latitude,
-    weatherPos.lng = position.coords.longitude;
-    alert("lat:"+ weatherPos.lat +"long:"+weatherPos.lng);
-
-  }, function() {
-   console.log('found :)');
- });
-} else {
- console.log('Browser does not support Geolocation');
-}
-return weatherPos;
-};
-
+*/

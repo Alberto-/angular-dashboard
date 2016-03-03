@@ -1,11 +1,6 @@
-{
-	
-	"active" : 5,
-	
-	"notActive" : 2,
-
-	"cancelled" : 3,
-
-	"terminated" : 1
-
-}
+[
+  {"value": 60, "label": "Opened"},
+  {"value": 25, "label": "Visit website"},
+  {"value": 10, "label": "Registered"},
+  {"value": 5, "label": "Deleted"}
+]

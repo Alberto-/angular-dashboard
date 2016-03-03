@@ -2,7 +2,6 @@ app.controller('widgetTileController', ["$scope", "$rootScope", "$http", "$compi
 
 	function ($scope, $rootScope, $http, $compile, widgetTileService) {
 
-
 		widgetTileService.getInfo().success(function(data){
 
 			$scope.json = data[$scope.widgetcode]; 
@@ -11,8 +10,8 @@ app.controller('widgetTileController', ["$scope", "$rootScope", "$http", "$compi
 			$scope.total=$scope.json.value;
 
 		}).error(function(data){
-			console.log("error loading windget Tile: " + $scope.widgetcode);
+			console.error("error loading windget Tile: " + $scope.widgetcode);
 		});
 
-
-	}]);
+	}
+]);

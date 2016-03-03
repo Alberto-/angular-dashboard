@@ -1,4 +1,3 @@
-
 app.factory("widgetBarService",["$http", function( $http) {
 
 	labels = ["Customers", "Leads"];
@@ -10,4 +9,5 @@ app.factory("widgetBarService",["$http", function( $http) {
 			return labels;
 		}
 	};
+	
 }]);

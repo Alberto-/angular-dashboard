@@ -7,14 +7,12 @@ app.config(function ($httpProvider) {
 
 app.controller('mainController', function ($scope, $rootScope, $http, $compile) {
 
-// if is not a mobile device 
-
+// if is not a mobile device enable draggable interface
 if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )) {
 
-  console.log("NOT mobile: activating draggable..");
+  console.info("NOT mobile: activating draggable..");
 
   // angular.element(document.getElementById('mainController')).scope().makeDraggable();
-
 
   $scope.sortableOptions = {
     connectWith: ".draggable",
@@ -24,24 +22,22 @@ if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
     cursor: "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAA3lBMVEUAAAAnk8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8Ink8J5sPN9AAAASXRSTlMAAQIDBAUGBwgODxESFBUZGxwfIywuMTQ2ODk7PD1AQ0dQVFVWWVxfYWNka21zdYOGjo+XmqWmq7Cyt7nAwcPI0dri6O3z9/n718TKMwAAALxJREFUGBl1wddWwkAARdEzKYJYKCo2jJSAvYuiqKCGCff/fwgWEBwf2JvVPD9s3zc2ouOQjPcgpfZ9LCnZLRpmbtU5sZuUPv2SpO8CkI+SAdwA5zAs5HpfsDWSelADahDBgXxeP4L1Lo6qQmwbLnFUFaIYznDsK0AxHOFoCX6u+a/bhytbxGXSDpg3W8axrQrgvaQV/tTlMWWexzssPfWZMY82IPN7wZyvQxbyili401KyRmavGc+d5lhhAtNfGTQkXlpjAAAAAElFTkSuQmCC'), pointer",
     cursorAt: { left : 200 },
     receive: function( event, ui ) {
-      console.log(event);
-      console.log(ui);
+      console.debug(event);
+      console.debug(ui);
       var listaId=this.id;
       var cardId=ui.item[0].id;
-      console.log("-->update verso colonna :"+listaId+"\n elemento id: "+cardId);
+      console.debug("-->update to column :"+listaId+"\n Element id: "+cardId);
       reloadChart();
   //$scope.moveCard(cardId,listaId);
-  },
-  start: function( event, ui ) {
-    $(".draggable").addClass("draggable_min_height");
-
-    console.log('')
+},
+start: function( event, ui ) {
+   angular.element(".draggable").addClass("draggable_min_height");
        // $(".draggable").addClass("showBordersMobile");
       // $("#showBorders").prop('checked', true);
       reloadChart();
     },
     stop: function( event, ui ) {
-      $(".draggable").removeClass("draggable_min_height");
+      angular.element(".draggable").removeClass("draggable_min_height");
        // $(".draggable").removeClass("showBordersMobile");
        //  $("#showBorders").prop('checked', false);
        reloadChart();
@@ -58,24 +54,29 @@ if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navi
      },***/
    };
 
-  }else{
-    $scope.sortableOptions = {
-      disabled: true
-    }
+ }else{
+  $scope.sortableOptions = {
+    disabled: true
   }
+}
+
+ angular.element("#showBordersButton").click(function () {
+  console.info('Show/hide template ...')
+   angular.element(".draggable").toggleClass("showBorders");
+ });
+
 });
 
- var changeDashboard = document.createEvent('Event');
-    changeDashboard.initEvent('changeDashboard', true, true);
-    
+var changeDashboard = document.createEvent('Event');
+changeDashboard.initEvent('changeDashboard', true, true);
 
 function reloadChart(){
-  $(window).trigger('resize');
+   angular.element(window).trigger('resize');
 
   if (document.createEvent) { // W3C
     var ev = document.createEvent('Event');
     ev.initEvent('resize', true, true);
-    //lancia evento
+    //Throw event 
     window.dispatchEvent(ev);
   }
   else { // IE
@@ -85,22 +86,4 @@ function reloadChart(){
   }
 };
 
-
-$(function() {
-  // $( ".portlet" )
-  // .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
-  // .find( ".portlet-header" )
-  // .addClass( "ui-widget-header ui-corner-all" )
-  // .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
-
-  // $( ".portlet-toggle" ).click(function() {
-  //   var icon = $( this );
-  //   icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
-  //   icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
-  // });
-
-$(".borders").click(function () {
- $(".draggable").toggleClass("showBorders");
-});
-});
 

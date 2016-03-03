@@ -4,15 +4,14 @@ app.controller('widgetDoughnutController', ["$scope", "$rootScope", "$http", "$c
   $scope.title="Contracts chart";
   $scope.desc="Contracts chart description";
 
-  console.log('Loading chart ...');
-
+  // console.info('Loading chart ...');
 
   $scope.chartPolarLabels = widgetDoughnutService.getLabels();
   $scope.chartPolarColours = widgetDoughnutService.getColors();
 
 
   widgetDoughnutService.getInfo().success(function(data){
-    console.log(data); 
+    //console.debug(data); 
 
     $scope.json = data; 
 
@@ -30,7 +29,7 @@ app.controller('widgetDoughnutController', ["$scope", "$rootScope", "$http", "$c
 
 
   }).error(function(data){
-    console.log("error loading windget Polar");
+    console.error("error loading windget Polar");
   });
 
 

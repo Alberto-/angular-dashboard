@@ -4,16 +4,16 @@ app.controller('widgetLineController', ["$scope", "$rootScope", "$http", "$compi
   $scope.title="Sales";
   $scope.desc="Polar chart description";
 
-  console.log('Loading chart ...');
+  //console.info('Loading chart Line...');
 
-$scope.options = {
+  $scope.options = {
     bezierCurve : false
-}
+  }
   $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
   $scope.series = ['Sales 2015'];
   $scope.data = [
-    [50000, 80000, 60000, 50000, 70000, 90000, 150000]
-   
+  [50000, 80000, 60000, 50000, 70000, 90000, 150000]
+
   ];
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
