@@ -1,83 +1,65 @@
-Instructions:
+# Angular Dashboard
 
-SCRIVERE IN MARKDOWN
+The Angular UI that offers you a page with different draggable widgets, ready to get data from external web services.
 
-Install:
+## What is a Dashboard?
+>A Dashboard provide a real time graphical view of performance and key indicators of an organization towards one or more business processes
 
-prerequisites : node
-
-# npm install
-
-(that also automatically runs : bower install)
+Angular Dashboar provide you a responsive UI and allows you to move the widget you want in the page.
+All widget can access and read external info from your own web services to show the your real company data.
 
 
-1) how to run:
+All DOM events you need are cached, and you can customize your own dashboar as you want.
 
-	(install globally http-server : npm install http-server -g)
+## Current Widget List
 
-	under app/  run
-
-	"http-server -a 0.0.0.0 -p 8000"
-
-or 
-
-under app/
-
- node assets/lib/http-server/bin/http-server -a 0.0.0.0 -p 8000
+  - 4 widget percentage
+  - 4 tiles widget (Facebook, Twitter, Downloads, Weather)
+  - 1 Map widget
+  - 1 Line chart widget
+  - 2 Donut chart widgets
+  - 1 Gauge widget
+  - 1 Bar widget
 
 
-2) test:
+## Installation
 
-	karma start test/karma.conf.js
+```
+$ git clone https://github.com/Alberto-/dashboard.git
+```
 
-or:
-
-
-npm install karma -g
-
-npm install karma-firefox-launcher  -g
-
-
-npm install karma-chrome-launcher  -g
-
-npm install karma-jasmine  -g
+From project root `(
+Prerequisites: node
+)`
 
 
-
-What is a dashboard?
-
-E’ un sistema di visualizzazione delle informazioni caratterizzato da facilità di lettura ed immediatezza.
-
-Le dashboard forniscono una visione grafica e realtime degli indicatori chiave di performance di un'organizzazione relativamente ad uno o più processi aziendali 
+```
+$ npm install
+```
+this will download all npm and bower required packages
 
 
-MONITORARE L'ATTIVITA
+### Run
+
+```
+$ npm start
+```
+
+Angular Dashboard will run on http://localhost:8000/app
 
 
-"
-Il termine dashboard proviene dal settore automobilistico e come in un cruscotto tale sistema raccoglie tutte le principali informazioni, consentendo di sapere a colpo d’occhio costa sta funzionando correttamente e cosa no.
+### Tests
+```
+karma start test/karma.conf.js
+```
 
-"
+### Version
+1.0 
 
+## License
 
-Pertanto il progetto non punta (per adesso) a offrirti un'area dove inserisci ad esempio fatture, ma ti
-offrirà i widget in grado di allacciarsi (con un minimo di lavoro) a quei servizi e te li mostrerà
-nella dashboard.
--
--------------------------------------------
-
-
-TO-DO:
-
-Widget Calendar
-
-widget clock
-
-widget horizontal progress bar 
-
-add colors to chart-M
-
-change menu
+MIT 
 
 
-update widgetMap
+
+
