@@ -1,6 +1,6 @@
 # Angular Dashboard
 
-The Angular UI that offers you a page with different draggable widgets, ready to get data from external web services.
+The Angular UI that offers you a page with different draggable widgets, ready to get data from external web services. [view demo]
 
 ## What is a Dashboard?
 >A Dashboard provide a real time graphical view of performance and key indicators of an organization towards one or more business processes
@@ -10,6 +10,8 @@ All widget can access and read external info from your own web services to show 
 
 
 All DOM events you need are cached, and you can customize your own dashboar as you want.
+
+[view demo]
 
 ## Current Widget List
 
@@ -61,5 +63,4 @@ karma start test/karma.conf.js
 MIT 
 
 
-
-
+[view demo]: <http://angulardashboard-enta.rhcloud.com/app/>
