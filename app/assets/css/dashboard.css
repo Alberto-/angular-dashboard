@@ -826,7 +826,7 @@ header{
 }
 
 .icon_gauge:before{
-  content: url('gaugeIcon.png');
+  content: url('../img/gaugeIcon.png');
 }
 
 .w_percentage_description{

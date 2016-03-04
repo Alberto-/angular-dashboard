@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "The Angular UI that offers you a page with different draggable widgets, ready to get data from external web services.",
   "main": "index.html",
-  "repository": "https://github.com/Alberto-/dashboard.git",
+  "repository": "https://github.com/Alberto-/angular-dashboard.git",
   "author": "Alberto Piras",
   "license": "MIT",
-  "homepage": "https://github.com/Alberto-/dashboard#readme",
+  "homepage": "https://github.com/Alberto-/angular-dashboard#README",
   "scripts": {
    "postinstall": "bower install",
     "prestart": "npm install",
