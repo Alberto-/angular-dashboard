@@ -310,9 +310,11 @@ body {
 }
 
 .user-info {
-  float: right;
-  padding: 0.4em;
-  padding-right: 1em;
+ /* padding: 0.4em;
+ padding-right: 1em;*/
+ float: right;
+ padding: 0.4em;
+ padding-right: 138px;
 }
 
 .logo{
@@ -581,6 +583,10 @@ header{
 
 .morrisChart{
   height: 300px;
+}
+
+.no_decoration{
+  text-decoration: none !important;
 }
 
 /*widget circles*/
@@ -875,6 +881,9 @@ header{
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 768px ) {
 
+  #fork_me{
+    display: none;
+  }
   .logo-content{
     line-height: 4em;
     padding-left: 0.5em;
@@ -943,4 +952,9 @@ header{
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width:  1200px) {
 
+}
+
+
+#userLink{
+  outline: none;
 }
