@@ -484,7 +484,9 @@ header{
   border-radius: 90% !important;
   background-color: rgba(180, 216, 233, 0.68) !important;
   color: #ffffff;
-} 
+  transition: all ease 0.5s;
+}
+
 #showBordersButton:checked + label {
   color: rgb(37, 114, 175) !important;
   background-color: #ffffff !important;
