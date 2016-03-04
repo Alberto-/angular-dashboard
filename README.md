@@ -52,7 +52,7 @@ Angular Dashboard will run on http://localhost:8000/app
 
 ### Tests
 ```
-karma start test/karma.conf.js
+$ npm test
 ```
 
 ### Version
