@@ -12,9 +12,7 @@
     "prestart": "npm install",
     "start": "./node_modules/.bin/http-server -a 0.0.0.0 -p 8000",
     "pretest": "npm install",
-    "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
-    "test-single-run": "node node_modules/karma/bin/karma start test/karma.conf.js  --single-run"
-
+    "test": "./node_modules/.bin/karma start app/test/karma.conf.js"
     },
     "devDependencies": {
     "http-server": "^0.6.1",

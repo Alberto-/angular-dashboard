@@ -61,19 +61,16 @@ describe('Test Services DashboardApp', function() {
 	});
 
 	describe('widgetChartPolar test', function() {
-		beforeEach(inject(function(_$controller_,widgetPolarService){
+		beforeEach(inject(function(_$controller_,widgetDoughnutService){
 		    // The injector unwraps the underscores (_) from around the parameter names when matching
 		    $controller = _$controller_;
-		    service = widgetPolarService;
+		    service = widgetDoughnutService;
 		}));
 
 		it('expects labels,colors, > 0', function() {
 			// expect(service.getLocations().length>0).toBe(true);
 			expect(service.getLabels().length).toBeGreaterThan(0); //true
-			expect(service.getColors().length).toBeGreaterThan(0); //true
-
 		});
-
 
 	});
 

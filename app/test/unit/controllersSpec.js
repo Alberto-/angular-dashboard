@@ -19,7 +19,7 @@ describe('Dashboard widgets', function() {
 		describe('widgetCircleService', function() {
 			it('Json data widget circle 1 expect percentage = 90, ', function() {
 				var $scope = {};
-				var controller = $controller('widgetCircleController_I', { $scope: $scope });
+				var controller = $controller('widgetCircleController', { $scope: $scope });
 				var result;
 				service.getInfo().success(function(data){
 					$scope.json = data.widgetCircle1; 
