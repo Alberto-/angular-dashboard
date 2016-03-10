@@ -27,7 +27,7 @@ All DOM events you need are cached, and you can customize your own dashboar as y
 ## Installation
 
 ```
-$ git clone https://github.com/Alberto-/dashboard.git
+$ git clone https://github.com/Alberto-/angular-dashboard.git
 ```
 
 From project root `(
