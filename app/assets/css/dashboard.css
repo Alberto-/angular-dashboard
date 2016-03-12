@@ -551,6 +551,14 @@ header{
   /*max-height: 358px !important;*/
 }
 
+.medium_widget .contenitoreMap{
+  min-height: 369px !important;
+}
+
+.medium_widget .portlet-content {
+  padding-top: 6em !important;
+}
+
 .small_widget .portlet{
   height: 318px;
 }
