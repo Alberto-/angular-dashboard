@@ -398,6 +398,7 @@ header{
 }
 .widget_Tile_main .portlet-content{
   padding-top: 2em;
+  box-sizing: border-box;
 }
 
 .widget_Tile_Content{
@@ -547,75 +548,76 @@ header{
 }
 
 .medium_widget .portlet{
-  min-height: 369px !important;
+   min-height: 385px !important;
   /*max-height: 358px !important;*/
 }
 
 .medium_widget .contenitoreMap{
-  min-height: 369px !important;
+  /*min-height: 369px !important;*/
+   min-height: 385px !important;
 }
 
-.medium_widget .portlet-content {
+/*.medium_widget .portlet-content {
   padding-top: 6em !important;
-}
+  }*/
 
-.small_widget .portlet{
-  height: 318px;
-}
+  .small_widget .portlet{
+    height: 318px;
+  }
 
-.small_widget .widget_Tile_main{
-  height: 154px;
-}
+  .small_widget .widget_Tile_main{
+    height: 154px;
+  }
 
-.x_small_widget .portlet{
+  .x_small_widget .portlet{
 
-  min-height: 200px !important;
-  max-height: 200px !important;
-}
+    min-height: 200px !important;
+    max-height: 200px !important;
+  }
 
-.x_small_widget .widget_Tile_main{
-  height: 200px;
-}
+  .x_small_widget .widget_Tile_main{
+    height: 200px;
+  }
 
-.x_small_widget .portlet .morrisChart{
-  height: 170px !important;
-  margin-top: -1.5em;
-  margin-bottom: -2em;
-}
+  .x_small_widget .portlet .morrisChart{
+    height: 170px !important;
+    margin-top: -1.5em;
+    margin-bottom: -2em;
+  }
 
-.small_widget .portlet .morrisChart{
-  height: 280px !important;
-  margin-top: -1.5em;
-  margin-bottom: -2em;
-}
+  .small_widget .portlet .morrisChart{
+    height: 280px !important;
+    margin-top: -1.5em;
+    margin-bottom: -2em;
+  }
 
-.morrisChart{
-  height: 300px;
-}
+  .morrisChart{
+    height: 300px;
+  }
 
-.no_decoration{
-  text-decoration: none !important;
-}
+  .no_decoration{
+    text-decoration: none !important;
+  }
 
-/*widget circles*/
+  /*widget circles*/
 
-.border_success{
- border-color: #4caf50 !important;
-}
+  .border_success{
+   border-color: #4caf50 !important;
+ }
 
-.border_medium{
- border-color: #307bbb !important;
-}
+ .border_medium{
+   border-color: #307bbb !important;
+ }
 
-.border_warning{
- border-color: #ff5722 !important;
-}
+ .border_warning{
+   border-color: #ff5722 !important;
+ }
 
-.border_error{
- border-color: #f44336 !important;
-}
+ .border_error{
+   border-color: #f44336 !important;
+ }
 
-.bg_red{
+ .bg_red{
   background-color: #FB5651;
 }
 
@@ -921,15 +923,30 @@ header{
     min-width: 5em;
   }
 
-  .portlet-header {
-    color: #ffffff;  
+  .medium_widget .portlet{
+    min-height: 200px !important;
   }
+  .medium_widget .portlet-content{
+   padding-top: 5em;
+ }
 
-  #briefDesc{
-    display: none;
-  }
+ .medium_widget .contenitoreMap{
+  min-height: 369px !important;
+}
 
-  .user-info{
+.large_widget .portlet {
+    min-height: 200px !important;
+}
+
+ .portlet-header {
+  color: #ffffff;  
+}
+
+#briefDesc{
+  display: none;
+}
+
+.user-info{
  /* position: absolute;
     top: 0;
     right: 0;*/
