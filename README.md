@@ -1,6 +1,6 @@
 # Angular Dashboard
 
-An Angular UI that offers you a page with different draggable widgets, ready to get data from external web services. [view demo]
+Angular Dashboard is a JavaScript User Interface that offers you different draggable widgets, ready to get data from external web services. [view demo]
 
 ## What is a Dashboard?
 >A Dashboard provide a real time graphical view of performance and key indicators of an organization towards one or more business processes

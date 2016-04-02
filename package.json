@@ -1,7 +1,7 @@
 {
   "name": "angular-dashboard",
   "version": "1.0.0",
-  "description": "The Angular UI that offers you a page with different draggable widgets, ready to get data from external web services.",
+  "description": "Angular Dashboard is a JavaScript User Interface that offers you different draggable widgets, ready to get data from external web services.",
   "main": "index.html",
   "repository": "https://github.com/Alberto-/angular-dashboard.git",
   "author": "Alberto Piras",
