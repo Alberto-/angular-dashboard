@@ -48,16 +48,17 @@ app.controller('widgetWeatherController', [ "$scope","$rootScope","$http","$comp
 }]);
 
 
-/* function getPosition - dynami geolocalization 
+/* 
+  CURRENT POSITION
+  function getPosition - dynamic geolocalization  - todo
+*/ 
 
-function getPosition(){
-
+/*function getPosition(){
   //default weather - San Francisco
   var weatherPos = {
     lat: 37.774929, 
     lng: -122.419416
   };
-
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       weatherPos.lat = position.coords.latitude,
@@ -70,7 +71,6 @@ function getPosition(){
   } else {
    console.log('Browser does not support Geolocation');
   }
-
   return weatherPos;
 };
 
