@@ -1,4 +1,12 @@
+/*
+* Widget Weather
+* (OpenWeather connector)
+*/
 'use strict';
+
+/**You need an API KEY from http://openweathermap.org/api (it's FREE)*/
+
+var API_KEY = "YOUR_API_KEY"; 
 
 app.controller('widgetWeatherController', [ "$scope","$rootScope","$http","$compile",
   function ($scope, $rootScope, $http, $compile) {
@@ -24,11 +32,11 @@ app.controller('widgetWeatherController', [ "$scope","$rootScope","$http","$comp
 
     // var newPos=getPosition();
 
-    $http.get("http://api.openweathermap.org/data/2.5/weather?lat="+newPos.lat+"&lon="+newPos.lng+"&appid=b1b15e88fa797225412429c1c50c122a").success(function(data){
+    $http.get("http://api.openweathermap.org/data/2.5/weather?lat=" + newPos.lat + "&lon=" + newPos.lng + "&appid=" + API_KEY).success(function(data){
 
       //console.debug('weather json:'+JSON.stringify(data));
-      var json= JSON.parse(JSON.stringify(data));
-      $scope.temperature= json.main.temp;
+      var json = JSON.parse(JSON.stringify(data));
+      $scope.temperature = json.main.temp;
       $scope.code = json.weather[0].id;
       $scope.description = json.weather[0].description;
       $scope.location = json.name;
