@@ -123,9 +123,9 @@ body {
   /*background: linear-gradient(rgb(222, 238, 238) 50%, #549ad0 50%);*/
   background: linear-gradient(rgba(222, 238, 238, 0.5) 50%, #549ad0 50%);
   background-repeat: repeat;
-  -webkit-background-size: 100% 201%;
-  -moz-background-size: 100% 201%;
-  background-size: 100% 201%;
+  -webkit-background-size: 100% 210%;
+  -moz-background-size: 100% 210%;
+  background-size: 100% 210%;
   -webkit-transition: all .5s linear;
   -moz-transition: all .5s linear;
   -o-transition: all .5s linear;
