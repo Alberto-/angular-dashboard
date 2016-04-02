@@ -91,6 +91,10 @@ body {
   min-height: 600px;
 }
 
+a, a:hover, a:focus {
+    color: #0277BD;
+}
+
 /*dashboard*/
 
 .portlet {

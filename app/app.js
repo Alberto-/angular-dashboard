@@ -7,6 +7,8 @@ app.config(function ($httpProvider) {
 
 app.controller('mainController', function ($scope, $rootScope, $http, $compile) {
 
+  $scope.dashboardAddress =  dashboard.dashboardHost;
+
 // if is not a mobile device enable draggable interface
 if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )) {
 
