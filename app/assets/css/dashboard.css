@@ -884,6 +884,11 @@ header{
   text-align: left;
 }
 
+.shwo-template-suggestion{
+  color: #9E9E9E;
+  padding: 1em 1.5em;
+}
+
 /*MEDIA QUERIES*/
 
 /* Small devices (tablets, 768px and up) */
@@ -950,6 +955,10 @@ header{
  /* position: absolute;
     top: 0;
     right: 0;*/
+    display: none;
+  }
+
+  #show-Template-section, .shwo-template-suggestion{
     display: none;
   }
 
