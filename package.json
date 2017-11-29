@@ -24,6 +24,9 @@
   },
   "dependencies": {
     "angular-chart.js": "0.10.2",
-    "chart.js": "1.1.0"
-  }
+    "chart.js": "1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",   
+    "gulp-minify": "^1.0.0"
+   }
 }
