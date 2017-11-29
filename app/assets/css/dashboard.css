@@ -134,7 +134,7 @@ a, a:hover, a:focus {
 .portlet:hover .portlet-header{
   color: #ffffff;
   /*background-color: #2572AF;*/
-  background-position: 0 -100%;
+  background-position: 0 -99%;
   height: auto;
   visibility: visible;
 }
@@ -594,6 +594,11 @@ header{
 
 .morrisChart{
   height: 300px;
+}
+
+chart-legend li>span{
+  padding: 3px 5px;
+  border-radius: 5px;
 }
 
 .no_decoration{

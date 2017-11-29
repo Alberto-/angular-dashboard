@@ -9,6 +9,7 @@ app.controller('widgetBarController', [ "$scope","$rootScope","$http","$compile"
 
       //main chart label
       $scope.chartBarLabels = ["Customers" + " - " + "Leads"];
+      $scope.chartBarColours = ['#ae9bce', "#9d9d9d"];
 
       //data series
       $scope.series = widgetBarService.getLabels();

@@ -9,10 +9,10 @@ app.factory('widgetDoughnutService', ["$http", function($http){
 
 
 	colors =  [
-	"#9ED54C",
-	"#91C249",
-	"#EC2A2D",
-	"#8D0521"
+	"#8ac249",
+	"#ffeb3b",
+	"#fe9700",
+	"#f34236"
 	];
 
 	return {
