@@ -3,7 +3,7 @@ app.directive("widgetgauge",function(){
     restrict : "E",
     replace : true,
     scope: {},
-    templateUrl: "widgets/widgetsChart/widgetGauge/widgetGaugeView.html",
+    templateUrl: "./app/widgets/widgetsChart/widgetGauge/widgetGaugeView.html",
     controller: 'widgetGaugeController'
   }
 

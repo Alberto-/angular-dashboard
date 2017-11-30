@@ -3,7 +3,7 @@ app.directive("widgetbar",function(){
     restrict : "E",
     replace : true,
     scope: {},
-    templateUrl: "widgets/widgetsChart/widgetBar/widgetBarView.html",
+    templateUrl: "./app/widgets/widgetsChart/widgetBar/widgetBarView.html",
     controller: 'widgetBarController'
   }
 

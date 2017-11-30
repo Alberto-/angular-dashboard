@@ -3,7 +3,7 @@ app.directive("widgetmap",function(){
     restrict : "E",
     replace : true,
     scope: {},
-    templateUrl: "widgets/widgetMaps/view.html",
+    templateUrl: "./app/widgets/widgetMaps/view.html",
     controller: 'widgetMapsController'
   }
 });

@@ -3,7 +3,7 @@ app.directive("widgetweather",function(){
     restrict : "E",
     replace : true,
     scope: {},
-    templateUrl: "widgets/widgetWeather/widgetWeatherView.html",
+    templateUrl: "./app/widgets/widgetWeather/widgetWeatherView.html",
     controller: 'widgetWeatherController'
   }
 

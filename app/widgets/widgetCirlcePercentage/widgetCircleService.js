@@ -24,7 +24,7 @@ app.factory('widgetCircleService', ["$http", function($http){
 
 	return {
 		getInfo: function(){
-			return $http.get('widgets/widgetCirlcePercentage/details.json');
+			return $http.get('./app/widgets/widgetCirlcePercentage/details.json');
 		},
 		checkLevel: function(val){
 			return checkLevelColors(val);

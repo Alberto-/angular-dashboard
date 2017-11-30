@@ -7,7 +7,7 @@ app.directive("widgettile",function(){
 			widgetTileClass : '@widgetTileClass',
 			widgetTileIcon : '@widgetTileIcon'
 		},
-		templateUrl: "widgets/widgetTile/widgetTileView.html",
+		templateUrl: "./app/widgets/widgetTile/widgetTileView.html",
 		controller: 'widgetTileController'
 	}
 });
