@@ -1,6 +1,6 @@
 # Angular Dashboard
 
-Angular Dashboard is a JavaScript User Interface that offers you different draggable widgets, ready to get data from external web services. [view demo]
+Angular Dashboard is a JavaScript User Interface built with Angular 1 that offers you different draggable widgets, ready to get data from external web services. [view demo]
 
 ## What is a Dashboard?
 >A Dashboard provide a real time graphical view of performance and key indicators of an organization towards one or more business processes
@@ -47,6 +47,7 @@ this will download all npm and bower required packages
 ```
 $ npm start
 ```
+This will create an http-server and will also run "gulp compress", to create the main-min.js file.
 
 Angular Dashboard will run on http://localhost:8000/app
 
@@ -64,4 +65,4 @@ $ npm test
 MIT 
 
 
-[view demo]: <http://angulardashboard-enta.rhcloud.com/app/>
+[view demo]: <https://alberto-.github.io/angular-dashboard/>
