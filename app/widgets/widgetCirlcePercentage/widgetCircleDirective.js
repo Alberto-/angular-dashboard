@@ -5,7 +5,7 @@ app.directive("widgetcircle",function(){
 		scope: {
 			widgetcode :'@widgetcode'
 		},
-		templateUrl: "widgets/widgetCirlcePercentage/widgetCircleView.html",
+		templateUrl: "./app/widgets/widgetCirlcePercentage/widgetCircleView.html",
 		controller: 'widgetCircleController'
 	}
 });

@@ -3,7 +3,7 @@ app.factory('widgetLineService', ["$http", function($http){
 
 	return {
 		getInfo: function(){
-			return $http.get('widgets/widgetsChart/widgetLine/details.json');
+			return $http.get('./app/widgets/widgetsChart/widgetLine/details.json');
 		}
 	}
 

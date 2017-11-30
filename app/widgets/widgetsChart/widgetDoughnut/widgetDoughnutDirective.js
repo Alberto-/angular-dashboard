@@ -3,7 +3,7 @@ app.directive("widgetdoughnut",function(){
     restrict : "E",
     replace : true,
     scope: {},
-    templateUrl: "widgets/widgetsChart/widgetDoughnut/widgetDoughnutView.html",
+    templateUrl: "./app/widgets/widgetsChart/widgetDoughnut/widgetDoughnutView.html",
     controller: 'widgetDoughnutController'
   }
 

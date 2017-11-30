@@ -17,7 +17,7 @@ app.factory('widgetDoughnutService', ["$http", function($http){
 
 	return {
 		getInfo: function(){
-			return $http.get('widgets/widgetsChart/widgetDoughnut/details.json');
+			return $http.get('./app/widgets/widgetsChart/widgetDoughnut/details.json');
 		},
 		getLabels: function(){
 			return labels;
