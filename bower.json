@@ -2,7 +2,7 @@
   "name": "angular-dashboard-bower",
   "description": "angular-dashboard bower inclusions",
   "version": "0.0.0",
-  "homepage": "https://github.com/Alberto-/angular-dashboard.git",
+  "homepage": "https://github.com/albertopiras/angular-dashboard.git",
   "license": "MIT",
   "private": true,
   "dependencies": {
