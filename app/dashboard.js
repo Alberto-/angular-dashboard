@@ -24,10 +24,10 @@
 
 })(this);
 
-/**You need a GOOGLE API Key - this will work only on the demo site*/
+/**You need a GOOGLE API Key */
 var GMAPS_APIKEY = "YOUR_GOOGLE_API_KEY";
 
-/**You need an API KEY from http://openweathermap.org/api (it's FREE) - this will work only on the demo site*/
+/**You need an API KEY from http://openweathermap.org/api (it's FREE)*/
 var API_KEY_OPEN_WEATHER = "YOUR_OPEN_WEATHER_API_KEY";
 
 $(document).ready(function () {
