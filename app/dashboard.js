@@ -2,13 +2,14 @@
   -dashboard utilities object-
 
   You can insert here the other general stuff you need
-  to use globally in the dashboard
+  to use globally in the dashboard.
+
+  At the bottom you can find the APIKEY to change in your app.
 
 */
 
-'use strict';
-
 (function (root) {
+    'use strict';
 
     var dashboardFullPathName = window.location.pathname;
     var dashboardFullPathNameArray = dashboardFullPathName.split("/");
@@ -27,4 +28,14 @@
 var GMAPS_APIKEY = "YOUR_GOOGLE_API_KEY";
 
 /**You need an API KEY from http://openweathermap.org/api (it's FREE) - this will work only on the demo site*/
-var API_KEY_OPEN_WEATHER = "YOUR_OPEN_WEATHER_API_KEY"; 
+var API_KEY_OPEN_WEATHER = "YOUR_OPEN_WEATHER_API_KEY";
+
+$(document).ready(function () {
+    // GRAVATAR
+    var hash = CryptoJS.MD5("albe45313@gmail.com");
+    document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/" + hash;
+    // MATERIAL INIT
+    $.material.init();
+});
+
+

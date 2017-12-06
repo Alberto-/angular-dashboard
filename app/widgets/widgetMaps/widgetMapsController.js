@@ -23,7 +23,7 @@ function setMarkers(map) {
 
   var imagePoint = {
     /*point perfect centered*/
-    url: 'assets/img/map-marker-icon-32.png',
+    url: './app/assets/img/map-marker-icon-32.png',
       // url: 'map-marker-icon.png',
       // This marker is 20 pixels wide by 32 pixels high.
       size: new google.maps.Size(32, 32),
@@ -34,7 +34,7 @@ function setMarkers(map) {
     };
 
     var imageHeart = {
-      url: 'assets/img/heart32.png',
+      url: './app/assets/img/heart32.png',
       size: new google.maps.Size(32, 32),
       origin: new google.maps.Point(0, 0),
       anchor: new google.maps.Point(16, 32)
