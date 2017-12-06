@@ -66,4 +66,4 @@ $ npm test
 MIT 
 
 
-[view demo]: <https://alberto-.github.io/angular-dashboard/>
+[view demo]: <https://albertopiras.github.io/angular-dashboard/>
