@@ -39,7 +39,7 @@ Prerequisites: node
 ```
 $ npm install
 ```
-this will download all npm and bower required packages
+this will download all npm and bower required package (bower install)
 
 
 ### Run
@@ -47,9 +47,9 @@ this will download all npm and bower required packages
 ```
 $ npm start
 ```
-This will create an http-server and will also run "gulp compress", to create the main-min.js file.
+This will create an http-server and will also run "gulp compressJS && gulp compressCSS", to create the compressed JS & CSS file of the app.
 
-Angular Dashboard will run on http://localhost:8000/app
+Angular Dashboard will run on http://localhost:8000
 
 
 ### Tests
@@ -58,7 +58,7 @@ $ npm test
 ```
 
 ### Version
-1.0 
+1.2 
 
 ## License
 
