@@ -1,8 +1,9 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var minify = require('gulp-minify');
+let cleanCSS = require('gulp-clean-css');
 
-gulp.task('compress', function () {
+gulp.task('compressJS', function () {
     gulp.src([
         './bower_components/jquery/dist/jquery.js',
         './bower_components/jquery-ui/jquery-ui.js',
@@ -19,7 +20,6 @@ gulp.task('compress', function () {
         './app/assets/lib/morris/morris.min.js',
         './app/assets/lib/crypto.js',
         './app/assets/lib/canvas-gauge/gauge.min.js',
-        '',
         './app/dashboard.js',
         './app/app.js',
         './app/widgets/**/*Service.js',
@@ -35,3 +35,19 @@ gulp.task('compress', function () {
         .pipe(gulp.dest('./app/dist/'));
 });
 
+gulp.task('compressCSS', function () {
+    gulp.src([
+        './bower_components/bootstrap/dist/css/bootstrap.min.css',
+        '../app/assets/lib/bootstrap-material-design/css/material.min.css',
+        './app/assets/lib/bootstrap-material-design/css/material-fullpalette.min.css',
+        './app/assets/lib/bootstrap-material-design/css/ripples.min.css',
+        './app/assets/lib/bootstrap-material-design/css/roboto.min.css',
+        './app/assets/lib/angular-chart-js/angular-chart.css',
+        './app/assets/lib/morris/morris.css',
+        './app/assets/lib/weather-icons-master/css/weather-icons.css',
+        './app/assets/lib/css-percentage-circle/circle.css',
+        './app/assets/css/dashboard.css'
+    ]).pipe(concat('main.css'))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest('./app/dist/'));
+});

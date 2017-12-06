@@ -9,24 +9,25 @@
   "homepage": "https://github.com/Alberto-/angular-dashboard#README",
   "scripts": {
     "postinstall": "bower install",
-    "prestart": "npm install && bower install && gulp compress",
+    "prestart": "gulp compressJS && gulp compressCSS",
     "start": "./node_modules/.bin/http-server -a 0.0.0.0 -p 8000",
     "pretest": "npm install",
     "test": "./node_modules/.bin/karma start app/test/karma.conf.js"
   },
   "devDependencies": {
-    "http-server": "^0.6.1",
     "karma": "^0.13.11",
     "karma-chrome-launcher": "^0.1.4",
-    "karma-firefox-launcher": "^0.1.3",
-    "karma-jasmine": "~0.1.0",
-    "bower": "1.3.1"
+    "karma-firefox-launcher": "0.1.3",
+    "karma-jasmine": "0.1.0",
+    "http-server": "^0.6.1"
   },
   "dependencies": {
+    "gulp-clean-css": "3.9.0",
+    "bower": "1.3.1",
     "angular-chart.js": "0.10.2",
     "chart.js": "1.1.0",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",   
-    "gulp-minify": "^1.0.0"
-   }
+    "gulp": "3.9.1",
+    "gulp-concat": "2.6.1",
+    "gulp-minify": "1.0.0"
+  }
 }

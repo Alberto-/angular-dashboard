@@ -22,17 +22,9 @@
     document.write("<script src='https://maps.googleapis.com/maps/api/js?sensor=false&language=en&key=" + GMAPS_APIKEY + "'><\/script>");
   </script>
   <!--main CSS-->
-  <link rel="stylesheet" href="./app/assets/css/dashboard.css">
-  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link href="./bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./app/assets/lib/bootstrap-material-design/css/material.min.css">
-  <link rel="stylesheet" href="./app/assets/lib/bootstrap-material-design/css/material-fullpalette.min.css">
-  <link rel="stylesheet" href="./app/assets/lib/bootstrap-material-design/css/ripples.min.css">
-  <link rel="stylesheet" href="./app/assets/lib/bootstrap-material-design/css/roboto.min.css">
-  <link rel="stylesheet" href="./app/assets/lib/angular-chart-js/angular-chart.css">
-  <link rel="stylesheet" href="./app/assets/lib/morris/morris.css">
   <link rel="stylesheet" href="./app/assets/lib/weather-icons-master/css/weather-icons.css">
-  <link rel="stylesheet" href="./app/assets/lib/css-percentage-circle/circle.css">
+  <link rel="stylesheet" href="./app/dist/main.css">
 
 </head>
 
@@ -86,7 +78,7 @@
         <!-- <h1>Angular Dashboard</h1> -->
         <!-- <h2>Drag and drop all widget you want see in the page</h2> -->
         <h2 id="briefDesc">Change widgets' position on this page or add new ones from left menu.</h2>
-        <p class="shwo-template-suggestion">Use the eye <a href="{{dashboardAddress}}/#show-Template-section">button</a> at the bottom of the page to see the
+        <p class="shwo-template-suggestion">Use the eye <a href="{{dashboardAddress}}#show-Template-section">button</a> at the bottom of the page to see the
           main page template.</p>
         <!--Main central section-->
         <div class="col-md-12">

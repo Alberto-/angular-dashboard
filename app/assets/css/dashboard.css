@@ -124,7 +124,7 @@ a, a:hover, a:focus {
   background: -o-linear-gradient(#2876b2, #549ad0);
   background: linear-gradient(rgba(222, 238, 238, 0.5) 50%, #549ad0 50%);
   background-repeat: repeat;
-  background-size: 100% 200%;
+  background-size: 100% 204%;
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
   -o-transition: all .2s linear;
@@ -848,11 +848,15 @@ chart-legend li>span{
 }
 
 .icon_gauge:before{
-  content: url('../img/gaugeIcon.png');
+  content: url('../assets/img/gaugeIcon.png');
 }
 
 .w_percentage_description{
 
+}
+
+.weather-descr{
+  
 }
 
 /*centered*/
