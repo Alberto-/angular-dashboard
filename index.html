@@ -4,18 +4,17 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Angular Dashboard - A simple dashboard with different draggable widgets, ready to get data from external web services. Made by Alberto Piras">
+	<meta name="keywords" content="Angular AngularJS dashboard, REST, API, HTML, CSS, JavaScript">
+	<meta name="author" content="Alberto Piras">
+	<meta name="contact" content="a.piras.ict@gmail.com">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>Angularjs Dashboard</title>
-
   <!-- ******* Old HEADER INCLUSIONS *******
     <script src="assets/bower_components/webcomponentsjs/HTMLImports.min.js"></script>
     <link rel="import" href="inc/header_inclusions.html">
   -->
-
-  <!--Libs inclusions
-  JQuery, Bootstrap, Bootstrap Material, Angular, chartjs, angularchart, morrisjs, crypto, gauge chart
-  -->
+  <!--Libs inclusions: JQuery, Bootstrap, Bootstrap Material, Angular, chartjs, angularchart, morrisjs, crypto, gauge chart -->
   <!--main JS-->
   <script type="text/javascript" src="./app/dist/main-min.js"></script>
   <script language="javascript">
@@ -25,15 +24,10 @@
   <link href="./bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./app/assets/lib/weather-icons-master/css/weather-icons.css">
   <link rel="stylesheet" href="./app/dist/main.css">
-
 </head>
 
 <body>
   <script type="text/javascript">
-    // MATERIAL init
-    $(document).ready(function () {
-      $.material.init();
-    });
   </script>
   <div class="container" ng-app="dashboardApp">
     <div id="mainController" class="content" ng-controller="mainController">
@@ -78,7 +72,7 @@
         <!-- <h1>Angular Dashboard</h1> -->
         <!-- <h2>Drag and drop all widget you want see in the page</h2> -->
         <h2 id="briefDesc">Change widgets' position on this page or add new ones from left menu.</h2>
-        <p class="shwo-template-suggestion">Use the eye <a href="{{dashboardAddress}}#show-Template-section">button</a> at the bottom of the page to see the
+        <p class="shwo-template-suggestion">Use the eye <a href="#show-Template-section">button</a> at the bottom of the page to see the
           main page template.</p>
         <!--Main central section-->
         <div class="col-md-12">
