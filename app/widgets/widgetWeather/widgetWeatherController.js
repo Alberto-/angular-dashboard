@@ -4,10 +4,6 @@
 */
 'use strict';
 
-/**You need an API KEY from http://openweathermap.org/api (it's FREE)*/
-
-var API_KEY_OPEN_WEATHER = "528b737fd7f101e5f15733bb9926b0bc"; 
-
 app.controller('widgetWeatherController', [ "$scope","$rootScope","$http","$compile",
   function ($scope, $rootScope, $http, $compile) {
     $scope.title="Weather";
