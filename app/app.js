@@ -1,11 +1,10 @@
 var app = angular.module('dashboardApp', ['ngRoute', 'ui.sortable', 'chart.js']);
 
-
-app.config(function ($httpProvider) {
+app.config(['$httpProvider',function ($httpProvider) {
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
-});
+}]);
 
-app.controller('mainController', function ($scope, $rootScope, $http, $compile) {
+app.controller('mainController', ['$scope','$rootScope', '$http', '$compile',function ($scope, $rootScope, $http, $compile) {
 
   $scope.dashboardAddress = dashboard.dashboardHost;
 
@@ -67,30 +66,23 @@ app.controller('mainController', function ($scope, $rootScope, $http, $compile) 
     angular.element(".draggable").toggleClass("showBorders");
   });
 
-});
-
-// GRAVATAR
-$(document).ready(function () {
-  var hash = CryptoJS.MD5("albe45313@gmail.com");
-  document.getElementById("authorPhoto").src = "http://www.gravatar.com/avatar/" + hash;
-});
+}]);
 
 var changeDashboard = document.createEvent('Event');
 changeDashboard.initEvent('changeDashboard', true, true);
 
 function reloadChart() {
-  angular.element(window).trigger('resize');
+    angular.element(window).trigger('resize');
 
-  if (document.createEvent) { // W3C
-    var ev = document.createEvent('Event');
-    ev.initEvent('resize', true, true);
-    //Throw event 
-    window.dispatchEvent(ev);
-  }
-  else { // IE
-    element = document.documentElement;
-    var event = document.createEventObject();
-    element.fireEvent("onresize", event);
-  }
+    if (document.createEvent) { // W3C
+        var ev = document.createEvent('Event');
+        ev.initEvent('resize', true, true);
+        //Throw event 
+        window.dispatchEvent(ev);
+    }
+    else { // IE
+        element = document.documentElement;
+        var event = document.createEventObject();
+        element.fireEvent("onresize", event);
+    }
 };
-
