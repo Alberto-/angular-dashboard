@@ -32,14 +32,14 @@ $ git clone https://github.com/Alberto-/angular-dashboard.git
 ```
 
 From project root `(
-Prerequisites: node
+Prerequisites:  node package manager
 )`
 
 
 ```
 $ npm install
 ```
-this will download all npm and bower required package (bower install)
+this will download all npm and bower required packages (bower install)
 
 
 ### Run
@@ -47,7 +47,8 @@ this will download all npm and bower required package (bower install)
 ```
 $ npm start
 ```
-This will create an http-server and will also run "gulp compressJS && gulp compressCSS", to create the compressed JS & CSS file of the app.
+This will execute "gulp compressJS && gulp compressCSS" commands, just to create the required JS & CSS file.
+Then will be started a simple http-server.
 
 Angular Dashboard will run on http://localhost:8000
 
