@@ -28,7 +28,7 @@ app.controller('widgetWeatherController', [ "$scope","$rootScope","$http","$comp
 
     // var newPos=getPosition();
 
-    $http.get("https://api.openweathermap.org/data/2.5/weather?lat=" + newPos.lat + "&lon=" + newPos.lng + "&appid=" + API_KEY_OPEN_WEATHER).success(function(data){
+    $http.get("api.openweathermap.org/data/2.5/weather?lat=" + newPos.lat + "&lon=" + newPos.lng + "&appid=" + API_KEY_OPEN_WEATHER).success(function(data){
 
       //console.debug('weather json:'+JSON.stringify(data));
       var json = JSON.parse(JSON.stringify(data));
