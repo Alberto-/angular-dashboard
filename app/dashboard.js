@@ -25,7 +25,7 @@
 })(this);
 
 /**You need a GOOGLE API Key - this will work only on the demo site*/
-var GMAPS_APIKEY = "AIzaSyA8U6jPDUV3vrsIWbVvSXnfMh0aOJT2I2U";
+var GMAPS_APIKEY = "AIzaSyDCJ2X_RLM2UyWOpJX7N3lReHJoQ0HKgPI";
 
 /**You need an API KEY from http://openweathermap.org/api (it's FREE) - this will work only on the demo site*/
 var API_KEY_OPEN_WEATHER = "528b737fd7f101e5f15733bb9926b0bc";
