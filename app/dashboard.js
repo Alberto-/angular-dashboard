@@ -28,7 +28,7 @@
 var GMAPS_APIKEY = "AIzaSyDCJ2X_RLM2UyWOpJX7N3lReHJoQ0HKgPI";
 
 /**You need an API KEY from http://openweathermap.org/api (it's FREE) - this will work only on the demo site*/
-var API_KEY_OPEN_WEATHER = "597d0ef8e5613db5b632cc2ec46fe49a";
+var API_KEY_OPEN_WEATHER = "199a7bbbcfd66ad68b17cf9f085c638a";
 
 $(document).ready(function () {
     // GRAVATAR
